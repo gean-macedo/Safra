@@ -1,0 +1,84 @@
+
+# =========================================================
+# VISUAL STUDIO / SSIS CORE
+# =========================================================
+
+.vs/
+bin/
+obj/
+
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# SSIS Project user / local config (IMPORTANTE)
+*.dtproj.user
+*.database
+*.cache
+
+# SSIS runtime / logs
+*.ispac
+*.dtsx.log
+*.log
+*.tmp
+
+# SQL Server local files
+*.mdf
+*.ldf
+*.ndf
+
+# Backup files
+*.bak
+*.backup
+
+# =========================================================
+# AZURE DEVOPS / CI-CD
+# =========================================================
+
+drop/
+artifacts/
+publish/
+build/
+release/
+out/
+
+*.zip
+*.nupkg
+
+# =========================================================
+# DEPENDENCIES
+# =========================================================
+
+packages/
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# =========================================================
+# SECRETS / ENVIRONMENT
+# =========================================================
+
+.env
+.env.*
+
+appsettings.Development.json
+appsettings.Local.json
+
+*.publishsettings
+*.pubxml
+*.pubxml.user
+
+# Keys / credentials
+*.key
+*.pem
+*.pfx
+
+# =========================================================
+# OS
+# =========================================================
+
+.DS_Store
+Thumbs.db

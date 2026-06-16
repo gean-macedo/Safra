@@ -1,0 +1,1595 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/24/2024 2:10:43 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MKPDTC-DBSTG"
+  DTS:CreatorName="MKPDTC\dbm_staging"
+  DTS:DTSID="{B93D3977-9F07-41B4-B73F-267359CB7DF7}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SAFRA_CARGA_D_PARTICIPANTES"
+  DTS:PackageType="5"
+  DTS:VersionBuild="55"
+  DTS:VersionGUID="{288F04BB-B51D-40BE-ADDB-CF30F22CB158}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DB_SAFRA]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{0CD4C6B3-0338-4191-8BDB-28A96C9E270C}"
+      DTS:ObjectName="DB_SAFRA">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=MKPDTC-DBSTG\STAGING;Initial Catalog=DB_SAFRA;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SAFRA_CARGA_D_PARTICIPANTES-{0CD4C6B3-0338-4191-8BDB-28A96C9E270C}10.10.20.103.DB_SAFRA;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{AD36DBDA-87B6-4591-A327-32182637A3D2}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ID_ITEM">
+      <DTS:VariableValue
+        DTS:DataType="3">83</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Carga D_PARTICIPANTES"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{8CC0CB12-1789-4358-AAD8-2ED43FB96CBC}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga D_PARTICIPANTES"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Carga D_PARTICIPANTES\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[D_PARTICIPANTES]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS,ROWS_PER_BATCH = 10000</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga D_PARTICIPANTES\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DB_SAFRA]"
+                  connectionManagerRefId="Package.ConnectionManagers[DB_SAFRA]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Carga D_PARTICIPANTES\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ID_PARTICIPANTE]"
+                      cachedDataType="i4"
+                      cachedName="ID_PARTICIPANTE"
+                      externalMetadataColumnId="Package\Carga D_PARTICIPANTES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_PARTICIPANTE]"
+                      lineageId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID_PARTICIPANTE]" />
+                    <inputColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ID_CARGO]"
+                      cachedDataType="i4"
+                      cachedName="ID_CARGO"
+                      externalMetadataColumnId="Package\Carga D_PARTICIPANTES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_CARGO]"
+                      lineageId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID_CARGO]" />
+                    <inputColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[STATUS]"
+                      cachedDataType="nText"
+                      cachedName="STATUS"
+                      externalMetadataColumnId="Package\Carga D_PARTICIPANTES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS]"
+                      lineageId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].Columns[STATUS]" />
+                    <inputColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FLG_ELEGIVEL]"
+                      cachedDataType="i4"
+                      cachedName="FLG_ELEGIVEL"
+                      externalMetadataColumnId="Package\Carga D_PARTICIPANTES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FLG_ELEGIVEL]"
+                      lineageId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].Columns[FLG_ELEGIVEL]" />
+                    <inputColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DATA_ACEITE_REGULAMENTO]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DATA_ACEITE_REGULAMENTO"
+                      externalMetadataColumnId="Package\Carga D_PARTICIPANTES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DATA_ACEITE_REGULAMENTO]"
+                      lineageId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].Columns[DATA_ACEITE_REGULAMENTO]" />
+                    <inputColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DATA_ATUALIZACAO_PARTICIPANTE]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DATA_ATUALIZACAO_PARTICIPANTE"
+                      externalMetadataColumnId="Package\Carga D_PARTICIPANTES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DATA_ATUALIZACAO_PARTICIPANTE]"
+                      lineageId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].Columns[DATA_ATUALIZACAO_PARTICIPANTE]" />
+                    <inputColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DATA_CRIACAO_PARTICIPANTE]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DATA_CRIACAO_PARTICIPANTE"
+                      externalMetadataColumnId="Package\Carga D_PARTICIPANTES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DATA_CRIACAO_PARTICIPANTE]"
+                      lineageId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].Columns[DATA_CRIACAO_PARTICIPANTE]" />
+                    <inputColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CPF]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="14"
+                      cachedName="CPF"
+                      externalMetadataColumnId="Package\Carga D_PARTICIPANTES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CPF]"
+                      lineageId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].Columns[CPF]" />
+                    <inputColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ID_PROGRAMA]"
+                      cachedDataType="i4"
+                      cachedName="ID_PROGRAMA"
+                      externalMetadataColumnId="Package\Carga D_PARTICIPANTES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_PROGRAMA]"
+                      lineageId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID_PROGRAMA]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      dataType="i4"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_PARTICIPANTE]"
+                      dataType="i4"
+                      name="ID_PARTICIPANTE" />
+                    <externalMetadataColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_CARGO]"
+                      dataType="i4"
+                      name="ID_CARGO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS]"
+                      dataType="nText"
+                      name="STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FLG_ELEGIVEL]"
+                      dataType="i4"
+                      name="FLG_ELEGIVEL" />
+                    <externalMetadataColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DAT_INI_VIGENCIA]"
+                      dataType="wstr"
+                      length="10"
+                      name="DAT_INI_VIGENCIA" />
+                    <externalMetadataColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DAT_FIM_VIGENCIA]"
+                      dataType="wstr"
+                      length="10"
+                      name="DAT_FIM_VIGENCIA" />
+                    <externalMetadataColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DATA_ACEITE_REGULAMENTO]"
+                      dataType="dbTimeStamp"
+                      name="DATA_ACEITE_REGULAMENTO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DATA_ATUALIZACAO_PARTICIPANTE]"
+                      dataType="dbTimeStamp"
+                      name="DATA_ATUALIZACAO_PARTICIPANTE" />
+                    <externalMetadataColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DATA_CRIACAO_PARTICIPANTE]"
+                      dataType="dbTimeStamp"
+                      name="DATA_CRIACAO_PARTICIPANTE" />
+                    <externalMetadataColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CPF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="11"
+                      name="CPF" />
+                    <externalMetadataColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_PROGRAMA]"
+                      dataType="i4"
+                      name="ID_PROGRAMA" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carga D_PARTICIPANTES\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Carga D_PARTICIPANTES\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga D_PARTICIPANTES\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga D_PARTICIPANTES\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carga D_PARTICIPANTES\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT
+	ID_PROGRAMA
+	,ID_PARTICIPANTE
+	,ID_CARGO
+	,STATUS
+	,CPF
+	,FLG_ELEGIVEL
+	,DATA_ACEITE_REGULAMENTO
+	,DATA_CRIACAO_PARTICIPANTE
+	,DATA_ATUALIZACAO_PARTICIPANTE
+FROM
+	DBO.D_PARTICIPANTES_TEMP					AS TP (NOLOCK)
+WHERE
+	NOT EXISTS (
+			SELECT
+				*
+			FROM
+				DBO.D_PARTICIPANTES				AS DA (NOLOCK)
+			WHERE
+				DA.ID_PARTICIPANTE = TP.ID_PARTICIPANTE
+				AND DA.STATUS = TP.STATUS
+				AND DA.ID_CARGO = TP.ID_CARGO
+				AND DA.ID_PROGRAMA = TP.ID_PROGRAMA
+	)</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga D_PARTICIPANTES\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DB_SAFRA]"
+                  connectionManagerRefId="Package.ConnectionManagers[DB_SAFRA]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID_PARTICIPANTE]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ID_PARTICIPANTE]"
+                      lineageId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID_PARTICIPANTE]"
+                      name="ID_PARTICIPANTE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID_CARGO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ID_CARGO]"
+                      lineageId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID_CARGO]"
+                      name="ID_CARGO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].Columns[STATUS]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[STATUS]"
+                      lineageId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].Columns[STATUS]"
+                      name="STATUS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].Columns[FLG_ELEGIVEL]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FLG_ELEGIVEL]"
+                      lineageId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].Columns[FLG_ELEGIVEL]"
+                      name="FLG_ELEGIVEL"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].Columns[DATA_ACEITE_REGULAMENTO]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DATA_ACEITE_REGULAMENTO]"
+                      lineageId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].Columns[DATA_ACEITE_REGULAMENTO]"
+                      name="DATA_ACEITE_REGULAMENTO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].Columns[DATA_ATUALIZACAO_PARTICIPANTE]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DATA_ATUALIZACAO_PARTICIPANTE]"
+                      lineageId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].Columns[DATA_ATUALIZACAO_PARTICIPANTE]"
+                      name="DATA_ATUALIZACAO_PARTICIPANTE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].Columns[DATA_CRIACAO_PARTICIPANTE]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DATA_CRIACAO_PARTICIPANTE]"
+                      lineageId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].Columns[DATA_CRIACAO_PARTICIPANTE]"
+                      name="DATA_CRIACAO_PARTICIPANTE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].Columns[CPF]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CPF]"
+                      length="14"
+                      lineageId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].Columns[CPF]"
+                      name="CPF"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID_PROGRAMA]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ID_PROGRAMA]"
+                      lineageId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID_PROGRAMA]"
+                      name="ID_PROGRAMA"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ID_PARTICIPANTE]"
+                      dataType="i4"
+                      name="ID_PARTICIPANTE" />
+                    <externalMetadataColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ID_CARGO]"
+                      dataType="i4"
+                      name="ID_CARGO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[STATUS]"
+                      dataType="nText"
+                      name="STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FLG_ELEGIVEL]"
+                      dataType="i4"
+                      name="FLG_ELEGIVEL" />
+                    <externalMetadataColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DATA_ACEITE_REGULAMENTO]"
+                      dataType="dbTimeStamp"
+                      name="DATA_ACEITE_REGULAMENTO" />
+                    <externalMetadataColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DATA_ATUALIZACAO_PARTICIPANTE]"
+                      dataType="dbTimeStamp"
+                      name="DATA_ATUALIZACAO_PARTICIPANTE" />
+                    <externalMetadataColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DATA_CRIACAO_PARTICIPANTE]"
+                      dataType="dbTimeStamp"
+                      name="DATA_CRIACAO_PARTICIPANTE" />
+                    <externalMetadataColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CPF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="14"
+                      name="CPF" />
+                    <externalMetadataColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ID_PROGRAMA]"
+                      dataType="i4"
+                      name="ID_PROGRAMA" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ID_PROGRAMA]"
+                      dataType="i4"
+                      lineageId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ID_PROGRAMA]"
+                      name="ID_PROGRAMA" />
+                    <outputColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ID_PARTICIPANTE]"
+                      dataType="i4"
+                      lineageId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ID_PARTICIPANTE]"
+                      name="ID_PARTICIPANTE" />
+                    <outputColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ID_CARGO]"
+                      dataType="i4"
+                      lineageId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ID_CARGO]"
+                      name="ID_CARGO" />
+                    <outputColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[STATUS]"
+                      dataType="nText"
+                      lineageId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[STATUS]"
+                      name="STATUS" />
+                    <outputColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CPF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="14"
+                      lineageId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CPF]"
+                      name="CPF" />
+                    <outputColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FLG_ELEGIVEL]"
+                      dataType="i4"
+                      lineageId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FLG_ELEGIVEL]"
+                      name="FLG_ELEGIVEL" />
+                    <outputColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DATA_ACEITE_REGULAMENTO]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DATA_ACEITE_REGULAMENTO]"
+                      name="DATA_ACEITE_REGULAMENTO" />
+                    <outputColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DATA_CRIACAO_PARTICIPANTE]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DATA_CRIACAO_PARTICIPANTE]"
+                      name="DATA_CRIACAO_PARTICIPANTE" />
+                    <outputColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DATA_ATUALIZACAO_PARTICIPANTE]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DATA_ATUALIZACAO_PARTICIPANTE]"
+                      name="DATA_ATUALIZACAO_PARTICIPANTE" />
+                    <outputColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Carga D_PARTICIPANTES.Paths[OLE DB Source Output]"
+              endId="Package\Carga D_PARTICIPANTES\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Carga D_PARTICIPANTES\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Carrega TEMP"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{E3A7664D-22F3-487E-B318-3C466C1FB10E}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carrega TEMP"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Carrega TEMP\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[D_PARTICIPANTES_TEMP]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS,ROWS_PER_BATCH = 10000</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carrega TEMP\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DB_SAFRA]"
+                  connectionManagerRefId="Package.ConnectionManagers[DB_SAFRA]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Carrega TEMP\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carrega TEMP\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ID_PARTICIPANTE]"
+                      cachedDataType="i4"
+                      cachedName="ID_PARTICIPANTE"
+                      externalMetadataColumnId="Package\Carrega TEMP\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_PARTICIPANTE]"
+                      lineageId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID_PARTICIPANTE]" />
+                    <inputColumn
+                      refId="Package\Carrega TEMP\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ID_CARGO]"
+                      cachedDataType="i4"
+                      cachedName="ID_CARGO"
+                      externalMetadataColumnId="Package\Carrega TEMP\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_CARGO]"
+                      lineageId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID_CARGO]" />
+                    <inputColumn
+                      refId="Package\Carrega TEMP\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[STATUS]"
+                      cachedDataType="nText"
+                      cachedName="STATUS"
+                      externalMetadataColumnId="Package\Carrega TEMP\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS]"
+                      lineageId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].Columns[STATUS]" />
+                    <inputColumn
+                      refId="Package\Carrega TEMP\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FLG_ELEGIVEL]"
+                      cachedDataType="i4"
+                      cachedName="FLG_ELEGIVEL"
+                      externalMetadataColumnId="Package\Carrega TEMP\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FLG_ELEGIVEL]"
+                      lineageId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].Columns[FLG_ELEGIVEL]" />
+                    <inputColumn
+                      refId="Package\Carrega TEMP\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DATA_ACEITE_REGULAMENTO]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DATA_ACEITE_REGULAMENTO"
+                      externalMetadataColumnId="Package\Carrega TEMP\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DATA_ACEITE_REGULAMENTO]"
+                      lineageId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].Columns[DATA_ACEITE_REGULAMENTO]" />
+                    <inputColumn
+                      refId="Package\Carrega TEMP\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DATA_CRIACAO_PARTICIPANTE]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DATA_CRIACAO_PARTICIPANTE"
+                      externalMetadataColumnId="Package\Carrega TEMP\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DATA_CRIACAO_PARTICIPANTE]"
+                      lineageId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].Columns[DATA_CRIACAO_PARTICIPANTE]" />
+                    <inputColumn
+                      refId="Package\Carrega TEMP\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DATA_ATUALIZACAO_PARTICIPANTE]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DATA_ATUALIZACAO_PARTICIPANTE"
+                      externalMetadataColumnId="Package\Carrega TEMP\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DATA_ATUALIZACAO_PARTICIPANTE]"
+                      lineageId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].Columns[DATA_ATUALIZACAO_PARTICIPANTE]" />
+                    <inputColumn
+                      refId="Package\Carrega TEMP\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CPF]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="11"
+                      cachedName="CPF"
+                      externalMetadataColumnId="Package\Carrega TEMP\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CPF]"
+                      lineageId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].Columns[CPF]" />
+                    <inputColumn
+                      refId="Package\Carrega TEMP\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ID_PROGRAMA]"
+                      cachedDataType="i4"
+                      cachedName="ID_PROGRAMA"
+                      externalMetadataColumnId="Package\Carrega TEMP\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_PROGRAMA]"
+                      lineageId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID_PROGRAMA]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carrega TEMP\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_PARTICIPANTE]"
+                      dataType="i4"
+                      name="ID_PARTICIPANTE" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TEMP\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_CARGO]"
+                      dataType="i4"
+                      name="ID_CARGO" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TEMP\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS]"
+                      dataType="nText"
+                      name="STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TEMP\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FLG_ELEGIVEL]"
+                      dataType="i4"
+                      name="FLG_ELEGIVEL" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TEMP\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DATA_ACEITE_REGULAMENTO]"
+                      dataType="dbTimeStamp"
+                      name="DATA_ACEITE_REGULAMENTO" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TEMP\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DATA_CRIACAO_PARTICIPANTE]"
+                      dataType="dbTimeStamp"
+                      name="DATA_CRIACAO_PARTICIPANTE" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TEMP\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DATA_ATUALIZACAO_PARTICIPANTE]"
+                      dataType="dbTimeStamp"
+                      name="DATA_ATUALIZACAO_PARTICIPANTE" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TEMP\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CPF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="14"
+                      name="CPF" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TEMP\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_PROGRAMA]"
+                      dataType="i4"
+                      name="ID_PROGRAMA" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carrega TEMP\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Carrega TEMP\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carrega TEMP\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carrega TEMP\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carrega TEMP\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carrega TEMP\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carrega TEMP\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT		
+	PR.ID												AS ID_PROGRAMA
+	,PA.ID												AS ID_PARTICIPANTE
+	,PH.ID												AS ID_CARGO
+	,TRY_CAST(pa.CPF AS VARCHAR(11))						AS CPF
+	,STATUS
+	,IIF(STATUS IN ('Ativo', 'Catálogo') AND 
+		DATA_ACEITE_REGULAMENTO IS NOT NULL, 1, 0)		AS FLG_ELEGIVEL
+	,DATA_ACEITE_REGULAMENTO
+	,DATA_CRIACAO_PARTICIPANTE
+	,DATA_ATUALIZACAO_PARTICIPANTE
+FROM
+	dbo.TB_PARTICIPANTES								AS PA (NOLOCK)
+	INNER JOIN dbo.TB_HIERARQUIA_PARTICIPANTES			AS HP (NOLOCK)
+		ON PA.ID_PARTICIPANTE = HP.ID_PARTICIPANTE
+		AND CAST(GETDATE() AS DATE) BETWEEN DATA_INICIO AND ISNULL(DATA_FIM, CAST(GETDATE() AS DATE) )
+	INNER JOIN DBO.TB_PROGRAMA_HIERARQUIA				AS PH (NOLOCK)
+		ON PH.ID_HIERARQUIA = HP.ID_HIERARQUIA
+	INNER JOIN DBO.TB_PROGRAMAS							AS PR (NOLOCK)
+		ON HP.ID_PROGRAMA = PR.ID_PROGRAMA</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carrega TEMP\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DB_SAFRA]"
+                  connectionManagerRefId="Package.ConnectionManagers[DB_SAFRA]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID_PARTICIPANTE]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ID_PARTICIPANTE]"
+                      lineageId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID_PARTICIPANTE]"
+                      name="ID_PARTICIPANTE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID_CARGO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ID_CARGO]"
+                      lineageId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID_CARGO]"
+                      name="ID_CARGO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].Columns[CPF]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CPF]"
+                      length="11"
+                      lineageId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].Columns[CPF]"
+                      name="CPF"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].Columns[STATUS]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[STATUS]"
+                      lineageId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].Columns[STATUS]"
+                      name="STATUS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].Columns[FLG_ELEGIVEL]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FLG_ELEGIVEL]"
+                      lineageId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].Columns[FLG_ELEGIVEL]"
+                      name="FLG_ELEGIVEL"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].Columns[DATA_ACEITE_REGULAMENTO]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DATA_ACEITE_REGULAMENTO]"
+                      lineageId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].Columns[DATA_ACEITE_REGULAMENTO]"
+                      name="DATA_ACEITE_REGULAMENTO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].Columns[DATA_CRIACAO_PARTICIPANTE]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DATA_CRIACAO_PARTICIPANTE]"
+                      lineageId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].Columns[DATA_CRIACAO_PARTICIPANTE]"
+                      name="DATA_CRIACAO_PARTICIPANTE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].Columns[DATA_ATUALIZACAO_PARTICIPANTE]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DATA_ATUALIZACAO_PARTICIPANTE]"
+                      lineageId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].Columns[DATA_ATUALIZACAO_PARTICIPANTE]"
+                      name="DATA_ATUALIZACAO_PARTICIPANTE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID_PROGRAMA]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ID_PROGRAMA]"
+                      lineageId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID_PROGRAMA]"
+                      name="ID_PROGRAMA"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ID_PARTICIPANTE]"
+                      dataType="i4"
+                      name="ID_PARTICIPANTE" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ID_CARGO]"
+                      dataType="i4"
+                      name="ID_CARGO" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CPF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="11"
+                      name="CPF" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[STATUS]"
+                      dataType="nText"
+                      name="STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FLG_ELEGIVEL]"
+                      dataType="i4"
+                      name="FLG_ELEGIVEL" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DATA_ACEITE_REGULAMENTO]"
+                      dataType="dbTimeStamp"
+                      name="DATA_ACEITE_REGULAMENTO" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DATA_CRIACAO_PARTICIPANTE]"
+                      dataType="dbTimeStamp"
+                      name="DATA_CRIACAO_PARTICIPANTE" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DATA_ATUALIZACAO_PARTICIPANTE]"
+                      dataType="dbTimeStamp"
+                      name="DATA_ATUALIZACAO_PARTICIPANTE" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ID_PROGRAMA]"
+                      dataType="i4"
+                      name="ID_PROGRAMA" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ID_PROGRAMA]"
+                      dataType="i4"
+                      lineageId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ID_PROGRAMA]"
+                      name="ID_PROGRAMA" />
+                    <outputColumn
+                      refId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ID_PARTICIPANTE]"
+                      dataType="i4"
+                      lineageId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ID_PARTICIPANTE]"
+                      name="ID_PARTICIPANTE" />
+                    <outputColumn
+                      refId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ID_CARGO]"
+                      dataType="i4"
+                      lineageId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ID_CARGO]"
+                      name="ID_CARGO" />
+                    <outputColumn
+                      refId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CPF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="11"
+                      lineageId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CPF]"
+                      name="CPF" />
+                    <outputColumn
+                      refId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[STATUS]"
+                      dataType="nText"
+                      lineageId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[STATUS]"
+                      name="STATUS" />
+                    <outputColumn
+                      refId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FLG_ELEGIVEL]"
+                      dataType="i4"
+                      lineageId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FLG_ELEGIVEL]"
+                      name="FLG_ELEGIVEL" />
+                    <outputColumn
+                      refId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DATA_ACEITE_REGULAMENTO]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DATA_ACEITE_REGULAMENTO]"
+                      name="DATA_ACEITE_REGULAMENTO" />
+                    <outputColumn
+                      refId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DATA_CRIACAO_PARTICIPANTE]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DATA_CRIACAO_PARTICIPANTE]"
+                      name="DATA_CRIACAO_PARTICIPANTE" />
+                    <outputColumn
+                      refId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DATA_ATUALIZACAO_PARTICIPANTE]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DATA_ATUALIZACAO_PARTICIPANTE]"
+                      name="DATA_ATUALIZACAO_PARTICIPANTE" />
+                    <outputColumn
+                      refId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Carrega TEMP.Paths[OLE DB Source Output]"
+              endId="Package\Carrega TEMP\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Carrega TEMP\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Correção datas Pre cadastro"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{CD6756B8-F8BD-42D9-8A1D-17DE0E99FD7F}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Correção datas Pre cadastro"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{0CD4C6B3-0338-4191-8BDB-28A96C9E270C}"
+          SQLTask:SqlStatementSource="WITH TEMP AS (&#xA;SELECT&#xA;&#x9;*&#xA;FROM&#xA;&#x9;(&#xA;SELECT&#xA;&#x9;ID_PARTICIPANTE&#xA;&#x9;,ROW_NUMBER() OVER(PARTITION BY ID_PARTICIPANTE, ID_CARGO, DAT_INI_VIGENCIA, ID_PROGRAMA ORDER BY DATA_CRIACAO_PARTICIPANTE) AS VLD&#xA;FROM&#xA;&#x9;DB_TCLSEMP.DBO.D_PARTICIPANTES&#x9;(NOLOCK)&#xA;) A&#xA;WHERE&#xA;&#x9;VLD &gt; 1&#xA;)&#xA;&#xA;--SELECT *&#xA;&#x9;UPDATE A SET DAT_INI_VIGENCIA = NULL, DAT_FIM_VIGENCIA = NULL&#xA;FROM&#xA;&#x9;DB_TCLSEMP.DBO.D_PARTICIPANTES&#x9;A&#xA;&#x9;INNER JOIN TEMP B&#xA;&#x9;&#x9;ON A.ID_PARTICIPANTE = B.ID_PARTICIPANTE&#xA;WHERE&#xA;&#x9;status = 'Pre-cadastro'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Registra item"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{E688EFB4-985D-4409-8F52-3388699F49B8}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Registra item"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{0CD4C6B3-0338-4191-8BDB-28A96C9E270C}"
+          SQLTask:SqlStatementSource="EXEC DB_MARKUP. [MKP].[SP_REGISTRA_LOG_ITEM] ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::ID_ITEM"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Trunca TEMP"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{8EFA205E-83A8-4A2D-98B2-FC046E9FA783}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Trunca TEMP"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{0CD4C6B3-0338-4191-8BDB-28A96C9E270C}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE DBO.D_PARTICIPANTES_TEMP" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update DAT_FIM Pre Cadastro"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{0E044159-1642-4AF3-9424-2A92B513B2A2}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update DAT_FIM Pre Cadastro"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{0CD4C6B3-0338-4191-8BDB-28A96C9E270C}"
+          SQLTask:SqlStatementSource="WITH DADOS_UPDATE AS(&#xA;SELECT&#xA;&#x9;PA.ID_PARTICIPANTE&#xA;&#x9;,MIN(DAT_INI_VIGENCIA)&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS DATA_FIM&#xA;FROM&#xA;&#x9;DBO.D_PARTICIPANTES&#x9;&#x9;&#x9;AS PA (NOLOCK)&#xA;WHERE&#xA;&#x9;STATUS = 'Ativo'&#xA;GROUP BY&#xA;&#x9;PA.ID_PARTICIPANTE&#xA;)&#xA;&#xA;&#xA;&#x9;UPDATE P SET DAT_FIM_VIGENCIA = DATEADD(DAY,-1,DATA_FIM)&#xA;FROM&#xA;&#x9;DBO.D_PARTICIPANTES&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;P&#xA;&#x9;INNER JOIN DADOS_UPDATE&#x9;&#x9;&#x9;&#x9;&#x9;DP&#xA;&#x9;&#x9;ON P.ID_PARTICIPANTE = DP.ID_PARTICIPANTE&#xA;WHERE&#xA;&#x9;P.DAT_FIM_VIGENCIA IS NULL&#xA;&#x9;AND STATUS = 'Pre-Cadastro'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update DAT_FIM_VIGENCIA"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{3154EE4F-384B-4EE0-83C1-864F300E2270}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update DAT_FIM_VIGENCIA"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{0CD4C6B3-0338-4191-8BDB-28A96C9E270C}"
+          SQLTask:SqlStatementSource="WITH VLD_UNICO AS(&#xA;SELECT&#xA;&#x9;ID&#xA;&#x9;,ID_PARTICIPANTE&#xA;FROM&#xA;&#x9;(&#xA;SELECT&#xA;&#x9;A.*&#xA;&#x9;,ROW_NUMBER() OVER(PARTITION BY ID_PARTICIPANTE, ID_PROGRAMA ORDER BY ID DESC) AS VLD&#xA;FROM&#xA;&#x9;dbo.D_PARTICIPANTES A (NOLOCK)&#xA;WHERE&#xA;&#x9;DATA_ACEITE_REGULAMENTO IS NOT NULL&#xA;) B&#xA;WHERE&#xA;&#x9;DAT_FIM_VIGENCIA IS NULL&#xA;&#x9;AND VLD &gt; 1&#xA;),&#xA;&#xA;DADOS_UPDATE AS(&#xA;SELECT&#xA;&#x9;PA.ID_PARTICIPANTE&#xA;&#x9;,MIN(PA.ID)&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS ID&#xA;&#x9;,MAX(DAT_INI_VIGENCIA)&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS DATA_FIM&#xA;FROM&#xA;&#x9;DBO.D_PARTICIPANTES&#x9;&#x9;&#x9;AS PA (NOLOCK)&#xA;&#x9;INNER JOIN VLD_UNICO&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS VU &#xA;&#x9;&#x9;ON PA.ID_PARTICIPANTE = VU.ID_PARTICIPANTE&#xA;WHERE&#xA;&#x9;DAT_FIM_VIGENCIA IS NULL&#xA;GROUP BY&#xA;&#x9;PA.ID_PARTICIPANTE&#xA;)&#xA;&#xA;--SELECT *&#xA;&#x9;UPDATE P SET DAT_FIM_VIGENCIA = DATEADD(DAY,-1,DATA_FIM)&#xA;FROM&#xA;&#x9;DBO.D_PARTICIPANTES&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;P&#xA;&#x9;INNER JOIN DADOS_UPDATE&#x9;&#x9;&#x9;&#x9;&#x9;DP&#xA;&#x9;&#x9;ON P.ID = DP.ID&#xA;WHERE&#xA;&#x9;P.DAT_FIM_VIGENCIA IS NULL" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update DAT_INI registro unico"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{6CF7ED7B-AE1B-4B86-B4FA-7F85FD3B5DE1}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update DAT_INI registro unico"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{0CD4C6B3-0338-4191-8BDB-28A96C9E270C}"
+          SQLTask:SqlStatementSource="WITH VLD_UNICO AS(&#xA;SELECT&#xA;&#x9;*&#xA;FROM&#xA;&#x9;(&#xA;SELECT&#xA;&#x9;ID_PARTICIPANTE&#xA;&#x9;,ID_CARGO&#xA;&#x9;,DAT_INI_VIGENCIA&#xA;&#x9;,ROW_NUMBER() OVER(PARTITION BY ID_PARTICIPANTE, ID_PROGRAMA ORDER BY DATA_ATUALIZACAO_PARTICIPANTE) AS VLD&#xA;FROM&#xA;&#x9;DBO.D_PARTICIPANTES A (NOLOCK)&#xA;) A&#xA;WHERE&#xA;&#x9;VLD = 1&#xA;&#x9;AND DAT_INI_VIGENCIA IS NULL&#xA;)&#xA;&#xA;--SELECT *&#xA;&#x9;UPDATE A SET DAT_INI_VIGENCIA = IIF(STATUS = 'Pre-cadastro', DATEADD(DAY,1,EOMONTH(DATA_CRIACAO_PARTICIPANTE,-1)),DATEADD(DAY,1,EOMONTH(DATA_ACEITE_REGULAMENTO,-1)))&#xA;FROM&#xA;&#x9;DBO.D_PARTICIPANTES&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS A (NOLOCK)&#xA;&#x9;INNER JOIN VLD_UNICO&#x9;&#x9;&#x9;&#x9;&#x9;AS V&#xA;&#x9;&#x9;ON A.ID_PARTICIPANTE = V.ID_PARTICIPANTE&#xA;&#x9;&#x9;AND V.VLD = 1&#xA;WHERE&#xA;&#x9;A.DAT_INI_VIGENCIA IS NULL&#xA;&#x9;AND STATUS &lt;&gt; 'Inativo'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update DAT_INI_VIGENCIA novo cargo"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{CC194684-5D86-42EA-9880-2C1B9EE18C3C}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update DAT_INI_VIGENCIA novo cargo"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{0CD4C6B3-0338-4191-8BDB-28A96C9E270C}"
+          SQLTask:SqlStatementSource="&#xA;WITH VLD_UNICO AS(&#xA;SELECT&#xA;&#x9;ID_PARTICIPANTE&#xA;&#x9;,ROW_NUMBER() OVER(PARTITION BY ID_PARTICIPANTE, ID_PROGRAMA ORDER BY DATA_ATUALIZACAO_PARTICIPANTE) AS VLD&#xA;FROM&#xA;&#x9;dbo.D_PARTICIPANTES A (NOLOCK)&#xA;)&#xA;&#xA;--SELECT *&#xA;UPDATE A SET DAT_INI_VIGENCIA = DATEADD(DAY,1,EOMONTH(DATA_ATUALIZACAO_PARTICIPANTE,-1))&#xA;FROM&#xA;&#x9;DBO.D_PARTICIPANTES&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS A&#xA;&#x9;INNER JOIN VLD_UNICO&#x9;&#x9;&#x9;&#x9;&#x9;AS VU&#xA;&#x9;&#x9;ON A.ID_PARTICIPANTE = VU.ID_PARTICIPANTE&#xA;&#x9;&#x9;AND VU.VLD &gt; 1&#xA;WHERE&#xA;&#x9;A.DAT_INI_VIGENCIA IS NULL&#xA;&#x9;AND DATA_ACEITE_REGULAMENTO IS NOT NULL" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{17A2A817-22F1-410E-90D1-445CEA9E33C4}"
+      DTS:From="Package\Carga D_PARTICIPANTES"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Update DAT_INI registro unico" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{7F6A939F-2A68-40F6-A956-7440586485B5}"
+      DTS:From="Package\Update DAT_INI registro unico"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Update DAT_INI_VIGENCIA novo cargo" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{6EB93480-57D3-45B0-99EB-C5AE3CAFB406}"
+      DTS:From="Package\Update DAT_INI_VIGENCIA novo cargo"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Update DAT_FIM_VIGENCIA" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{C393D698-CE6E-4BE2-A77A-663901A8E0A7}"
+      DTS:From="Package\Trunca TEMP"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Carrega TEMP" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{8444050D-F937-455E-94E5-865644313994}"
+      DTS:From="Package\Carrega TEMP"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Carga D_PARTICIPANTES" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{C8E123F9-93A3-4FA3-84E6-01FF0C479CC3}"
+      DTS:From="Package\Update DAT_FIM_VIGENCIA"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\Update DAT_FIM Pre Cadastro" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{B40D6C46-7D19-4A4C-AAA0-1EC5847C18E3}"
+      DTS:From="Package\Update DAT_FIM Pre Cadastro"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\Correção datas Pre cadastro" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição]"
+      DTS:CreationName=""
+      DTS:DTSID="{9F6076D5-4D27-494E-9100-853B5D277FAA}"
+      DTS:From="Package\Correção datas Pre cadastro"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição"
+      DTS:To="Package\Registra item" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="213,42"
+          Id="Package\Carga D_PARTICIPANTES"
+          TopLeft="96,169" />
+        <NodeLayout
+          Size="152,42"
+          Id="Package\Carrega TEMP"
+          TopLeft="124,95" />
+        <NodeLayout
+          Size="219,42"
+          Id="Package\Correção datas Pre cadastro"
+          TopLeft="100,573" />
+        <NodeLayout
+          Size="144,42"
+          Id="Package\Registra item"
+          TopLeft="136,651" />
+        <NodeLayout
+          Size="147,42"
+          Id="Package\Trunca TEMP"
+          TopLeft="128,18" />
+        <NodeLayout
+          Size="232,42"
+          Id="Package\Update DAT_FIM Pre Cadastro"
+          TopLeft="90,497" />
+        <NodeLayout
+          Size="223,42"
+          Id="Package\Update DAT_FIM_VIGENCIA"
+          TopLeft="95,410" />
+        <NodeLayout
+          Size="228,42"
+          Id="Package\Update DAT_INI registro unico"
+          TopLeft="93,249" />
+        <NodeLayout
+          Size="275,42"
+          Id="Package\Update DAT_INI_VIGENCIA novo cargo"
+          TopLeft="70,326" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="204.75,211">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38"
+              Start="0,0"
+              End="0,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="207.25,291">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35"
+              Start="0,0"
+              End="0,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="207,368">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="200.75,60">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35"
+              Start="0,0"
+              End="0,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="201.25,137">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32"
+              Start="0,0"
+              End="0,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="206.25,452">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="207.75,539">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição]"
+          TopLeft="208.75,615">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Carga D_PARTICIPANTES">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Carga D_PARTICIPANTES\OLE DB Source"
+          TopLeft="101,62" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Carga D_PARTICIPANTES\OLE DB Destination"
+          TopLeft="93,162" />
+        <EdgeLayout
+          Id="Package\Carga D_PARTICIPANTES.Paths[OLE DB Source Output]"
+          TopLeft="180.5,104">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58"
+              Start="0,0"
+              End="0,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga D_PARTICIPANTES\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga D_PARTICIPANTES\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Carrega TEMP">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Carrega TEMP\OLE DB Source"
+          TopLeft="79,24" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Carrega TEMP\OLE DB Destination"
+          TopLeft="62,150" />
+        <EdgeLayout
+          Id="Package\Carrega TEMP.Paths[OLE DB Source Output]"
+          TopLeft="154,66">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,84"
+              Start="0,0"
+              End="0,76.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,76.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carrega TEMP\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carrega TEMP\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
