@@ -1,37 +1,37 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="5/6/2024 11:23:36 AM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="MKPDTC-DBSTG"
   DTS:CreatorName="MKPDTC\dbm_staging"
-  DTS:DTSID="{9F517D10-808B-4D32-94A9-E3ABD99233EE}"
+  DTS:DTSID="{481FF023-A756-48C5-9489-29FB9C95ABCA}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="SAFRA_CARGA_PRODUTOS_PONTOS"
   DTS:PackageType="5"
-  DTS:VersionBuild="58"
-  DTS:VersionGUID="{0AB84C78-D039-465E-934D-C03F05769EB6}">
+  DTS:VersionBuild="59"
+  DTS:VersionGUID="{69791A64-ABB8-4AD6-8AD3-923B99A4D2EF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[DB_SAFRA]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{D0EAC33A-9FEF-4394-99C7-4C1AAA831C2B}"
+      DTS:DTSID="{6017B25F-2CEF-40E1-9021-9465D4C15107}"
       DTS:ObjectName="DB_SAFRA">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=MKPDTC-DBSTG\STAGING;Initial Catalog=DB_SAFRA;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{D0EAC33A-9FEF-4394-99C7-4C1AAA831C2B}10.10.20.103.DB_SAFRA;" />
+          DTS:ConnectionString="Data Source=MKPDTC-DBSTG\STAGING;Initial Catalog=DB_SAFRA;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{6017B25F-2CEF-40E1-9021-9465D4C15107}10.10.20.103.DB_SAFRA;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[vendavall40 - PROD REP]"
       DTS:CreationName="ADO.NET:System.Data.Odbc.OdbcConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
-      DTS:DTSID="{1C0BCD0D-E222-4053-8CB4-6DCE2BC2232A}"
+      DTS:DTSID="{DA5BCF62-66B3-46B6-9E1C-4B53C538896C}"
       DTS:ObjectName="vendavall40 - PROD REP">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -42,7 +42,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{82AC62FA-1B01-48D8-A50F-D5995549E952}"
+      DTS:DTSID="{69F7A4E4-34AD-4AA8-82BF-349F4BA7FA55}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ID_ITEM">
@@ -55,7 +55,7 @@
       DTS:refId="Package\Carrega TB_PRODUTO"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{351A4739-1AA3-424E-9C1D-D2849867954A}"
+      DTS:DTSID="{9C98EEDE-3ACE-4DCA-8DFF-11649EF6072C}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Carrega TB_PRODUTO"
@@ -668,7 +668,7 @@ WHERE
       DTS:refId="Package\Carrega TB_PRODUTO_TEMP"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{788D3925-83C7-4DEA-B543-D4F9A770B8A6}"
+      DTS:DTSID="{D1EE834E-8BEA-4810-84EF-106344596516}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Carrega TB_PRODUTO_TEMP"
@@ -1370,7 +1370,7 @@ from
       DTS:refId="Package\Carrega TB_VENDAS"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{C112B174-7EF4-4FCC-878C-941EA65F8E26}"
+      DTS:DTSID="{25C25033-0022-4305-854E-D7270A68D01D}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Carrega TB_VENDAS"
@@ -2122,7 +2122,7 @@ WHERE NOT EXISTS (
       DTS:refId="Package\Carrega TB_VENDAS_TEMP"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{D2D30725-A4F1-4106-A6BA-F17F5F0551D8}"
+      DTS:DTSID="{402D261F-7827-46BE-AF6E-5B8E62F20AC9}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Carrega TB_VENDAS_TEMP"
@@ -3105,7 +3105,7 @@ on s.establishment_id = e.id</property>
       DTS:refId="Package\Registra item"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{DED8CF46-9F92-4EC8-B546-FD427F135137}"
+      DTS:DTSID="{F69F064D-E37D-4F50-8F80-9031E864DF5B}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Registra item"
@@ -3114,7 +3114,7 @@ on s.establishment_id = e.id</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{D0EAC33A-9FEF-4394-99C7-4C1AAA831C2B}"
+          SQLTask:Connection="{6017B25F-2CEF-40E1-9021-9465D4C15107}"
           SQLTask:SqlStatementSource="EXEC DB_MARKUP. [MKP].[SP_REGISTRA_LOG_ITEM] ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
@@ -3129,7 +3129,7 @@ on s.establishment_id = e.id</property>
       DTS:refId="Package\Trunca PRODUTO_TEMP"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{99187402-A860-45D9-A56F-B6AF38D5F0C7}"
+      DTS:DTSID="{E9381EA6-82EB-48D2-A386-56269F7821E1}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Trunca PRODUTO_TEMP"
@@ -3138,7 +3138,7 @@ on s.establishment_id = e.id</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{D0EAC33A-9FEF-4394-99C7-4C1AAA831C2B}"
+          SQLTask:Connection="{6017B25F-2CEF-40E1-9021-9465D4C15107}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE DBO.TB_PRODUTO_TEMP" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -3146,7 +3146,7 @@ on s.establishment_id = e.id</property>
       DTS:refId="Package\Trunca TB_VENDAS"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{5831F6C6-FB2B-4665-BCB3-8365DA60BBC6}"
+      DTS:DTSID="{51516DDB-8449-4DE1-81E3-56F7D6199B55}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Trunca TB_VENDAS"
@@ -3155,7 +3155,7 @@ on s.establishment_id = e.id</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{D0EAC33A-9FEF-4394-99C7-4C1AAA831C2B}"
+          SQLTask:Connection="{6017B25F-2CEF-40E1-9021-9465D4C15107}"
           SQLTask:SqlStatementSource="IF EXISTS (SELECT 1 FROM DBO.TB_VENDAS_TEMP (NOLOCK))&#xA;BEGIN&#xA;    TRUNCATE TABLE DBO.TB_VENDAS;&#xA;END" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -3163,7 +3163,7 @@ on s.establishment_id = e.id</property>
       DTS:refId="Package\Trunca TB_VENDAS_TEMP"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{9D5A0CEC-A82F-4C89-AEBD-D50AFB0865C7}"
+      DTS:DTSID="{1E82D126-1DA5-4272-BFF5-786D143B98A4}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Trunca TB_VENDAS_TEMP"
@@ -3172,7 +3172,7 @@ on s.establishment_id = e.id</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{D0EAC33A-9FEF-4394-99C7-4C1AAA831C2B}"
+          SQLTask:Connection="{6017B25F-2CEF-40E1-9021-9465D4C15107}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE DBO.TB_VENDAS_TEMP" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -3181,7 +3181,7 @@ on s.establishment_id = e.id</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{5D9EC620-3045-408F-9C11-803EB2E96FE1}"
+      DTS:DTSID="{1A7081BE-3924-4EA5-8EE0-8815415A2603}"
       DTS:From="Package\Carrega TB_PRODUTO_TEMP"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -3189,7 +3189,7 @@ on s.establishment_id = e.id</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{86C41C34-989C-4F71-B9F7-7321FAF78E4A}"
+      DTS:DTSID="{75AC6DE0-1A2E-4C65-A58F-73DC2C494B3D}"
       DTS:From="Package\Carrega TB_PRODUTO"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -3197,7 +3197,7 @@ on s.establishment_id = e.id</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{07BDA1AD-233B-478C-BD9B-23D66DDA6E9C}"
+      DTS:DTSID="{741D6DAC-E927-45C9-8605-3525B7DFADFA}"
       DTS:From="Package\Trunca PRODUTO_TEMP"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
@@ -3205,7 +3205,7 @@ on s.establishment_id = e.id</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{87EDD8DF-FA9A-483F-896B-C50F4F770255}"
+      DTS:DTSID="{87000328-AF82-4500-909F-481BA82E2158}"
       DTS:From="Package\Carrega TB_VENDAS_TEMP"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
@@ -3213,7 +3213,7 @@ on s.establishment_id = e.id</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{FD24B38E-2B86-43EA-944D-AE252E8E0E93}"
+      DTS:DTSID="{1DA00A3E-7678-4B6E-BA58-91A2DDCB5A98}"
       DTS:From="Package\Trunca TB_VENDAS"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
@@ -3221,7 +3221,7 @@ on s.establishment_id = e.id</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição 1]"
       DTS:CreationName=""
-      DTS:DTSID="{885F2CCA-B3B9-47D3-A055-0949EAD64662}"
+      DTS:DTSID="{FD4316BF-7CC6-43FE-B228-11E6F3CD6CDB}"
       DTS:From="Package\Trunca TB_VENDAS_TEMP"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição 1"
@@ -3229,19 +3229,19 @@ on s.establishment_id = e.id</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição 3]"
       DTS:CreationName=""
-      DTS:DTSID="{6A72D6CB-EF7C-44F3-BF82-988FB97CDCE6}"
+      DTS:DTSID="{C04A8563-0B28-411E-BFB5-BA2CDB58801F}"
       DTS:From="Package\Carrega TB_VENDAS"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição 3"
       DTS:To="Package\Registra item" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
-<!--If you manually edit this section and make a mistake, you can delete it. -->
-<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<!--Esta seção CDATA contém as informações de layout do pacote. A seção inclui informações como coordenadas (x,y), largura e altura.-->
+<!--Se você editar manualmente esta seção e cometer algum erro, poderá excluí-la. -->
+<!--O pacote ainda poderá ser carregado normalmente, mas as informações de layout anteriores serão perdidas e o designer reorganizará automaticamente os elementos na superfície de design.-->
 <Objects
   Version="8">
-  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <!--Cada nó abaixo conterá propriedades que não afetam o comportamento em tempo de execução.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
@@ -3271,6 +3271,10 @@ on s.establishment_id = e.id</property>
           Size="242,42"
           Id="Package\Trunca PRODUTO_TEMP"
           TopLeft="106.5,21" />
+        <NodeLayout
+          Size="218,42"
+          Id="Package\Trunca TB_VENDAS"
+          TopLeft="116,434" />
         <NodeLayout
           Size="218,42"
           Id="Package\Trunca TB_VENDAS_TEMP"
@@ -3342,54 +3346,6 @@ on s.establishment_id = e.id</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Restrição 1]"
-          TopLeft="226.75,298">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,47"
-              Start="0,0"
-              End="0,39.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,39.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Restrição 3]"
-          TopLeft="223,559">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,53"
-              Start="0,0"
-              End="0,45.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,45.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="218,42"
-          Id="Package\Trunca TB_VENDAS"
-          TopLeft="116,434" />
-        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
           TopLeft="225.5,387">
           <EdgeLayout.Curve>
@@ -3425,6 +3381,50 @@ on s.establishment_id = e.id</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição 1]"
+          TopLeft="226.75,298">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47"
+              Start="0,0"
+              End="0,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição 3]"
+          TopLeft="223,559">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53"
+              Start="0,0"
+              End="0,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

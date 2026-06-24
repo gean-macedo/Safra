@@ -1,49 +1,49 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="3/6/2024 3:27:45 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="MKPDCT-DBSTG01"
   DTS:CreatorName="MKPDCT-DBSTG01\dbm_dw"
-  DTS:DTSID="{D67199F6-4630-4AF8-9032-16246A35215B}"
+  DTS:DTSID="{831DCAA9-E929-49D5-9360-7B8E77FB8EEB}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="SAFRA_CARGA_VENDAVALL_API_STG_PONTOS"
   DTS:PackageType="5"
-  DTS:VersionBuild="347"
-  DTS:VersionGUID="{69427809-8218-4F49-8133-321A8FF7519A}">
+  DTS:VersionBuild="348"
+  DTS:VersionGUID="{35DEC8A3-1266-4519-A058-3A3C205DA1DD}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[10.10.20.103.DB_SAFRA]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{2C990400-8E23-4842-87E4-2E138B72E08E}"
+      DTS:DTSID="{C5C7D699-0A4F-4460-A4EE-4255DAA7271C}"
       DTS:ObjectName="10.10.20.103.DB_SAFRA">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=MKPDTC-DBSTG\STAGING;Initial Catalog=DB_SAFRA;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SAFRA_CARGA_VENDAVALL_API_STG_PONTOS-{2C990400-8E23-4842-87E4-2E138B72E08E}10.10.20.103.DB_SAFRA;" />
+          DTS:ConnectionString="Data Source=MKPDTC-DBSTG\STAGING;Initial Catalog=DB_SAFRA;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SAFRA_CARGA_VENDAVALL_API_STG_PONTOS-{C5C7D699-0A4F-4460-A4EE-4255DAA7271C}10.10.20.103.DB_SAFRA;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[10.10.20.103.DB_SAFRA.markup.dbranches]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{12A587DA-0EC3-4662-A87A-CA32466612D3}"
+      DTS:DTSID="{0FCACEED-7594-423F-B71D-0B7D1DB217FA}"
       DTS:ObjectName="10.10.20.103.DB_SAFRA.markup.dbranches">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=MKPDTC-DBSTG\STAGING;Initial Catalog=DB_SAFRA;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-SAFRA_CARGA_VENDAVALL_API_STG_PONTOS-{12A587DA-0EC3-4662-A87A-CA32466612D3}10.10.20.103.DB_SAFRA.markup.dbranches;" />
+          DTS:ConnectionString="Data Source=MKPDTC-DBSTG\STAGING;Initial Catalog=DB_SAFRA;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-SAFRA_CARGA_VENDAVALL_API_STG_PONTOS-{0FCACEED-7594-423F-B71D-0B7D1DB217FA}10.10.20.103.DB_SAFRA.markup.dbranches;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[vendavall40 - HLG]"
       DTS:CreationName="ADO.NET:System.Data.Odbc.OdbcConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
-      DTS:DTSID="{2483BE0E-E6C1-4BD1-91BA-AD4A56602281}"
+      DTS:DTSID="{C2B1799C-2232-4C1D-B47D-A5C7DCC4295F}"
       DTS:ObjectName="vendavall40 - HLG">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -53,7 +53,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[vendavall40 - HLG - API]"
       DTS:CreationName="ADO.NET:System.Data.Odbc.OdbcConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
-      DTS:DTSID="{5AA1A042-6548-4F12-9D47-6D46A89E1207}"
+      DTS:DTSID="{24A5C292-8656-41F5-939F-8DCF1EA59AEA}"
       DTS:ObjectName="vendavall40 - HLG - API">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -64,7 +64,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{0ED6AD79-AD51-4680-A6E6-09B479AE6066}"
+      DTS:DTSID="{64C5B54A-DECA-4B2C-B7CA-9BE453986BC7}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="CPF">
@@ -74,7 +74,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{AFECA792-500E-4436-B27B-C09AFB6EA899}"
+      DTS:DTSID="{F60C787A-86E7-450D-8894-99B090B4AC80}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="ID_ITEM">
@@ -83,7 +83,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{14DD0CAA-1F89-4C2F-B89D-91739BB722B8}"
+      DTS:DTSID="{C9E9665A-1D9B-4BFC-8C29-51FC835DCDBE}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ID_PONTO">
@@ -93,7 +93,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{B8106E67-615C-4CCD-8575-EED1754CB1CF}"
+      DTS:DTSID="{9EBDF8D9-0A38-482A-B839-B7D6522A65D3}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="PERIODO">
@@ -103,7 +103,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{8CCBFBA5-3257-4C4F-9BC0-147F8387F903}"
+      DTS:DTSID="{C612CB63-F6F6-4BCC-9566-0D631C5EE7A6}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="PONTO">
@@ -113,7 +113,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{A8B1CDFE-43BA-4B41-86A2-0D6F62E50CD7}"
+      DTS:DTSID="{32F53DA2-3852-431C-AF6C-5F339E19D567}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="PONTOS">
@@ -131,7 +131,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{FE2BDF08-A40D-44FC-AEBD-4A691CB818B2}"
+      DTS:DTSID="{A39B08DC-D05B-49AC-A721-4CEE2D7B5898}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="STATUS">
@@ -141,7 +141,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{728BA4C8-8567-4F07-BAC1-4A7DB1BD0C28}"
+      DTS:DTSID="{0ECFDB39-D264-44EF-8EEB-3D006EB12D39}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="TYPE">
@@ -155,7 +155,7 @@
       DTS:refId="Package\Carrega novos Pontos Vendavall STG"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarefa Fluxo de Dados"
-      DTS:DTSID="{5D72CDB2-24C4-40CA-AF73-C661C2F9EE07}"
+      DTS:DTSID="{514C694D-21F8-4C7C-A46E-1C20F389914F}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Carrega novos Pontos Vendavall STG"
@@ -1524,7 +1524,7 @@ FROM CTE_PONTOS;</property>
       DTS:refId="Package\Carrega TB_ESTABELECIMENTOS_STG 1"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarefa Fluxo de Dados"
-      DTS:DTSID="{8B33F4DA-DA13-451C-A6C2-5C6FAB654D08}"
+      DTS:DTSID="{7ED10659-75C1-4BBC-BF8B-DB896752705C}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Carrega TB_ESTABELECIMENTOS_STG 1"
@@ -1942,7 +1942,7 @@ FROM CTE_PONTOS;</property>
       DTS:refId="Package\Carrega TB_PARTICIPANTES_STG"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarefa Fluxo de Dados"
-      DTS:DTSID="{76EB8FEB-E77C-40F5-AA05-52AEB2F437EF}"
+      DTS:DTSID="{695B4F80-C9DE-41A0-A4D2-24EC8C0BF5BB}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Carrega TB_PARTICIPANTES_STG"
@@ -2559,7 +2559,7 @@ FROM CTE_PONTOS;</property>
       DTS:refId="Package\Carrega TB_PONTOS_API"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarefa Fluxo de Dados"
-      DTS:DTSID="{F42FDDB1-ABDE-48D8-BA5C-7E810131E258}"
+      DTS:DTSID="{9F4EFF4F-E551-4DC8-9474-A0781066A4C7}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Carrega TB_PONTOS_API"
@@ -3555,7 +3555,7 @@ where status = 'Pré-Aprovado DLQ' or status = 'inativar';</property>
       DTS:refId="Package\Carrega TB_PONTOS_STG"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarefa Fluxo de Dados"
-      DTS:DTSID="{ABFCBC7D-1D16-47EF-9A08-BE50EECC2647}"
+      DTS:DTSID="{8C727E68-7669-4CE9-B0B4-B8025C7EE370}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Carrega TB_PONTOS_STG"
@@ -4067,7 +4067,7 @@ on pa.id = p.participant_id</property>
       DTS:refId="Package\Carrega TB_SALES_STG"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarefa Fluxo de Dados"
-      DTS:DTSID="{11AE432F-2F2D-4FF3-8313-A39F556454FF}"
+      DTS:DTSID="{684A39E1-44A8-4016-99DF-75B0DDC08ECB}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Carrega TB_SALES_STG"
@@ -4642,13 +4642,13 @@ on pa.id = s.saler_id</property>
       DTS:refId="Package\Contêiner do Loop Foreach 1 1"
       DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:Description="Contêiner do Loop Foreach"
-      DTS:DTSID="{54891851-C605-432B-8B60-C04992E53EAC}"
+      DTS:DTSID="{F7D4A280-0D08-406B-AE7F-503BADF9DD5F}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
       DTS:ObjectName="Contêiner do Loop Foreach 1 1">
       <DTS:ForEachEnumerator
         DTS:CreationName="Microsoft.ForEachADOEnumerator"
-        DTS:DTSID="{1104D825-1A32-47C4-A239-987D351991FD}"
+        DTS:DTSID="{1D799B5A-08AA-48F8-B90B-AB4FF7CF134F}"
         DTS:ObjectName="{018D0820-A16A-4C3B-B205-8CB3154AE612}">
         <DTS:ObjectData>
           <FEEADO
@@ -4662,7 +4662,7 @@ on pa.id = s.saler_id</property>
           DTS:refId="Package\Contêiner do Loop Foreach 1 1\Update API"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Tarefa Executar SQL"
-          DTS:DTSID="{CA984B52-051F-4909-A926-D56B6B29BCD7}"
+          DTS:DTSID="{03D6B9A7-6A54-420B-9AA3-914C44B15756}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Update API"
@@ -4671,7 +4671,7 @@ on pa.id = s.saler_id</property>
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{5AA1A042-6548-4F12-9D47-6D46A89E1207}"
+              SQLTask:Connection="{24A5C292-8656-41F5-939F-8DCF1EA59AEA}"
               SQLTask:TimeOut="30"
               SQLTask:BypassPrepare="False"
               SQLTask:SqlStatementSource="update public.points&#xA;set status = 'error'&#xA;where points = ?&#xA;and participant_cpf = ?&#xA;and ? &lt;&gt; 'inativar'&#xA;and id = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
@@ -4706,26 +4706,26 @@ on pa.id = s.saler_id</property>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{261BC1C1-42CA-4DE9-BE55-3C909573D55F}"
-          DTS:ObjectName="{261BC1C1-42CA-4DE9-BE55-3C909573D55F}"
+          DTS:DTSID="{FABFCBB1-5F26-4226-928D-9D18CD308457}"
+          DTS:ObjectName="{FABFCBB1-5F26-4226-928D-9D18CD308457}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::PONTO" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{CE21B2C6-93D5-4373-A723-B402B768F1FE}"
-          DTS:ObjectName="{CE21B2C6-93D5-4373-A723-B402B768F1FE}"
+          DTS:DTSID="{65A32DDF-2D48-4EC5-A0C5-80ED02ECA71F}"
+          DTS:ObjectName="{65A32DDF-2D48-4EC5-A0C5-80ED02ECA71F}"
           DTS:ValueIndex="1"
           DTS:VariableName="User::STATUS" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{CD58B034-DC8C-46E4-ABAD-D82028CF3899}"
-          DTS:ObjectName="{CD58B034-DC8C-46E4-ABAD-D82028CF3899}"
+          DTS:DTSID="{BC2670FA-2DA6-4F6B-A9D2-6734E03AB61C}"
+          DTS:ObjectName="{BC2670FA-2DA6-4F6B-A9D2-6734E03AB61C}"
           DTS:ValueIndex="2"
           DTS:VariableName="User::CPF" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{D789BDCA-3D3E-4603-8976-5A8DF6B7E569}"
-          DTS:ObjectName="{D789BDCA-3D3E-4603-8976-5A8DF6B7E569}"
+          DTS:DTSID="{C250A03C-FAE6-4481-8F2D-0DF0D0F48BD1}"
+          DTS:ObjectName="{C250A03C-FAE6-4481-8F2D-0DF0D0F48BD1}"
           DTS:ValueIndex="3"
           DTS:VariableName="User::ID_PONTO" />
       </DTS:ForEachVariableMappings>
@@ -4734,13 +4734,13 @@ on pa.id = s.saler_id</property>
       DTS:refId="Package\Contêiner do Loop Foreach 1 1 1"
       DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:Description="Contêiner do Loop Foreach"
-      DTS:DTSID="{41060F4B-EC98-471D-B067-D78C3AE02EB4}"
+      DTS:DTSID="{FC2679C6-2AD6-4DC3-861D-6BD7D005481C}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
       DTS:ObjectName="Contêiner do Loop Foreach 1 1 1">
       <DTS:ForEachEnumerator
         DTS:CreationName="Microsoft.ForEachADOEnumerator"
-        DTS:DTSID="{60191B95-A764-4707-9995-61A718A45389}"
+        DTS:DTSID="{5E2386D4-28B5-4123-B08B-7A3E90E0EF3F}"
         DTS:ObjectName="{018D0820-A16A-4C3B-B205-8CB3154AE612}">
         <DTS:ObjectData>
           <FEEADO
@@ -4754,7 +4754,7 @@ on pa.id = s.saler_id</property>
           DTS:refId="Package\Contêiner do Loop Foreach 1 1 1\Update Status Final API"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Tarefa Executar SQL"
-          DTS:DTSID="{F275506A-E777-4DA1-BF08-B4A8C59E33FD}"
+          DTS:DTSID="{A26657A7-C18B-4C1B-BF52-B2AF201E50E1}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Update Status Final API"
@@ -4763,7 +4763,7 @@ on pa.id = s.saler_id</property>
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{5AA1A042-6548-4F12-9D47-6D46A89E1207}"
+              SQLTask:Connection="{24A5C292-8656-41F5-939F-8DCF1EA59AEA}"
               SQLTask:TimeOut="30"
               SQLTask:BypassPrepare="False"
               SQLTask:SqlStatementSource="update public.points&#xA;set status = 'Sucesso'&#xA;where points = ?&#xA;and participant_cpf = ?&#xA;and ? = 'Pré-Aprovado DLQ'&#xA;and id = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
@@ -4798,26 +4798,26 @@ on pa.id = s.saler_id</property>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{E094E110-A57B-42C9-95EB-56E7AA130F96}"
-          DTS:ObjectName="{E094E110-A57B-42C9-95EB-56E7AA130F96}"
+          DTS:DTSID="{4A107081-1888-4732-AEAB-AB5DF9BF8DB5}"
+          DTS:ObjectName="{4A107081-1888-4732-AEAB-AB5DF9BF8DB5}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::PONTO" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{84E86893-6143-4C2D-ADE6-77A7676FF47B}"
-          DTS:ObjectName="{84E86893-6143-4C2D-ADE6-77A7676FF47B}"
+          DTS:DTSID="{1332CAA9-5302-4856-BD24-1EC11FAE00B6}"
+          DTS:ObjectName="{1332CAA9-5302-4856-BD24-1EC11FAE00B6}"
           DTS:ValueIndex="1"
           DTS:VariableName="User::CPF" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{CDD1699D-8667-4E88-BF94-97ADDB57DDE1}"
-          DTS:ObjectName="{CDD1699D-8667-4E88-BF94-97ADDB57DDE1}"
+          DTS:DTSID="{DE365B21-3BD4-42E1-A9BA-8C024E86467A}"
+          DTS:ObjectName="{DE365B21-3BD4-42E1-A9BA-8C024E86467A}"
           DTS:ValueIndex="2"
           DTS:VariableName="User::STATUS" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{34F869FA-1E5A-41E4-AFF1-E86153811CCC}"
-          DTS:ObjectName="{34F869FA-1E5A-41E4-AFF1-E86153811CCC}"
+          DTS:DTSID="{0D531141-899F-481F-BC3A-2790F35DABEF}"
+          DTS:ObjectName="{0D531141-899F-481F-BC3A-2790F35DABEF}"
           DTS:ValueIndex="3"
           DTS:VariableName="User::ID_PONTO" />
       </DTS:ForEachVariableMappings>
@@ -4826,7 +4826,7 @@ on pa.id = s.saler_id</property>
       DTS:refId="Package\Executar PROCEDURE"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarefa Executar SQL"
-      DTS:DTSID="{1FCDC31B-10E9-4457-96FE-C07824C013C5}"
+      DTS:DTSID="{1AD3A1FE-7589-4310-A574-D3839110620F}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Executar PROCEDURE"
@@ -4835,7 +4835,7 @@ on pa.id = s.saler_id</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{5AA1A042-6548-4F12-9D47-6D46A89E1207}"
+          SQLTask:Connection="{24A5C292-8656-41F5-939F-8DCF1EA59AEA}"
           SQLTask:SqlStatementSource="select public.proc_alerta_cria_log_integracao_ft_pontos();" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -4843,7 +4843,7 @@ on pa.id = s.saler_id</property>
       DTS:refId="Package\Limpa variaveis"
       DTS:CreationName="Microsoft.ScriptTask"
       DTS:Description="Tarefa Script"
-      DTS:DTSID="{3078B605-F55E-4481-BFFA-CFBC49031FB6}"
+      DTS:DTSID="{92694C48-0D80-4A9A-8BC0-6D57994039FF}"
       DTS:ExecutableType="Microsoft.ScriptTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Limpa variaveis"
@@ -4852,7 +4852,7 @@ on pa.id = s.saler_id</property>
       <DTS:ObjectData>
         <ScriptProject
           Name="ST_4fbfb173937a480d89a6f7bbb86caa7c"
-          VSTAMajorVersion="16"
+          VSTAMajorVersion="17"
           VSTAMinorVersion="0"
           Language="CSharp"
           ReadWriteVariables="User::PONTOS">
@@ -4909,8 +4909,8 @@ on pa.id = s.saler_id</property>
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=17.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=17.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
   </ItemGroup>
   <ItemGroup>
     <AppDesigner Include="Properties\" />
@@ -4945,7 +4945,7 @@ on pa.id = s.saler_id</property>
         <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" />
         <Host Name="ScriptTask" />
         <ProjectClient>
-          <HostIdentifier>SSIS_ST160</HostIdentifier>
+          <HostIdentifier>SSIS_ST170</HostIdentifier>
         </ProjectClient>
       </FlavorProperties>
     </VisualStudio>
@@ -5214,7 +5214,7 @@ namespace ST_48625c3817584bbf9300f8012ca86634
     <msb:CodeName>ST_4fbfb173937a480d89a6f7bbb86caa7c</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>ST_4fbfb173937a480d89a6f7bbb86caa7c</msb:DisplayName>
-    <msb:ProjectId>{286D7704-5B5E-46CA-B004-DDF36F031331}</msb:ProjectId>
+    <msb:ProjectId>{DB6C040D-BBC0-48C1-8B34-AE77640B6853}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="ST_4fbfb173937a480d89a6f7bbb86caa7c.csproj" />
@@ -5356,7 +5356,7 @@ namespace ST_48625c3817584bbf9300f8012ca86634.Properties {
           <BinaryItem
             Name="ST_4fbfb173937a480d89a6f7bbb86caa7c.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDANi52GcAAAAAAAAAAOAAIiALATAAABAAAAAIAAAAAAAA1i4A
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDANgrPGoAAAAAAAAAAOAAIiALATAAABAAAAAIAAAAAAAA1i4A
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAIQuAABPAAAAAEAAAHgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -5387,8 +5387,8 @@ Az4AyQCsBQEAyQCOBUMAeQCSADQA6QB9BEgAcQCHBAYAkQCHBAYA8QC5AFEA8QC7BVgAmQCHBF4A
 uQCHBAYACAAIAHgACAAMAH0AKQBzAOUALgALAL0ALgATAMYALgAbAOUALgAjAO4ALgArABcBLgAz
 ABcBLgA7ABcBLgBDAO4ALgBLAB0BLgBTABcBLgBbADQBQwBjAH0ASQBzAOUAgwBrAH0AwQB7AH0A
 GwAEAAEABQADAAAAWQSuAAAAGAGzAAAApAW4AAIABAADAAIABQAFAAEABgAFAAIABwAHAASAAAAB
-AAAA9yPTlAAAAAAAAF4AAAAEAAAAAAAAAAAAAABmAFUAAAAAABAAAAAAAAAAAAAAAG8APwMAAAAA
-BAAAAAAAAAAAAAAAZgDgAwAAAAAQAAAAAAAAAAAAAABvAC4AAAAAAAAAAAABAAAA2AQAAAAAAFNU
+AAAAxyXUcQAAAAAAAF4AAAAEAAAAAAAAAAAAAABmAFUAAAAAABEAAAAAAAAAAAAAAG8APwMAAAAA
+BAAAAAAAAAAAAAAAZgDgAwAAAAARAAAAAAAAAAAAAABvAC4AAAAAAAAAAAABAAAA2AQAAAAAAFNU
 XzQ4NjI1YzM4MTc1ODRiYmY5MzAwZjgwMTJjYTg2NjM0ADxNb2R1bGU+AE1pY3Jvc29mdC5TcWxT
 ZXJ2ZXIuTWFuYWdlZERUUwB2YWx1ZV9fAG1zY29ybGliAFNUXzRmYmZiMTczOTM3YTQ4MGQ4OWE2
 ZjdiYmI4NmNhYTdjAGRlZmF1bHRJbnN0YW5jZQBnZXRfTWVzc2FnZQBWYXJpYWJsZQBSdW50aW1l
@@ -5417,8 +5417,8 @@ dF9WYXJpYWJsZXMAU2V0dGluZ3MAU3VjY2VzcwBnZXRfRHRzAFNjcmlwdFJlc3VsdHMAZ2V0X0V2
 ZW50cwBPYmplY3QAZ2V0X0RlZmF1bHQAc2V0X1Rhc2tSZXN1bHQAZ2V0X0Fzc2VtYmx5AG9wX0lu
 ZXF1YWxpdHkAAAAAGVUAcwBlAHIAOgA6AFAATwBOAFQATwBTAAABAAlFAHIAcgBvAABxUwBUAF8A
 NAA4ADYAMgA1AGMAMwA4ADEANwA1ADgANABiAGIAZgA5ADMAMAAwAGYAOAAwADEAMgBjAGEAOAA2
-ADYAMwA0AC4AUAByAG8AcABlAHIAdABpAGUAcwAuAFIAZQBzAG8AdQByAGMAZQBzAAAAAABhPHwE
-uWxGSJ9XewGOIyWaAAQgAQEIAyAAAQUgAQEREQQgAQEOBSABARFVBAcBEj0EIAASZQQgABJpBSAB
+ADYAMwA0AC4AUAByAG8AcABlAHIAdABpAGUAcwAuAFIAZQBzAG8AdQByAGMAZQBzAAAAAABgXGgF
+DpVYSpPtVIdVzGlDAAQgAQEIAyAAAQUgAQEREQQgAQEOBSABARFVBAcBEj0EIAASZQQgABJpBSAB
 Em0cAyAAHAMgAA4FAAICDg4EIAEBHAQgABJ1CCAFAggODg4IBgABEnkRfQUgABKAgQcgAgEOEoCB
 CLd6XFYZNOCJCImEXc2AgMyRBAAAAAAEAQAAAAIGCAMGEQwDBhJNAwYSUQMGEhQEAAASTQQAABJR
 BQABARJRBAAAEhQDAAABBAgAEk0ECAASUQQIABIUCAEACAAAAAAAHgEAAQBUAhZXcmFwTm9uRXhj
@@ -5437,14 +5437,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAABABAAAAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAA
 AABIAAAAWEAAABoEAAAAAAAAAAAAABoENAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBP
-AAAAAAC9BO/+AAABAAAAAQDTlPcjAAABANOU9yM/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAA
+AAAAAAC9BO/+AAABAAAAAQDUccclAAABANRxxyU/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAA
 RAAAAAEAVgBhAHIARgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBv
 AG4AAAAAAAAAsAR6AwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAABWAwAAAQAwADAA
 MAAwADAANABiADAAAAAaAAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAAIgABAAEAQwBvAG0AcABh
 AG4AeQBOAGEAbQBlAAAAAAAAAAAAcAAkAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4A
 AAAAAFMAVABfADQAOAA2ADIANQBjADMAOAAxADcANQA4ADQAYgBiAGYAOQAzADAAMABmADgAMAAx
 ADIAYwBhADgANgA2ADMANAAAAD4ADwABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAA
-LgA5ADIAMAA3AC4AMwA4ADAAOQA5AAAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAA
+LgA5ADYANwAxAC4AMgA5ADEANAAwAAAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAA
 AFMAVABfADQAZgBiAGYAYgAxADcAMwA5ADMANwBhADQAOAAwAGQAOAA5AGEANgBmADcAYgBiAGIA
 OAA2AGMAYQBhADcAYwAuAGQAbABsAAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0
 AAAAQwBvAHAAeQByAGkAZwBoAHQAIABAACAAIAAyADAAMgA0AAAAKgABAAEATABlAGcAYQBsAFQA
@@ -5453,8 +5453,8 @@ AGEAbQBlAAAAUwBUAF8ANABmAGIAZgBiADEANwAzADkAMwA3AGEANAA4ADAAZAA4ADkAYQA2AGYA
 NwBiAGIAYgA4ADYAYwBhAGEANwBjAC4AZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBt
 AGUAAAAAAFMAVABfADQAOAA2ADIANQBjADMAOAAxADcANQA4ADQAYgBiAGYAOQAzADAAMABmADgA
 MAAxADIAYwBhADgANgA2ADMANAAAAEIADwABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAA
-ADEALgAwAC4AOQAyADAANwAuADMAOAAwADkAOQAAAAAARgAPAAEAQQBzAHMAZQBtAGIAbAB5ACAA
-VgBlAHIAcwBpAG8AbgAAADEALgAwAC4AOQAyADAANwAuADMAOAAwADkAOQAAAAAAAAAAAAAAAAAA
+ADEALgAwAC4AOQA2ADcAMQAuADIAOQAxADQAMAAAAAAARgAPAAEAQQBzAHMAZQBtAGIAbAB5ACAA
+VgBlAHIAcwBpAG8AbgAAADEALgAwAC4AOQA2ADcAMQAuADIAOQAxADQAMAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -5478,7 +5478,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       DTS:refId="Package\Registra item"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{666D3ACF-61E4-46A0-8FC4-A873D9E7D944}"
+      DTS:DTSID="{27BF9C8A-681C-425E-A248-826EFC086B2E}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Registra item"
@@ -5487,7 +5487,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{2C990400-8E23-4842-87E4-2E138B72E08E}"
+          SQLTask:Connection="{C5C7D699-0A4F-4460-A4EE-4255DAA7271C}"
           SQLTask:SqlStatementSource="EXEC DB_MARKUP. [MKP].[SP_REGISTRA_LOG_ITEM] ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
@@ -5502,7 +5502,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       DTS:refId="Package\Trunca TB_ESTABELECIMENTOS_STG"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarefa Executar SQL"
-      DTS:DTSID="{9ACA11B8-1E08-4E8F-BE1E-2386FDFF6359}"
+      DTS:DTSID="{80E1A6A8-CB09-412F-88DA-42773F9B2C2A}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Trunca TB_ESTABELECIMENTOS_STG"
@@ -5511,7 +5511,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{12A587DA-0EC3-4662-A87A-CA32466612D3}"
+          SQLTask:Connection="{0FCACEED-7594-423F-B71D-0B7D1DB217FA}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[TB_ESTABELECIMENTOS_STG]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -5519,7 +5519,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       DTS:refId="Package\Trunca TB_PARTICIPANTES_STG"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarefa Executar SQL"
-      DTS:DTSID="{B8574A7D-7FF7-4EC0-ADD5-5C5276A91ADC}"
+      DTS:DTSID="{1C1659E9-086A-4445-BB18-B98F5C5F0810}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Trunca TB_PARTICIPANTES_STG"
@@ -5528,7 +5528,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{12A587DA-0EC3-4662-A87A-CA32466612D3}"
+          SQLTask:Connection="{0FCACEED-7594-423F-B71D-0B7D1DB217FA}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[TB_PARTICIPANTES_STG]&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -5536,7 +5536,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       DTS:refId="Package\Trunca TB_PONTOS_API E STG"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarefa Executar SQL"
-      DTS:DTSID="{15268771-31E8-45BE-A587-445CE9873448}"
+      DTS:DTSID="{70B01EFD-4660-4821-8A4A-33B54DD50374}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Trunca TB_PONTOS_API E STG"
@@ -5545,7 +5545,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{12A587DA-0EC3-4662-A87A-CA32466612D3}"
+          SQLTask:Connection="{0FCACEED-7594-423F-B71D-0B7D1DB217FA}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[TB_PONTOS_API]&#xA;TRUNCATE TABLE [dbo].[TB_PONTOS_STG]&#xA;TRUNCATE TABLE [dbo].[TB_SALES_STG]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -5553,7 +5553,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       DTS:refId="Package\Valida e Retorna Pontos Existentes API"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarefa Fluxo de Dados"
-      DTS:DTSID="{C59C058A-5632-488C-8F0B-1636EBD74EE6}"
+      DTS:DTSID="{A8BB0CF1-6021-4765-8757-3AEB73912E93}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Valida e Retorna Pontos Existentes API"
@@ -6265,7 +6265,7 @@ FROM CTE_PONTOS;</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição]"
       DTS:CreationName=""
-      DTS:DTSID="{891A8BB7-07F4-4C44-9F62-C3338DD9C31E}"
+      DTS:DTSID="{B57700E8-61A1-4B09-90A9-5EE408F9B2B8}"
       DTS:From="Package\Carrega TB_PARTICIPANTES_STG"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição"
@@ -6273,7 +6273,7 @@ FROM CTE_PONTOS;</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição 1]"
       DTS:CreationName=""
-      DTS:DTSID="{7C810B82-4F98-48C1-B681-5AC860E0D0ED}"
+      DTS:DTSID="{48EAEB1E-2EA9-4693-9A6C-BBDA6F678C32}"
       DTS:From="Package\Carrega TB_PONTOS_API"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição 1"
@@ -6281,7 +6281,7 @@ FROM CTE_PONTOS;</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição 10]"
       DTS:CreationName=""
-      DTS:DTSID="{16234AC7-3907-4F64-B136-554A90EF4D81}"
+      DTS:DTSID="{6E4C10DD-5770-43B3-B9E7-690E7A017491}"
       DTS:From="Package\Carrega TB_ESTABELECIMENTOS_STG 1"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição 10"
@@ -6289,7 +6289,7 @@ FROM CTE_PONTOS;</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição 11]"
       DTS:CreationName=""
-      DTS:DTSID="{91D10410-9F62-4DEC-8958-B99BB95BFAEA}"
+      DTS:DTSID="{4EBCCB35-ACCA-4FB2-B110-4BEDC99CF12F}"
       DTS:From="Package\Trunca TB_ESTABELECIMENTOS_STG"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição 11"
@@ -6297,7 +6297,7 @@ FROM CTE_PONTOS;</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição 12]"
       DTS:CreationName=""
-      DTS:DTSID="{5A00E3B4-BCFA-408C-98D6-CE2EA5C8D95A}"
+      DTS:DTSID="{A5E6E099-EC1B-4B3F-9CE1-7633C8646490}"
       DTS:From="Package\Carrega novos Pontos Vendavall STG"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição 12"
@@ -6305,7 +6305,7 @@ FROM CTE_PONTOS;</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição 13]"
       DTS:CreationName=""
-      DTS:DTSID="{B5C1A8AD-2A94-4B3B-A4B4-F0FA2C637709}"
+      DTS:DTSID="{24C3F7D7-7F52-4ED8-863D-8AA5FAB41D7C}"
       DTS:From="Package\Contêiner do Loop Foreach 1 1 1"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição 13"
@@ -6313,7 +6313,7 @@ FROM CTE_PONTOS;</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição 2]"
       DTS:CreationName=""
-      DTS:DTSID="{82352DBD-C12A-49DD-8362-15B6C145F8DC}"
+      DTS:DTSID="{1A6A97A8-02ED-452B-B3A9-4879E6FD7716}"
       DTS:From="Package\Carrega TB_PONTOS_STG"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição 2"
@@ -6321,7 +6321,7 @@ FROM CTE_PONTOS;</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição 3]"
       DTS:CreationName=""
-      DTS:DTSID="{DCFC9D36-75F7-491F-8ACA-FB6A78971078}"
+      DTS:DTSID="{6AB1565E-A923-4D69-B816-72E7445C7E1A}"
       DTS:From="Package\Executar PROCEDURE"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição 3"
@@ -6329,7 +6329,7 @@ FROM CTE_PONTOS;</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição 4]"
       DTS:CreationName=""
-      DTS:DTSID="{D3533869-54AC-4518-9048-08FF6A885984}"
+      DTS:DTSID="{D61DADCB-7415-43E7-9384-2B5FDC850AB3}"
       DTS:From="Package\Trunca TB_PONTOS_API E STG"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição 4"
@@ -6337,7 +6337,7 @@ FROM CTE_PONTOS;</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição 5]"
       DTS:CreationName=""
-      DTS:DTSID="{89EFFBBF-C607-4E84-AA6E-181DDFE87FCB}"
+      DTS:DTSID="{A1954785-3029-456E-B71F-72D2A788DE7E}"
       DTS:From="Package\Valida e Retorna Pontos Existentes API"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição 5"
@@ -6345,7 +6345,7 @@ FROM CTE_PONTOS;</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição 6]"
       DTS:CreationName=""
-      DTS:DTSID="{0F38BBAD-5F0A-42EB-9FF4-211F057C6253}"
+      DTS:DTSID="{07A68C46-F4AD-46CE-A8E0-6ADBE5DB7575}"
       DTS:From="Package\Contêiner do Loop Foreach 1 1"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição 6"
@@ -6353,7 +6353,7 @@ FROM CTE_PONTOS;</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição 7]"
       DTS:CreationName=""
-      DTS:DTSID="{DF35AB78-FB58-4274-AB43-ED29BA2D2096}"
+      DTS:DTSID="{28E3C0DA-BD28-4A9B-870E-51E33C17EE0D}"
       DTS:From="Package\Limpa variaveis"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição 7"
@@ -6361,7 +6361,7 @@ FROM CTE_PONTOS;</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição 8]"
       DTS:CreationName=""
-      DTS:DTSID="{70DEDD76-AF9D-46F9-B8E6-02E39A72DF40}"
+      DTS:DTSID="{17E6E631-7A2F-42AB-9470-B382A59C4FFC}"
       DTS:From="Package\Trunca TB_PARTICIPANTES_STG"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição 8"
@@ -6369,19 +6369,19 @@ FROM CTE_PONTOS;</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição 9]"
       DTS:CreationName=""
-      DTS:DTSID="{D1EDCFCA-1136-49C0-93FF-DA4B52FBBE78}"
+      DTS:DTSID="{195B4A93-3AFC-4BFC-902E-FE7141433645}"
       DTS:From="Package\Carrega TB_SALES_STG"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição 9"
       DTS:To="Package\Carrega TB_PONTOS_STG" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
-<!--If you manually edit this section and make a mistake, you can delete it. -->
-<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<!--Esta seção CDATA contém as informações de layout do pacote. A seção inclui informações como coordenadas (x,y), largura e altura.-->
+<!--Se você editar manualmente esta seção e cometer algum erro, poderá excluí-la. -->
+<!--O pacote ainda poderá ser carregado normalmente, mas as informações de layout anteriores serão perdidas e o designer reorganizará automaticamente os elementos na superfície de design.-->
 <Objects
   Version="8">
-  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <!--Cada nó abaixo conterá propriedades que não afetam o comportamento em tempo de execução.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>

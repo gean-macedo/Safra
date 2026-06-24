@@ -1,49 +1,49 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="3/6/2024 3:27:45 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="MKPDCT-DBSTG01"
   DTS:CreatorName="MKPDCT-DBSTG01\dbm_dw"
-  DTS:DTSID="{3579B385-206F-40B4-B244-5A8C616CF339}"
+  DTS:DTSID="{9C2DDC57-A78D-4F79-9E6B-B1C93FB4B095}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
   DTS:LocaleID="1033"
-  DTS:ObjectName="SAFRA_CARGA_VENDAVALL_API_STG_ESTABELECIMENTOS_PARTICIPANTES"
+  DTS:ObjectName="SAFRA_CARGA_VENDAVALL_API_STG_HIERARQUIA"
   DTS:PackageType="5"
-  DTS:VersionBuild="256"
-  DTS:VersionGUID="{4C4E7B5C-31A4-40A6-932B-6F5A0FC6AAAF}">
+  DTS:VersionBuild="257"
+  DTS:VersionGUID="{99A84317-34C4-4C3D-ABCB-8E8F2233398E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[10.10.20.103.DB_SAFRA.markup.dbranches]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{CC98BFDD-DF4B-41C3-90FB-3727C4E47C25}"
+      DTS:DTSID="{AF9AAE60-8889-4AEE-B8DE-47271120804E}"
       DTS:ObjectName="10.10.20.103.DB_SAFRA.markup.dbranches">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=MKPDTC-DBSTG\STAGING;Initial Catalog=DB_SAFRA;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-SAFRA_CARGA_VENDAVALL_API_STG_ESTABELECIMENTOS_PARTICIPANTES-{CC98BFDD-DF4B-41C3-90FB-3727C4E47C25}10.10.20.103.DB_SAFRA.;" />
+          DTS:ConnectionString="Data Source=MKPDTC-DBSTG\STAGING;Initial Catalog=DB_SAFRA;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-SAFRA_CARGA_VENDAVALL_API_STG_ESTABELECIMENTOS_PARTICIPANTES-{AF9AAE60-8889-4AEE-B8DE-47271120804E}10.10.20.103.DB_SAFRA.;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[10.10.20.103.markup.dbranches]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{E5455159-8E15-4FE8-8DBE-F75A1C266DDE}"
+      DTS:DTSID="{D3D1C5B1-9E43-4ABB-8ED6-C8FCE03FF65C}"
       DTS:ObjectName="10.10.20.103.markup.dbranches">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=MKPDTC-DBSTG\STAGING;Initial Catalog=DB_SAFRA;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-SAFRA_CARGA_VENDAVALL_API_STG_ESTABELECIMENTOS_PARTICIPANTES-{E5455159-8E15-4FE8-8DBE-F75A1C266DDE}10.10.20.103.markup.db;" />
+          DTS:ConnectionString="Data Source=MKPDTC-DBSTG\STAGING;Initial Catalog=DB_SAFRA;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-SAFRA_CARGA_VENDAVALL_API_STG_ESTABELECIMENTOS_PARTICIPANTES-{D3D1C5B1-9E43-4ABB-8ED6-C8FCE03FF65C}10.10.20.103.markup.db;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[vendavall40 - HLG]"
       DTS:CreationName="ADO.NET:System.Data.Odbc.OdbcConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
-      DTS:DTSID="{CD6BF70E-A9F9-4F98-BB90-FD7631BA11F1}"
+      DTS:DTSID="{5006CF18-0E13-4BA7-8E69-2E0AE2DB3A85}"
       DTS:ObjectName="vendavall40 - HLG">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -53,7 +53,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[vendavall40 - HLG - API]"
       DTS:CreationName="ADO.NET:System.Data.Odbc.OdbcConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
-      DTS:DTSID="{BACA8486-D441-4CF7-A7FF-78F1FC1C3D96}"
+      DTS:DTSID="{38538819-66B9-45EE-BF42-771E050EFC94}"
       DTS:ObjectName="vendavall40 - HLG - API">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -64,7 +64,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{7DCEBDD6-0E7E-4DC8-A8D7-640339D596F8}"
+      DTS:DTSID="{DD764186-7288-4D04-8CD7-83AA67287DB4}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="HIERARQUIA_PARTICIPANTES">
@@ -82,7 +82,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{FFA94040-E07C-4729-9303-40FB57D6AED1}"
+      DTS:DTSID="{779A7434-7B29-4D41-BD73-F4EAB348E7DB}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ID_HIERARQUIA_PARTICIPANTES">
@@ -92,7 +92,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{F8B61F23-9745-4A36-90E2-CE3F88EAD254}"
+      DTS:DTSID="{B5A5A742-2096-4546-8BF6-B64DBB818DB2}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ID_HIERARQUIA_PARTICIPANTES_API">
@@ -102,7 +102,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{7E6A856F-BEEC-4DBF-B8B2-6C491AF5416D}"
+      DTS:DTSID="{5A8CC7C5-6F15-423B-B3EF-20A5CFB0EF0B}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="ID_ITEM">
@@ -111,7 +111,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{F2F31106-3989-4F92-940B-80975F66AE55}"
+      DTS:DTSID="{9D6856AF-E30C-4A9C-B6C0-73EEEA85176D}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ID_PARTICIPANTE">
@@ -121,7 +121,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{B4B49980-F08B-4878-9A04-A951593A2F4C}"
+      DTS:DTSID="{F67CE645-E396-40C1-A811-E5CDADA55DFB}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ID_PARTICIPANTE_SUPERIOR">
@@ -131,7 +131,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{0C35F15E-5C3C-4401-AB8D-1B35F98BFA94}"
+      DTS:DTSID="{A96D3ADB-B64F-4FD0-B5A9-808BF9EE1BCE}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ID_TRANSACAO">
@@ -141,7 +141,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{154ADBCF-B67A-4AC6-A8D1-7BB9C67904C4}"
+      DTS:DTSID="{52588FBE-06E2-4551-A3C8-5A9010116FD6}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="OPERACAO">
@@ -155,7 +155,7 @@
       DTS:refId="Package\Carrega TB_ESTABELECIMENTOS_STG"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarefa Fluxo de Dados"
-      DTS:DTSID="{9FCFD373-5233-4688-AFFF-98BEC124094A}"
+      DTS:DTSID="{87528F7B-30B8-4C06-8BCA-360FE9A854A9}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Carrega TB_ESTABELECIMENTOS_STG"
@@ -573,7 +573,7 @@
       DTS:refId="Package\Carrega TB_HIERARQUIA_PARTICIPANTES_API"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarefa Fluxo de Dados"
-      DTS:DTSID="{9547E5F0-5452-4D61-851E-95F7C1C9A857}"
+      DTS:DTSID="{5E13B2A5-7D53-4229-9C91-B7A85AF8A666}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Carrega TB_HIERARQUIA_PARTICIPANTES_API"
@@ -1227,7 +1227,7 @@ join public.participants p2
       DTS:refId="Package\Carrega TB_HIERARQUIA_PARTICIPANTES_STG"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarefa Fluxo de Dados"
-      DTS:DTSID="{4AD9B1EF-0B94-40FB-A8BB-29BCF72630AB}"
+      DTS:DTSID="{E267E0AE-9AB0-4469-A450-D30B84E3ED4B}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Carrega TB_HIERARQUIA_PARTICIPANTES_STG"
@@ -1851,7 +1851,7 @@ join safra_api_vendavall_20240805110525.participants p2
       DTS:refId="Package\Carrega TB_PARTICIPANTES_STG"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarefa Fluxo de Dados"
-      DTS:DTSID="{D287FE05-2C71-4B61-A354-B140583ED043}"
+      DTS:DTSID="{D114C1F2-749F-41BE-A574-A7C07F5A4596}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Carrega TB_PARTICIPANTES_STG"
@@ -2506,13 +2506,13 @@ join safra_api_vendavall_20240805110525.participants p2
       DTS:refId="Package\Contêiner do Loop Foreach 1 1"
       DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:Description="Contêiner do Loop Foreach"
-      DTS:DTSID="{8DCBC008-8FAA-4B71-BA53-5D13F131BC45}"
+      DTS:DTSID="{1F2D054C-2A5D-44B3-81C1-212DE82441B6}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
       DTS:ObjectName="Contêiner do Loop Foreach 1 1">
       <DTS:ForEachEnumerator
         DTS:CreationName="Microsoft.ForEachADOEnumerator"
-        DTS:DTSID="{2EEB5897-906D-4324-9CCD-2B6C4EA7A392}"
+        DTS:DTSID="{F33EC6A4-7386-4E0E-8FD2-39BD536B2333}"
         DTS:ObjectName="{018D0820-A16A-4C3B-B205-8CB3154AE612}">
         <DTS:ObjectData>
           <FEEADO
@@ -2526,7 +2526,7 @@ join safra_api_vendavall_20240805110525.participants p2
           DTS:refId="Package\Contêiner do Loop Foreach 1 1\Update API"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Tarefa Executar SQL"
-          DTS:DTSID="{B262BF48-3C1F-4697-A73F-2E2EE87FBCF1}"
+          DTS:DTSID="{4C0FB18B-A5C5-4986-B59B-DAD9A194266A}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Update API"
@@ -2535,7 +2535,7 @@ join safra_api_vendavall_20240805110525.participants p2
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{BACA8486-D441-4CF7-A7FF-78F1FC1C3D96}"
+              SQLTask:Connection="{38538819-66B9-45EE-BF42-771E050EFC94}"
               SQLTask:BypassPrepare="False"
               SQLTask:SqlStatementSource="update public.participant_hierarchy&#xA;set status = 'error'&#xA;where id = ?&#xA;and participant_id = ?&#xA;and superior_participant_id = ?&#xA;and status in ('Ativo', 'Update')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
@@ -2563,20 +2563,20 @@ join safra_api_vendavall_20240805110525.participants p2
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{BF8E1A7C-03D4-4CD1-9E28-BC6EBB14B2D7}"
-          DTS:ObjectName="{BF8E1A7C-03D4-4CD1-9E28-BC6EBB14B2D7}"
+          DTS:DTSID="{842227A5-CAA7-4F69-AAA0-E59A145C19FF}"
+          DTS:ObjectName="{842227A5-CAA7-4F69-AAA0-E59A145C19FF}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::ID_PARTICIPANTE" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{1B483C42-8D30-49ED-8D90-A9176EFD2A83}"
-          DTS:ObjectName="{1B483C42-8D30-49ED-8D90-A9176EFD2A83}"
+          DTS:DTSID="{79511B00-5439-449F-BAB6-5E44C4E0BE45}"
+          DTS:ObjectName="{79511B00-5439-449F-BAB6-5E44C4E0BE45}"
           DTS:ValueIndex="1"
           DTS:VariableName="User::ID_PARTICIPANTE_SUPERIOR" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{5931CB6D-4C2B-42BD-8A2B-992907EF6ACF}"
-          DTS:ObjectName="{5931CB6D-4C2B-42BD-8A2B-992907EF6ACF}"
+          DTS:DTSID="{26355ECD-43EC-4DFE-AF02-A5D1B9B961D2}"
+          DTS:ObjectName="{26355ECD-43EC-4DFE-AF02-A5D1B9B961D2}"
           DTS:ValueIndex="2"
           DTS:VariableName="User::ID_HIERARQUIA_PARTICIPANTES_API" />
       </DTS:ForEachVariableMappings>
@@ -2585,13 +2585,13 @@ join safra_api_vendavall_20240805110525.participants p2
       DTS:refId="Package\Contêiner do Loop Foreach 1 1 1"
       DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:Description="Contêiner do Loop Foreach"
-      DTS:DTSID="{C501334F-C53E-4833-AA47-A85BE45FFA8E}"
+      DTS:DTSID="{94D8991D-18E3-4D52-BACF-F9F7BBD3A75B}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
       DTS:ObjectName="Contêiner do Loop Foreach 1 1 1">
       <DTS:ForEachEnumerator
         DTS:CreationName="Microsoft.ForEachADOEnumerator"
-        DTS:DTSID="{DBB7AC3A-0A71-4228-8225-1816C3FE159E}"
+        DTS:DTSID="{178930EC-59C1-48B3-B75A-E863DA61638A}"
         DTS:ObjectName="{018D0820-A16A-4C3B-B205-8CB3154AE612}">
         <DTS:ObjectData>
           <FEEADO
@@ -2605,7 +2605,7 @@ join safra_api_vendavall_20240805110525.participants p2
           DTS:refId="Package\Contêiner do Loop Foreach 1 1 1\Update Participantes Inativados STG"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Tarefa Executar SQL"
-          DTS:DTSID="{45589A3E-90AC-4C5E-A106-1B0E246E1340}"
+          DTS:DTSID="{00F3BF14-F006-4D26-81F7-6CDD40E4DCC1}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Update Participantes Inativados STG"
@@ -2614,7 +2614,7 @@ join safra_api_vendavall_20240805110525.participants p2
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{CD6BF70E-A9F9-4F98-BB90-FD7631BA11F1}"
+              SQLTask:Connection="{5006CF18-0E13-4BA7-8E69-2E0AE2DB3A85}"
               SQLTask:SqlStatementSource="UPDATE safra_api_vendavall_20240805110525.participant_hierarchy&#xA; SET status = false&#xA; ,updated_by = 'dadd7b9c-45a9-4f8a-9bbf-2bddf7a49830'&#xA; ,deleted_at = NOW()&#xA; ,updated_at = NOW()&#xA;&#xA; WHERE id = ?&#xA;AND UPPER(?) = 'UPDATE';&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
@@ -2635,7 +2635,7 @@ join safra_api_vendavall_20240805110525.participants p2
           DTS:refId="Package\Contêiner do Loop Foreach 1 1 1\Update Status API Participantes"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Tarefa Executar SQL"
-          DTS:DTSID="{B9C4E202-9591-4C66-A88E-B77D76331C5A}"
+          DTS:DTSID="{1B55B0A9-B86B-494D-913D-F8C1E40A8274}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Update Status API Participantes"
@@ -2644,7 +2644,7 @@ join safra_api_vendavall_20240805110525.participants p2
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{BACA8486-D441-4CF7-A7FF-78F1FC1C3D96}"
+              SQLTask:Connection="{38538819-66B9-45EE-BF42-771E050EFC94}"
               SQLTask:SqlStatementSource="UPDATE public.participant_hierarchy&#xA;SET status = 'Sucesso'&#xA;&#xA;WHERE id = ?&#xA;and transaction_id = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="0"
@@ -2666,7 +2666,7 @@ join safra_api_vendavall_20240805110525.participants p2
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Contêiner do Loop Foreach 1 1 1.PrecedenceConstraints[Restrição]"
           DTS:CreationName=""
-          DTS:DTSID="{7A0CF9B0-E3FD-4DDD-83F1-AF2A1B8ECE1E}"
+          DTS:DTSID="{B2DD9012-8164-4B2D-963F-0A0FACB9A327}"
           DTS:From="Package\Contêiner do Loop Foreach 1 1 1\Update Status API Participantes"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Restrição"
@@ -2675,38 +2675,38 @@ join safra_api_vendavall_20240805110525.participants p2
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{44161AEA-4352-4BBA-B988-7D3749BF1EF4}"
-          DTS:ObjectName="{44161AEA-4352-4BBA-B988-7D3749BF1EF4}"
+          DTS:DTSID="{3FCFEC1F-7B1D-4D0D-8DCB-38F624CA900E}"
+          DTS:ObjectName="{3FCFEC1F-7B1D-4D0D-8DCB-38F624CA900E}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::ID_PARTICIPANTE" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{08809DC7-D537-41ED-931C-CD6C7DC8AD51}"
-          DTS:ObjectName="{08809DC7-D537-41ED-931C-CD6C7DC8AD51}"
+          DTS:DTSID="{ACE60A41-75CF-453C-B1F3-DA0DD0C36CE1}"
+          DTS:ObjectName="{ACE60A41-75CF-453C-B1F3-DA0DD0C36CE1}"
           DTS:ValueIndex="1"
           DTS:VariableName="User::ID_PARTICIPANTE_SUPERIOR" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{CCAD5D28-1D7C-4255-8A7D-D501AF4349A7}"
-          DTS:ObjectName="{CCAD5D28-1D7C-4255-8A7D-D501AF4349A7}"
+          DTS:DTSID="{A94AC11C-2D6F-4951-ACA0-0A1410A1C95F}"
+          DTS:ObjectName="{A94AC11C-2D6F-4951-ACA0-0A1410A1C95F}"
           DTS:ValueIndex="2"
           DTS:VariableName="User::OPERACAO" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{9257C48E-D2CB-4D40-97C1-2FE53F12D1B8}"
-          DTS:ObjectName="{9257C48E-D2CB-4D40-97C1-2FE53F12D1B8}"
+          DTS:DTSID="{BE2659AE-A8CF-4C57-B140-B214DFCDD6D2}"
+          DTS:ObjectName="{BE2659AE-A8CF-4C57-B140-B214DFCDD6D2}"
           DTS:ValueIndex="3"
           DTS:VariableName="User::ID_HIERARQUIA_PARTICIPANTES_API" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{F29CE4CE-F169-40D4-AF3E-AAA401160D0F}"
-          DTS:ObjectName="{F29CE4CE-F169-40D4-AF3E-AAA401160D0F}"
+          DTS:DTSID="{F99BD7D6-EC88-446F-ACFA-8BC2D362DB68}"
+          DTS:ObjectName="{F99BD7D6-EC88-446F-ACFA-8BC2D362DB68}"
           DTS:ValueIndex="4"
           DTS:VariableName="User::ID_TRANSACAO" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{46EF7D92-86DC-4EFE-92F2-CFBC65C0E5D4}"
-          DTS:ObjectName="{46EF7D92-86DC-4EFE-92F2-CFBC65C0E5D4}"
+          DTS:DTSID="{5DD166E9-1AD2-4D59-A7A2-860E61EB5498}"
+          DTS:ObjectName="{5DD166E9-1AD2-4D59-A7A2-860E61EB5498}"
           DTS:ValueIndex="5"
           DTS:VariableName="User::ID_HIERARQUIA_PARTICIPANTES" />
       </DTS:ForEachVariableMappings>
@@ -2716,7 +2716,7 @@ join safra_api_vendavall_20240805110525.participants p2
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:Disabled="True"
-      DTS:DTSID="{2F488A14-0549-46DD-B228-4B28FB778C94}"
+      DTS:DTSID="{7ED3A82D-419C-40D1-8201-C8105A15F94D}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Registra item"
@@ -2725,7 +2725,7 @@ join safra_api_vendavall_20240805110525.participants p2
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{E5455159-8E15-4FE8-8DBE-F75A1C266DDE}"
+          SQLTask:Connection="{D3D1C5B1-9E43-4ABB-8ED6-C8FCE03FF65C}"
           SQLTask:SqlStatementSource="EXEC DB_MARKUP. [MKP].[SP_REGISTRA_LOG_ITEM] ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
@@ -2740,7 +2740,7 @@ join safra_api_vendavall_20240805110525.participants p2
       DTS:refId="Package\Trunca ESTABELECIMENTOS E PARTICIPANTES"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarefa Executar SQL"
-      DTS:DTSID="{723E6481-32A5-4E00-8E9C-5CBC8E0A9404}"
+      DTS:DTSID="{E55BF5CA-46DB-4F23-836F-734E812403BE}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Trunca ESTABELECIMENTOS E PARTICIPANTES"
@@ -2749,7 +2749,7 @@ join safra_api_vendavall_20240805110525.participants p2
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{CC98BFDD-DF4B-41C3-90FB-3727C4E47C25}"
+          SQLTask:Connection="{AF9AAE60-8889-4AEE-B8DE-47271120804E}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[TB_ESTABELECIMENTOS_STG]&#xA;TRUNCATE TABLE [dbo].[TB_PARTICIPANTES_STG]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -2757,7 +2757,7 @@ join safra_api_vendavall_20240805110525.participants p2
       DTS:refId="Package\Trunca TB_ESTABELECIMENTOS_PARTICIPANTES_API E STG"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarefa Executar SQL"
-      DTS:DTSID="{ABF53FB8-850D-4158-ADD8-18E5A094AAB3}"
+      DTS:DTSID="{FEB065BB-511C-46E3-A92C-299F53E6A24C}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Trunca TB_ESTABELECIMENTOS_PARTICIPANTES_API E STG"
@@ -2766,7 +2766,7 @@ join safra_api_vendavall_20240805110525.participants p2
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{CC98BFDD-DF4B-41C3-90FB-3727C4E47C25}"
+          SQLTask:Connection="{AF9AAE60-8889-4AEE-B8DE-47271120804E}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[TB_HIERARQUIA_PARTICIPANTES_API]&#xA;TRUNCATE TABLE [dbo].[TB_HIERARQUIA_PARTICIPANTES_STG]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -2774,7 +2774,7 @@ join safra_api_vendavall_20240805110525.participants p2
       DTS:refId="Package\Verifica Estabelecimentos_Participantes Existentes"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarefa Fluxo de Dados"
-      DTS:DTSID="{4FB89746-B217-4D41-A6A1-B3BB4CB92577}"
+      DTS:DTSID="{2BFF45BE-DFA3-4689-BB48-4C845D1F6CDD}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Verifica Estabelecimentos_Participantes Existentes"
@@ -3514,7 +3514,7 @@ WHERE E.code_error IS NOT NULL</property>
       DTS:refId="Package\Verifica novos Estabelecimentos_Participantes API"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarefa Fluxo de Dados"
-      DTS:DTSID="{FE868FFD-59AD-4F9C-9FC4-A5FB80E69D18}"
+      DTS:DTSID="{1B4E6A4F-91F9-47B0-81AE-9566470127A5}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Verifica novos Estabelecimentos_Participantes API"
@@ -4416,7 +4416,7 @@ WHERE tipo_operacao IN ('CREATE','UPDATE');</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição]"
       DTS:CreationName=""
-      DTS:DTSID="{1D1B1E0A-E113-46EF-AA31-B49EF60B9F43}"
+      DTS:DTSID="{8906B54E-BEEF-40A7-BB43-70848AF5258B}"
       DTS:From="Package\Carrega TB_PARTICIPANTES_STG"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição"
@@ -4424,7 +4424,7 @@ WHERE tipo_operacao IN ('CREATE','UPDATE');</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição 1]"
       DTS:CreationName=""
-      DTS:DTSID="{59A0B663-913A-4EB0-BE0B-A0C4EF525F86}"
+      DTS:DTSID="{2E806217-1E95-45D3-B919-EB38426D30C6}"
       DTS:From="Package\Trunca TB_ESTABELECIMENTOS_PARTICIPANTES_API E STG"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição 1"
@@ -4432,7 +4432,7 @@ WHERE tipo_operacao IN ('CREATE','UPDATE');</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição 10]"
       DTS:CreationName=""
-      DTS:DTSID="{55105D54-E5D8-465D-8A28-20046E66E9FD}"
+      DTS:DTSID="{EBEA2A6B-D393-457B-AA11-55CAB9B20C8C}"
       DTS:From="Package\Contêiner do Loop Foreach 1 1 1"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição 10"
@@ -4440,7 +4440,7 @@ WHERE tipo_operacao IN ('CREATE','UPDATE');</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição 2]"
       DTS:CreationName=""
-      DTS:DTSID="{807643FD-9DF3-49BA-966B-041AA077882B}"
+      DTS:DTSID="{484AFD30-3F46-4862-9BB4-1D113A0CA74C}"
       DTS:From="Package\Verifica novos Estabelecimentos_Participantes API"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição 2"
@@ -4448,7 +4448,7 @@ WHERE tipo_operacao IN ('CREATE','UPDATE');</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição 3]"
       DTS:CreationName=""
-      DTS:DTSID="{6D21E2DA-CACA-4C96-8800-AC0ACCFF0AA4}"
+      DTS:DTSID="{B1BC96CD-7F3D-4F87-9E34-A2939B08450A}"
       DTS:From="Package\Carrega TB_HIERARQUIA_PARTICIPANTES_STG"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição 3"
@@ -4456,7 +4456,7 @@ WHERE tipo_operacao IN ('CREATE','UPDATE');</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição 4]"
       DTS:CreationName=""
-      DTS:DTSID="{006AF4BA-0AA1-41A7-84F1-FA2125D615ED}"
+      DTS:DTSID="{9546D62A-C1D4-4F1E-AA40-CED39B0245A6}"
       DTS:From="Package\Carrega TB_HIERARQUIA_PARTICIPANTES_API"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição 4"
@@ -4464,7 +4464,7 @@ WHERE tipo_operacao IN ('CREATE','UPDATE');</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição 5]"
       DTS:CreationName=""
-      DTS:DTSID="{72CEFE4B-711A-4D5D-8144-BEA1752BE58B}"
+      DTS:DTSID="{28E52386-37AF-4090-AF7D-CFD829058E94}"
       DTS:From="Package\Carrega TB_ESTABELECIMENTOS_STG"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição 5"
@@ -4472,7 +4472,7 @@ WHERE tipo_operacao IN ('CREATE','UPDATE');</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição 6]"
       DTS:CreationName=""
-      DTS:DTSID="{09029712-F4D7-4787-A920-39D51A1134F9}"
+      DTS:DTSID="{6F6DDFFE-70FB-4D98-AC1F-CB388D4B98B5}"
       DTS:From="Package\Verifica Estabelecimentos_Participantes Existentes"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição 6"
@@ -4480,7 +4480,7 @@ WHERE tipo_operacao IN ('CREATE','UPDATE');</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição 7]"
       DTS:CreationName=""
-      DTS:DTSID="{4FC50748-C216-4F38-925C-1AFF66ABC330}"
+      DTS:DTSID="{D0A21354-8531-433E-9595-CD32A77DDD06}"
       DTS:From="Package\Contêiner do Loop Foreach 1 1"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição 7"
@@ -4488,19 +4488,19 @@ WHERE tipo_operacao IN ('CREATE','UPDATE');</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição 8]"
       DTS:CreationName=""
-      DTS:DTSID="{1450414A-7833-4919-81F9-D43BEABEDDF8}"
+      DTS:DTSID="{23B0E99E-84E2-4DC7-A7BB-D6F2E2F5CC1E}"
       DTS:From="Package\Trunca ESTABELECIMENTOS E PARTICIPANTES"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição 8"
       DTS:To="Package\Carrega TB_ESTABELECIMENTOS_STG" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
-<!--If you manually edit this section and make a mistake, you can delete it. -->
-<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<!--Esta seção CDATA contém as informações de layout do pacote. A seção inclui informações como coordenadas (x,y), largura e altura.-->
+<!--Se você editar manualmente esta seção e cometer algum erro, poderá excluí-la. -->
+<!--O pacote ainda poderá ser carregado normalmente, mas as informações de layout anteriores serão perdidas e o designer reorganizará automaticamente os elementos na superfície de design.-->
 <Objects
   Version="8">
-  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <!--Cada nó abaixo conterá propriedades que não afetam o comportamento em tempo de execução.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>

@@ -1,61 +1,61 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="3/7/2024 1:51:17 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="MKPDCT-DBSTG01"
   DTS:CreatorName="MKPDCT-DBSTG01\dbm_dw"
-  DTS:DTSID="{94A816B9-5F17-4043-8092-F02B4E67AB03}"
+  DTS:DTSID="{FE97D4BE-DB03-4B2E-9E89-6E1E7085747B}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="SAFRA_CARGA_TB_ESTABELECIMENTOS_PDVS"
   DTS:PackageType="5"
-  DTS:VersionBuild="91"
-  DTS:VersionGUID="{254327FF-88C0-4084-82BE-90ED86BE6ED1}">
+  DTS:VersionBuild="92"
+  DTS:VersionGUID="{044F8420-2067-48B3-BB4C-DB508959503F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[DB_MARKUP]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{A6943B3C-6BD3-451D-9173-7BD9D5B21038}"
+      DTS:DTSID="{DE40F8CE-2EDB-4A65-8971-7C058307E794}"
       DTS:ObjectName="DB_MARKUP">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=MKPDTC-DBSTG\STAGING;Initial Catalog=DB_MARKUP;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SAFRA_CARGA_TB_ESTABELECIMENTOS_PDVS-{A6943B3C-6BD3-451D-9173-7BD9D5B21038}MKPDTC-DBSTG\STAGING;" />
+          DTS:ConnectionString="Data Source=MKPDTC-DBSTG\STAGING;Initial Catalog=DB_MARKUP;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SAFRA_CARGA_TB_ESTABELECIMENTOS_PDVS-{DE40F8CE-2EDB-4A65-8971-7C058307E794}MKPDTC-DBSTG\STAGING;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[DB_SAFRA]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{55706254-D57E-4657-A6B7-DF31BE4D1B98}"
+      DTS:DTSID="{507906EE-9D5A-439E-89BB-7DF735B3A5BB}"
       DTS:ObjectName="DB_SAFRA">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=MKPDTC-DBSTG\STAGING;Initial Catalog=DB_SAFRA;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-SAFRA_CARGA_TB_ESTABELECIMENTOS_PDVS-{55706254-D57E-4657-A6B7-DF31BE4D1B98}10.10.20.103.DB_SAFRA.markup.dbranches;" />
+          DTS:ConnectionString="Data Source=MKPDTC-DBSTG\STAGING;Initial Catalog=DB_SAFRA;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-SAFRA_CARGA_TB_ESTABELECIMENTOS_PDVS-{507906EE-9D5A-439E-89BB-7DF735B3A5BB}10.10.20.103.DB_SAFRA.markup.dbranches;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[DB_SAFRA_API]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{8DC19B0E-24B1-456B-BF95-2095A6F50B66}"
+      DTS:DTSID="{2E0FB202-7642-43F0-A87C-2FB171CD2BA5}"
       DTS:ObjectName="DB_SAFRA_API">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=MKPDTC-DBSTG\STAGING;Initial Catalog=DB_SAFRA_API;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-SAFRA_CARGA_TB_ESTABELECIMENTOS_PDVS-{55706254-D57E-4657-A6B7-DF31BE4D1B98}10.10.20.103.DB_SAFRA.markup.dbranches;" />
+          DTS:ConnectionString="Data Source=MKPDTC-DBSTG\STAGING;Initial Catalog=DB_SAFRA_API;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-SAFRA_CARGA_TB_ESTABELECIMENTOS_PDVS-{507906EE-9D5A-439E-89BB-7DF735B3A5BB}10.10.20.103.DB_SAFRA.markup.dbranches;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Replica Vendavall Producao]"
       DTS:CreationName="ADO.NET:System.Data.Odbc.OdbcConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
-      DTS:DTSID="{34462721-2669-4E41-8015-E6CC961923BC}"
+      DTS:DTSID="{2C96D3A8-BA3C-48EC-BBE5-D35781A700D9}"
       DTS:ObjectName="Replica Vendavall Producao">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -66,7 +66,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{331C6415-7729-44B2-A60D-A3E84449254E}"
+      DTS:DTSID="{23B142E9-CD6B-44D5-B8A5-342EF801F557}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ID_ITEM">
@@ -79,7 +79,7 @@
       DTS:refId="Package\CARREGA TB_CNPJS_PENDENTES"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{45E76329-E91A-4F9E-ACC6-46B136DBA2D7}"
+      DTS:DTSID="{7A2A629B-3DFD-42C4-BFB7-71F8B179B1C6}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="CARREGA TB_CNPJS_PENDENTES"
@@ -372,7 +372,7 @@
       DTS:refId="Package\CARREGA TB_ESTABELECIMENTOS"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{DE9397DF-C1F2-48D2-9B2F-0C4825A66D8C}"
+      DTS:DTSID="{36A6F887-BF3F-4F61-9152-C4EB9F671772}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="CARREGA TB_ESTABELECIMENTOS"
@@ -1129,7 +1129,7 @@ order by created_at asc</property>
       DTS:refId="Package\CARREGA TB_ESTABELECIMENTOS_PARTICIPANTES"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{67EDBFD3-6D08-4731-BD30-33DE421E3B02}"
+      DTS:DTSID="{C4A726D6-6BD3-452B-AE71-C8EDED6A89BC}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="CARREGA TB_ESTABELECIMENTOS_PARTICIPANTES"
@@ -1696,7 +1696,7 @@ order by created_at asc;</property>
       DTS:refId="Package\CARREGA TB_ESTABELECIMENTOS_PROGRAMA"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{D2BFCAD6-2B26-43E6-B014-72EEC70DB201}"
+      DTS:DTSID="{4B5B0C61-5BB4-4C13-908D-8E78C2685A02}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="CARREGA TB_ESTABELECIMENTOS_PROGRAMA"
@@ -2237,7 +2237,7 @@ from
       DTS:refId="Package\CARREGA TB_LOGS_INATIVACAO"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{49DF80E4-33E9-432C-A410-C6FCD1BC30E2}"
+      DTS:DTSID="{438977FC-E392-4865-8FFF-066155657C63}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="CARREGA TB_LOGS_INATIVACAO"
@@ -2559,7 +2559,7 @@ from
       DTS:refId="Package\CARREGA TB_LOGS_INATIVACAO TEMP"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{121898D1-8348-4B23-BEC2-34F2A6235354}"
+      DTS:DTSID="{9D601CAB-0440-4931-B25A-E173407A46E0}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="CARREGA TB_LOGS_INATIVACAO TEMP"
@@ -2970,7 +2970,7 @@ and (updated_by in ('beb6b98c-f415-4bf7-9436-ad0cb2f451bf', 'dadd7b9c-45a9-4f8a-
       DTS:refId="Package\Registra item"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{669517D2-27B0-42C6-9600-1FDCAAFD6167}"
+      DTS:DTSID="{9FE8C334-5472-4723-89DC-C2868739C315}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Registra item"
@@ -2979,7 +2979,7 @@ and (updated_by in ('beb6b98c-f415-4bf7-9436-ad0cb2f451bf', 'dadd7b9c-45a9-4f8a-
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{55706254-D57E-4657-A6B7-DF31BE4D1B98}"
+          SQLTask:Connection="{507906EE-9D5A-439E-89BB-7DF735B3A5BB}"
           SQLTask:SqlStatementSource="EXEC DB_MARKUP. [MKP].[SP_REGISTRA_LOG_ITEM] ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
@@ -2994,7 +2994,7 @@ and (updated_by in ('beb6b98c-f415-4bf7-9436-ad0cb2f451bf', 'dadd7b9c-45a9-4f8a-
       DTS:refId="Package\TRUNCA TB_ESTABELECIMENTOS_PROGRAMA"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{EF451F5F-0622-45E2-A137-E1EBEC164DF6}"
+      DTS:DTSID="{90C64E41-4D8F-4063-A416-663321A0CFCD}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="TRUNCA TB_ESTABELECIMENTOS_PROGRAMA"
@@ -3003,7 +3003,7 @@ and (updated_by in ('beb6b98c-f415-4bf7-9436-ad0cb2f451bf', 'dadd7b9c-45a9-4f8a-
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{55706254-D57E-4657-A6B7-DF31BE4D1B98}"
+          SQLTask:Connection="{507906EE-9D5A-439E-89BB-7DF735B3A5BB}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE DBO.TB_ESTABELECIMENTOS_PROGRAMA" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -3011,7 +3011,7 @@ and (updated_by in ('beb6b98c-f415-4bf7-9436-ad0cb2f451bf', 'dadd7b9c-45a9-4f8a-
       DTS:refId="Package\TRUNCA TB_LOGS_INATIVACAO_TEMP"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{761EC0A7-D078-4644-B3C9-4395E01EAAE7}"
+      DTS:DTSID="{E524F8C9-26C0-4C82-9BD3-27CC63088029}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="TRUNCA TB_LOGS_INATIVACAO_TEMP"
@@ -3020,7 +3020,7 @@ and (updated_by in ('beb6b98c-f415-4bf7-9436-ad0cb2f451bf', 'dadd7b9c-45a9-4f8a-
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{8DC19B0E-24B1-456B-BF95-2095A6F50B66}"
+          SQLTask:Connection="{2E0FB202-7642-43F0-A87C-2FB171CD2BA5}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE DBO.TB_LOGS_INATIVACAO_TEMP" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -3028,7 +3028,7 @@ and (updated_by in ('beb6b98c-f415-4bf7-9436-ad0cb2f451bf', 'dadd7b9c-45a9-4f8a-
       DTS:refId="Package\TRUNCA_TB_ESTABELECIMENTOS"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{BA54ED78-8DEA-45AA-80A5-EB7ED5CF8BB5}"
+      DTS:DTSID="{52890CB1-15FD-486B-8749-75727BAD65A9}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="TRUNCA_TB_ESTABELECIMENTOS"
@@ -3037,7 +3037,7 @@ and (updated_by in ('beb6b98c-f415-4bf7-9436-ad0cb2f451bf', 'dadd7b9c-45a9-4f8a-
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{55706254-D57E-4657-A6B7-DF31BE4D1B98}"
+          SQLTask:Connection="{507906EE-9D5A-439E-89BB-7DF735B3A5BB}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE DBO.TB_ESTABELECIMENTOS" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -3045,7 +3045,7 @@ and (updated_by in ('beb6b98c-f415-4bf7-9436-ad0cb2f451bf', 'dadd7b9c-45a9-4f8a-
       DTS:refId="Package\TRUNCA_TB_ESTABELECIMENTOS_PARTICIPANTES"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{4517CDB9-DE3D-4ED6-B5F0-5FB319C7B845}"
+      DTS:DTSID="{DD78FBD4-8FF3-41FC-AF22-EE18551CFF8F}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="TRUNCA_TB_ESTABELECIMENTOS_PARTICIPANTES"
@@ -3054,7 +3054,7 @@ and (updated_by in ('beb6b98c-f415-4bf7-9436-ad0cb2f451bf', 'dadd7b9c-45a9-4f8a-
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{55706254-D57E-4657-A6B7-DF31BE4D1B98}"
+          SQLTask:Connection="{507906EE-9D5A-439E-89BB-7DF735B3A5BB}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE DBO.TB_ESTABELECIMENTOS_PARTICIPANTES" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -3063,7 +3063,7 @@ and (updated_by in ('beb6b98c-f415-4bf7-9436-ad0cb2f451bf', 'dadd7b9c-45a9-4f8a-
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{1EB469A3-5FE9-44A5-8A30-6EE861BBE524}"
+      DTS:DTSID="{47B9B138-EFF1-4C15-ACF0-D59DFE47EAA8}"
       DTS:From="Package\CARREGA TB_ESTABELECIMENTOS_PARTICIPANTES"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -3071,7 +3071,7 @@ and (updated_by in ('beb6b98c-f415-4bf7-9436-ad0cb2f451bf', 'dadd7b9c-45a9-4f8a-
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{ABDE82D1-B172-4EC8-88E7-16177F46B4B0}"
+      DTS:DTSID="{B4838E33-7E1C-4F7E-831D-019E77EFDC92}"
       DTS:From="Package\TRUNCA_TB_ESTABELECIMENTOS_PARTICIPANTES"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -3079,7 +3079,7 @@ and (updated_by in ('beb6b98c-f415-4bf7-9436-ad0cb2f451bf', 'dadd7b9c-45a9-4f8a-
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{66F3AFA7-5970-4DC6-B4F5-E204FE3BD6F1}"
+      DTS:DTSID="{85EACC3D-A3F7-4670-B655-1D85CAA4BF8C}"
       DTS:From="Package\TRUNCA_TB_ESTABELECIMENTOS"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
@@ -3087,7 +3087,7 @@ and (updated_by in ('beb6b98c-f415-4bf7-9436-ad0cb2f451bf', 'dadd7b9c-45a9-4f8a-
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{EAE68EA8-BFD5-4144-8A78-CC70847C21B7}"
+      DTS:DTSID="{A100E559-A593-48D4-9470-3084B8193FC5}"
       DTS:From="Package\CARREGA TB_ESTABELECIMENTOS_PROGRAMA"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
@@ -3095,7 +3095,7 @@ and (updated_by in ('beb6b98c-f415-4bf7-9436-ad0cb2f451bf', 'dadd7b9c-45a9-4f8a-
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{471D3080-75AC-4B02-BEFF-11C42D4BA221}"
+      DTS:DTSID="{36BBEB72-C348-4851-87C2-9820971B6C8B}"
       DTS:From="Package\TRUNCA TB_ESTABELECIMENTOS_PROGRAMA"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
@@ -3103,7 +3103,7 @@ and (updated_by in ('beb6b98c-f415-4bf7-9436-ad0cb2f451bf', 'dadd7b9c-45a9-4f8a-
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
       DTS:CreationName=""
-      DTS:DTSID="{0B4A2115-E4FB-4954-8B67-DD4094D0B8ED}"
+      DTS:DTSID="{F5C8C20F-2157-4CFF-BBB6-6599BF989080}"
       DTS:From="Package\CARREGA TB_LOGS_INATIVACAO TEMP"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 5"
@@ -3111,7 +3111,7 @@ and (updated_by in ('beb6b98c-f415-4bf7-9436-ad0cb2f451bf', 'dadd7b9c-45a9-4f8a-
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
       DTS:CreationName=""
-      DTS:DTSID="{4B6B38DF-F065-4D72-AC5D-BDD93364EFDC}"
+      DTS:DTSID="{7932529D-260B-4DF6-BAD2-2724DF9F4AC5}"
       DTS:From="Package\CARREGA TB_LOGS_INATIVACAO"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 6"
@@ -3119,7 +3119,7 @@ and (updated_by in ('beb6b98c-f415-4bf7-9436-ad0cb2f451bf', 'dadd7b9c-45a9-4f8a-
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
       DTS:CreationName=""
-      DTS:DTSID="{708AA8EB-3255-47AF-845C-5A268E3974C1}"
+      DTS:DTSID="{31A54CAD-BD2D-4AAA-A18C-11CAE0EE6E55}"
       DTS:From="Package\TRUNCA TB_LOGS_INATIVACAO_TEMP"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 7"
@@ -3127,7 +3127,7 @@ and (updated_by in ('beb6b98c-f415-4bf7-9436-ad0cb2f451bf', 'dadd7b9c-45a9-4f8a-
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição]"
       DTS:CreationName=""
-      DTS:DTSID="{5FC4E712-60D5-4538-BD08-969189B76086}"
+      DTS:DTSID="{5BE7C6C4-B15A-481D-AA06-9C226E8D8E58}"
       DTS:From="Package\CARREGA TB_ESTABELECIMENTOS"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição"
@@ -3135,19 +3135,19 @@ and (updated_by in ('beb6b98c-f415-4bf7-9436-ad0cb2f451bf', 'dadd7b9c-45a9-4f8a-
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição 1]"
       DTS:CreationName=""
-      DTS:DTSID="{F49A9BB9-6B19-4C1A-92D9-A8566C8F80B9}"
+      DTS:DTSID="{C2CB472E-3160-4E17-9622-9643758639A6}"
       DTS:From="Package\CARREGA TB_CNPJS_PENDENTES"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição 1"
       DTS:To="Package\TRUNCA TB_ESTABELECIMENTOS_PROGRAMA" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
-<!--If you manually edit this section and make a mistake, you can delete it. -->
-<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<!--Esta seção CDATA contém as informações de layout do pacote. A seção inclui informações como coordenadas (x,y), largura e altura.-->
+<!--Se você editar manualmente esta seção e cometer algum erro, poderá excluí-la. -->
+<!--O pacote ainda poderá ser carregado normalmente, mas as informações de layout anteriores serão perdidas e o designer reorganizará automaticamente os elementos na superfície de design.-->
 <Objects
   Version="8">
-  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <!--Cada nó abaixo conterá propriedades que não afetam o comportamento em tempo de execução.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
@@ -3170,6 +3170,14 @@ and (updated_by in ('beb6b98c-f415-4bf7-9436-ad0cb2f451bf', 'dadd7b9c-45a9-4f8a-
           Id="Package\CARREGA TB_ESTABELECIMENTOS_PROGRAMA"
           TopLeft="111.75,492" />
         <NodeLayout
+          Size="260,42"
+          Id="Package\CARREGA TB_LOGS_INATIVACAO"
+          TopLeft="162,702" />
+        <NodeLayout
+          Size="293,42"
+          Id="Package\CARREGA TB_LOGS_INATIVACAO TEMP"
+          TopLeft="143.75,629" />
+        <NodeLayout
           Size="144,42"
           Id="Package\Registra item"
           TopLeft="220.75,783" />
@@ -3177,6 +3185,10 @@ and (updated_by in ('beb6b98c-f415-4bf7-9436-ad0cb2f451bf', 'dadd7b9c-45a9-4f8a-
           Size="333,42"
           Id="Package\TRUNCA TB_ESTABELECIMENTOS_PROGRAMA"
           TopLeft="133.75,414" />
+        <NodeLayout
+          Size="288,42"
+          Id="Package\TRUNCA TB_LOGS_INATIVACAO_TEMP"
+          TopLeft="148,560" />
         <NodeLayout
           Size="365,42"
           Id="Package\TRUNCA_TB_ESTABELECIMENTOS"
@@ -3252,6 +3264,28 @@ and (updated_by in ('beb6b98c-f415-4bf7-9436-ad0cb2f451bf', 'dadd7b9c-45a9-4f8a-
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="293.125,534">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26"
+              Start="0,0"
+              End="0,18.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
           TopLeft="297.25,456">
           <EdgeLayout.Curve>
@@ -3273,58 +3307,6 @@ and (updated_by in ('beb6b98c-f415-4bf7-9436-ad0cb2f451bf', 'dadd7b9c-45a9-4f8a-
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Restrição]"
-          TopLeft="301.625,303">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,34"
-              Start="0,0"
-              End="0,26.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Restrição 1]"
-          TopLeft="302.125,379">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,35"
-              Start="0,0"
-              End="0,27.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="293,42"
-          Id="Package\CARREGA TB_LOGS_INATIVACAO TEMP"
-          TopLeft="143.75,629" />
-        <NodeLayout
-          Size="260,42"
-          Id="Package\CARREGA TB_LOGS_INATIVACAO"
-          TopLeft="162,702" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
           TopLeft="291.125,671">
@@ -3369,32 +3351,6 @@ and (updated_by in ('beb6b98c-f415-4bf7-9436-ad0cb2f451bf', 'dadd7b9c-45a9-4f8a-
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="288,42"
-          Id="Package\TRUNCA TB_LOGS_INATIVACAO_TEMP"
-          TopLeft="148,560" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="293.125,534">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,26"
-              Start="0,0"
-              End="0,18.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
           TopLeft="291.125,602">
@@ -3409,6 +3365,50 @@ and (updated_by in ('beb6b98c-f415-4bf7-9436-ad0cb2f451bf', 'dadd7b9c-45a9-4f8a-
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,19.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição]"
+          TopLeft="301.625,303">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição 1]"
+          TopLeft="302.125,379">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35"
+              Start="0,0"
+              End="0,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3783,6 +3783,65 @@ and (updated_by in ('beb6b98c-f415-4bf7-9436-ad0cb2f451bf', 'dadd7b9c-45a9-4f8a-
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
+    design-time-name="Package\CARREGA TB_LOGS_INATIVACAO">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="145,42"
+          Id="Package\CARREGA TB_LOGS_INATIVACAO\Grava no DW"
+          TopLeft="108,273" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\CARREGA TB_LOGS_INATIVACAO\OLE DB Source"
+          TopLeft="99,128" />
+        <EdgeLayout
+          Id="Package\CARREGA TB_LOGS_INATIVACAO.Paths[OLE DB Source Output]"
+          TopLeft="179,170">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,103"
+              Start="0,0"
+              End="0,95.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,95.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARREGA TB_LOGS_INATIVACAO\Grava no DW">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARREGA TB_LOGS_INATIVACAO\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\CARREGA TB_LOGS_INATIVACAO TEMP">
     <LayoutInfo>
       <GraphLayout
@@ -3861,65 +3920,6 @@ and (updated_by in ('beb6b98c-f415-4bf7-9436-ad0cb2f451bf', 'dadd7b9c-45a9-4f8a-
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\CARREGA TB_LOGS_INATIVACAO TEMP\ADO NET Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\CARREGA TB_LOGS_INATIVACAO">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="145,42"
-          Id="Package\CARREGA TB_LOGS_INATIVACAO\Grava no DW"
-          TopLeft="108,273" />
-        <NodeLayout
-          Size="157,42"
-          Id="Package\CARREGA TB_LOGS_INATIVACAO\OLE DB Source"
-          TopLeft="99,128" />
-        <EdgeLayout
-          Id="Package\CARREGA TB_LOGS_INATIVACAO.Paths[OLE DB Source Output]"
-          TopLeft="179,170">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,103"
-              Start="0,0"
-              End="0,95.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,95.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\CARREGA TB_LOGS_INATIVACAO\Grava no DW">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\CARREGA TB_LOGS_INATIVACAO\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

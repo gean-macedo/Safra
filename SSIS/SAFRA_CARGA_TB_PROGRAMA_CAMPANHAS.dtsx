@@ -1,37 +1,37 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="3/6/2024 9:28:41 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="MKPDCT-DBSTG01"
   DTS:CreatorName="MKPDCT-DBSTG01\dbm_dw"
-  DTS:DTSID="{5F0F6D19-F816-43CD-9FAB-730E68FC9739}"
+  DTS:DTSID="{D9DB5C1D-6D34-42E3-9ABF-961C0919A108}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="SAFRA_CARGA_TB_PROGRAMA_CAMPANHAS"
   DTS:PackageType="5"
-  DTS:VersionBuild="31"
-  DTS:VersionGUID="{338C0AFA-8C19-4DFB-B2B7-65ABFE7A86BE}">
+  DTS:VersionBuild="32"
+  DTS:VersionGUID="{0E25D49E-A166-426D-831F-748918B6AC38}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[DB_SAFRA]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{F9D12406-0F85-4076-BDFF-F2FECD40B3B9}"
+      DTS:DTSID="{772B244D-7F5D-4EFA-9325-D3D324CA5FA4}"
       DTS:ObjectName="DB_SAFRA">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=MKPDTC-DBSTG\STAGING;Initial Catalog=DB_SAFRA;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-TCLSEMP_CARGA_TB_PROGRAMA_CAMPANHAS-{F9D12406-0F85-4076-BDFF-F2FECD40B3B9}10.10.20.103.DB_SAFRA.markup.gmacedo;" />
+          DTS:ConnectionString="Data Source=MKPDTC-DBSTG\STAGING;Initial Catalog=DB_SAFRA;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-TCLSEMP_CARGA_TB_PROGRAMA_CAMPANHAS-{772B244D-7F5D-4EFA-9325-D3D324CA5FA4}10.10.20.103.DB_SAFRA.markup.gmacedo;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[vendavall40 - PROD REP]"
       DTS:CreationName="ADO.NET:System.Data.Odbc.OdbcConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
-      DTS:DTSID="{3C391421-39FB-4FB1-998A-1DD60819CBFE}"
+      DTS:DTSID="{AE5D4F37-15EE-4895-9864-9804C3E2C12B}"
       DTS:ObjectName="vendavall40 - PROD REP">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -42,7 +42,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{E1B5E112-8E39-4FA7-8993-ACE0E63227A6}"
+      DTS:DTSID="{FE9B53BE-A050-4C17-8EAD-A31337C09B17}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="ID_ITEM">
@@ -55,7 +55,7 @@
       DTS:refId="Package\CARGA TB_PARTICIPANTE_PROGRAMA"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{A5D52637-B580-4A37-A0A3-4223817E294E}"
+      DTS:DTSID="{4717166B-676D-4496-99BA-E9397AC81CB4}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="CARGA TB_PARTICIPANTE_PROGRAMA"
@@ -471,7 +471,7 @@ WHERE
       DTS:refId="Package\CARGA TB_PARTICIPANTE_PROGRAMA_TEMP"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{ABB18BC8-2F6A-47F8-B51C-A259DAF4F8E9}"
+      DTS:DTSID="{BEC2E78C-BDEA-4612-A84D-6738608FED55}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="CARGA TB_PARTICIPANTE_PROGRAMA_TEMP"
@@ -992,7 +992,7 @@ from
       DTS:refId="Package\CARGA TB_PROGRAMAS"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{90CF9187-0759-408C-BD19-4433F2ED163B}"
+      DTS:DTSID="{2A1AE586-3A81-4760-9730-3011EF9EB79B}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="CARGA TB_PROGRAMAS"
@@ -1775,7 +1775,7 @@ from
       DTS:refId="Package\CARGA TB_PROGRAMA_HIERARQUIA"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{9C3D6FD9-1F4A-4F43-B2CF-14EF5FFD50C6}"
+      DTS:DTSID="{F73875C0-7DF4-436B-8303-86EEB1496B8C}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="CARGA TB_PROGRAMA_HIERARQUIA"
@@ -2384,7 +2384,7 @@ from
       DTS:refId="Package\GRAVA TB_CAMPANHAS"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{AC77A810-2A96-46B8-999D-5B7FC171051C}"
+      DTS:DTSID="{02CE6A59-1BB2-491E-9D01-23F7B4E3A57B}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="GRAVA TB_CAMPANHAS"
@@ -3240,7 +3240,7 @@ from
       DTS:refId="Package\Registra item 1"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{6F6F35F7-E464-43C9-9D7A-A120895F3C90}"
+      DTS:DTSID="{1F512BFF-AB6E-45A2-B720-A0770337ABF3}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Registra item 1"
@@ -3249,7 +3249,7 @@ from
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{F9D12406-0F85-4076-BDFF-F2FECD40B3B9}"
+          SQLTask:Connection="{772B244D-7F5D-4EFA-9325-D3D324CA5FA4}"
           SQLTask:SqlStatementSource="EXEC DB_MARKUP. [MKP].[SP_REGISTRA_LOG_ITEM] ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
@@ -3264,7 +3264,7 @@ from
       DTS:refId="Package\TRUNCA TB_CAMPANHAS"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{D2220B08-E8A8-407F-A16D-60071ED6202D}"
+      DTS:DTSID="{0E4ECDF3-ED71-4924-B326-AC124893BD89}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="TRUNCA TB_CAMPANHAS"
@@ -3273,7 +3273,7 @@ from
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{F9D12406-0F85-4076-BDFF-F2FECD40B3B9}"
+          SQLTask:Connection="{772B244D-7F5D-4EFA-9325-D3D324CA5FA4}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE DBO.TB_CAMPANHAS" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -3281,7 +3281,7 @@ from
       DTS:refId="Package\TRUNCA TB_PARTICIPANTE_PROGRAMA_TEMP"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{E9E2B2A1-4D62-4C8E-AE51-BCA3301040A6}"
+      DTS:DTSID="{BF7FB073-13B8-454A-B6C1-FEBCC7FB0733}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="TRUNCA TB_PARTICIPANTE_PROGRAMA_TEMP"
@@ -3290,7 +3290,7 @@ from
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{F9D12406-0F85-4076-BDFF-F2FECD40B3B9}"
+          SQLTask:Connection="{772B244D-7F5D-4EFA-9325-D3D324CA5FA4}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE DBO.TB_PARTICIPANTE_PROGRAMA_TEMP" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -3298,7 +3298,7 @@ from
       DTS:refId="Package\TRUNCA TB_PROGRAMAS"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{D9405301-8CFE-47E3-85D3-DB17F24432B8}"
+      DTS:DTSID="{9F6AFD64-D12A-47CD-B119-3F3DF95C946F}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="TRUNCA TB_PROGRAMAS"
@@ -3307,7 +3307,7 @@ from
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{F9D12406-0F85-4076-BDFF-F2FECD40B3B9}"
+          SQLTask:Connection="{772B244D-7F5D-4EFA-9325-D3D324CA5FA4}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE DBO.TB_PROGRAMAS" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -3315,7 +3315,7 @@ from
       DTS:refId="Package\Trunca TEMP_PROGRAMA_HIERARQUIA"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{72978B4F-CF09-41E9-8407-1182E29644B8}"
+      DTS:DTSID="{5EA627C6-3701-4D19-9FE5-192AC8656D91}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Trunca TEMP_PROGRAMA_HIERARQUIA"
@@ -3324,7 +3324,7 @@ from
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{F9D12406-0F85-4076-BDFF-F2FECD40B3B9}"
+          SQLTask:Connection="{772B244D-7F5D-4EFA-9325-D3D324CA5FA4}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE DBO.TB_PROGRAMA_HIERARQUIA" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -3333,7 +3333,7 @@ from
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{B47132D6-3F9A-4963-8CF1-07AA290C565F}"
+      DTS:DTSID="{2F5EFDE5-DE2B-4A43-802A-26BF7D81ABFF}"
       DTS:From="Package\Trunca TEMP_PROGRAMA_HIERARQUIA"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -3341,7 +3341,7 @@ from
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{7F41E805-6947-45AD-AD89-0DE0C203555D}"
+      DTS:DTSID="{EE1ABFC5-D3D3-42CB-ABFD-8A634AC3EB23}"
       DTS:From="Package\TRUNCA TB_PROGRAMAS"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -3349,7 +3349,7 @@ from
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1 1]"
       DTS:CreationName=""
-      DTS:DTSID="{EEC40C35-E154-4E5A-BC47-5CE0A2BAFC25}"
+      DTS:DTSID="{1AF188F1-0ED2-4AA6-8A2F-696D86C31E61}"
       DTS:From="Package\CARGA TB_PROGRAMAS"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1 1"
@@ -3357,7 +3357,7 @@ from
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{E4C3066A-36A8-4CD5-B3BD-FDF2E02C7ED1}"
+      DTS:DTSID="{7F837019-3DFC-4287-87DB-5DB50B9E78A1}"
       DTS:From="Package\TRUNCA TB_CAMPANHAS"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
@@ -3365,7 +3365,7 @@ from
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{710A0FD7-9C37-4CB4-AE65-1CFA9EABAA73}"
+      DTS:DTSID="{09C9C7C5-E2E6-48C4-B1CE-787F416484AE}"
       DTS:From="Package\CARGA TB_PROGRAMA_HIERARQUIA"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
@@ -3373,7 +3373,7 @@ from
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{49A18196-DE82-43B7-80A4-1F43E5B47361}"
+      DTS:DTSID="{122C504F-3A20-4CF9-B8BF-EDA89FB71AD7}"
       DTS:From="Package\CARGA TB_PARTICIPANTE_PROGRAMA"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
@@ -3381,7 +3381,7 @@ from
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição]"
       DTS:CreationName=""
-      DTS:DTSID="{498D9307-1949-4459-8225-CB5C298CC814}"
+      DTS:DTSID="{6DB6D8C3-9AC7-4D14-B782-C3F22560D22D}"
       DTS:From="Package\GRAVA TB_CAMPANHAS"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição"
@@ -3389,7 +3389,7 @@ from
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição 1]"
       DTS:CreationName=""
-      DTS:DTSID="{AFE22E67-9730-4FB3-83FF-E7DA9194328E}"
+      DTS:DTSID="{8E81DA3F-DD4C-4D16-8D6E-C2EBA518C7D7}"
       DTS:From="Package\TRUNCA TB_PARTICIPANTE_PROGRAMA_TEMP"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição 1"
@@ -3397,19 +3397,19 @@ from
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição 2]"
       DTS:CreationName=""
-      DTS:DTSID="{763F2B54-2ED3-4497-9337-F3C97718BE9A}"
+      DTS:DTSID="{E1273A50-05A8-4F15-B7B6-C921320F1317}"
       DTS:From="Package\CARGA TB_PARTICIPANTE_PROGRAMA_TEMP"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição 2"
       DTS:To="Package\CARGA TB_PARTICIPANTE_PROGRAMA" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
-<!--If you manually edit this section and make a mistake, you can delete it. -->
-<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<!--Esta seção CDATA contém as informações de layout do pacote. A seção inclui informações como coordenadas (x,y), largura e altura.-->
+<!--Se você editar manualmente esta seção e cometer algum erro, poderá excluí-la. -->
+<!--O pacote ainda poderá ser carregado normalmente, mas as informações de layout anteriores serão perdidas e o designer reorganizará automaticamente os elementos na superfície de design.-->
 <Objects
   Version="8">
-  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <!--Cada nó abaixo conterá propriedades que não afetam o comportamento em tempo de execução.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>

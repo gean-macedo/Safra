@@ -1,37 +1,37 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="3/6/2024 3:27:45 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="MKPDCT-DBSTG01"
   DTS:CreatorName="MKPDCT-DBSTG01\dbm_dw"
-  DTS:DTSID="{ABD94040-C020-4A21-831B-7F72D4F8CC44}"
+  DTS:DTSID="{299A28D1-9AA8-4804-B4CC-9FFC4BC12CFA}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="SAFRA_CARGA_TB_HIERARQUIA_PARTICIPANTES"
   DTS:PackageType="5"
-  DTS:VersionBuild="126"
-  DTS:VersionGUID="{54E71594-CCE3-42C4-A039-ABE48432B33B}">
+  DTS:VersionBuild="127"
+  DTS:VersionGUID="{B3D35FE6-B91A-418F-A9A5-EA9D80F4E30D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[DB_SAFRA]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{AB9690D2-407C-4CF7-A1F5-9D2443F0BF5A}"
+      DTS:DTSID="{26B9D2AA-2025-4463-BC68-13D4D7B3D75A}"
       DTS:ObjectName="DB_SAFRA">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=MKPDTC-DBSTG\STAGING;Initial Catalog=DB_SAFRA;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SAFRA_CARGA_TB_HIERARQUIA_PARTICIPANTES-{AB9690D2-407C-4CF7-A1F5-9D2443F0BF5A}10.10.20.103.DB_SAFRA;" />
+          DTS:ConnectionString="Data Source=MKPDTC-DBSTG\STAGING;Initial Catalog=DB_SAFRA;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SAFRA_CARGA_TB_HIERARQUIA_PARTICIPANTES-{26B9D2AA-2025-4463-BC68-13D4D7B3D75A}10.10.20.103.DB_SAFRA;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[vendavall40 - PROD REP]"
       DTS:CreationName="ADO.NET:System.Data.Odbc.OdbcConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
-      DTS:DTSID="{D33604BD-31EF-4F69-80FC-153C8A2AEFB7}"
+      DTS:DTSID="{16257443-0555-4604-A971-A5DE15E520E3}"
       DTS:ObjectName="vendavall40 - PROD REP">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -42,7 +42,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{FC1BA67D-ACF8-4A70-A630-FF6E27A6E709}"
+      DTS:DTSID="{3FAA5A7A-EA87-439A-932F-E4A3337CA0E2}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="ID_ITEM">
@@ -55,7 +55,7 @@
       DTS:refId="Package\CARGA TB_ACEITE_REGULAMENTO"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{AD1D1E46-9162-4E63-87B3-95F073E8E365}"
+      DTS:DTSID="{5C06B1D3-1E8C-4AAA-9210-D3BD53BCA141}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="CARGA TB_ACEITE_REGULAMENTO"
@@ -655,7 +655,7 @@ join safra_api_vendavall_20240828225002.rule_and_terms rt
       DTS:refId="Package\CARREGA TB_HIERARQUIA"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{EA481883-5A01-4DE9-A67B-0C9395C2AE32}"
+      DTS:DTSID="{71B32BD0-9F4F-484E-9958-573D3F9BD243}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="CARREGA TB_HIERARQUIA"
@@ -1069,7 +1069,7 @@ LEFT JOIN DBO.TB_PARTICIPANTES										AS PA (NOLOCK)
       DTS:refId="Package\CARREGA TEMP"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{F3607960-5CED-45CF-9556-9C430B591CE6}"
+      DTS:DTSID="{9F423A5A-4F20-4579-A59D-C0B30616CF31}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="CARREGA TEMP"
@@ -1624,7 +1624,7 @@ from
       DTS:refId="Package\Carrega TEMP"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{13368DCA-F744-4CCF-B8BD-3302879F586F}"
+      DTS:DTSID="{5316D8E4-B609-42B0-A321-CE5C0A9F50B7}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Carrega TEMP"
@@ -2879,7 +2879,7 @@ and pa.name not like '%TESTE%'</property>
       DTS:refId="Package\Grava TB_PARTICIPANTES"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{832F05BB-434D-499F-B3BD-BE133AB0150A}"
+      DTS:DTSID="{F04B5047-1F8A-48BD-9388-88F0A7DD3A8E}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Grava TB_PARTICIPANTES"
@@ -3881,7 +3881,7 @@ AND PT.NOME NOT LIKE '%TESTE%'</property>
       DTS:refId="Package\Registra item"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{1CDC7F66-A058-46C8-B80E-2CCFD39E5D81}"
+      DTS:DTSID="{4FDA92B5-E506-4BA6-B29E-4824E06BBFC2}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Registra item"
@@ -3890,7 +3890,7 @@ AND PT.NOME NOT LIKE '%TESTE%'</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{AB9690D2-407C-4CF7-A1F5-9D2443F0BF5A}"
+          SQLTask:Connection="{26B9D2AA-2025-4463-BC68-13D4D7B3D75A}"
           SQLTask:SqlStatementSource="EXEC DB_MARKUP. [MKP].[SP_REGISTRA_LOG_ITEM] ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
@@ -3905,7 +3905,7 @@ AND PT.NOME NOT LIKE '%TESTE%'</property>
       DTS:refId="Package\TRUNCA TB_ACEITE_REGULAMENTO"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{016A785A-A527-442B-91E2-CDD5A30F4F94}"
+      DTS:DTSID="{06856CF0-A3B2-4021-87DC-EB13568E84F7}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="TRUNCA TB_ACEITE_REGULAMENTO"
@@ -3914,7 +3914,7 @@ AND PT.NOME NOT LIKE '%TESTE%'</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{AB9690D2-407C-4CF7-A1F5-9D2443F0BF5A}"
+          SQLTask:Connection="{26B9D2AA-2025-4463-BC68-13D4D7B3D75A}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE DBO.TB_ACEITE_TERMOS_REGULAMENTOS" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -3922,7 +3922,7 @@ AND PT.NOME NOT LIKE '%TESTE%'</property>
       DTS:refId="Package\TRUNCA TEMP"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{E4BA67FB-9AAC-4AD3-A164-5745C6906C2F}"
+      DTS:DTSID="{766581E2-7A64-4452-90F8-771AA61763C1}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="TRUNCA TEMP"
@@ -3931,7 +3931,7 @@ AND PT.NOME NOT LIKE '%TESTE%'</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{AB9690D2-407C-4CF7-A1F5-9D2443F0BF5A}"
+          SQLTask:Connection="{26B9D2AA-2025-4463-BC68-13D4D7B3D75A}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE DBO.TB_HIERARQUIA_PARTICIPANTES_TEMP" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -3939,7 +3939,7 @@ AND PT.NOME NOT LIKE '%TESTE%'</property>
       DTS:refId="Package\Trunca TEMP"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{666B9874-5FF1-461B-A81B-9FDEED29D5A7}"
+      DTS:DTSID="{26174D60-6A39-4518-A37D-63A7832D7E53}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Trunca TEMP"
@@ -3948,7 +3948,7 @@ AND PT.NOME NOT LIKE '%TESTE%'</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{AB9690D2-407C-4CF7-A1F5-9D2443F0BF5A}"
+          SQLTask:Connection="{26B9D2AA-2025-4463-BC68-13D4D7B3D75A}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE DBO.TB_PARTICIPANTES_TEMP" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -3956,7 +3956,7 @@ AND PT.NOME NOT LIKE '%TESTE%'</property>
       DTS:refId="Package\UPDATE DATA_FIM"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{7C869193-43C9-4592-B95C-7BB3F3268D7D}"
+      DTS:DTSID="{D7C7E5C1-C7AA-44C6-92F3-687AB750A265}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="UPDATE DATA_FIM"
@@ -3965,7 +3965,7 @@ AND PT.NOME NOT LIKE '%TESTE%'</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{AB9690D2-407C-4CF7-A1F5-9D2443F0BF5A}"
+          SQLTask:Connection="{26B9D2AA-2025-4463-BC68-13D4D7B3D75A}"
           SQLTask:SqlStatementSource="WITH NOVOS_REGISTROS AS (&#xA;SELECT&#xA;&#x9;ID&#xA;&#x9;,ID_PARTICIPANTE&#xA;&#x9;,ID_PROGRAMA&#xA;&#x9;,DATA_INICIO&#xA;FROM&#xA;&#x9;(&#xA;SELECT&#xA;&#x9;*&#xA;&#x9;,ROW_NUMBER() OVER(PARTITION BY ID_PARTICIPANTE,ID_PROGRAMA ORDER BY DATA_INICIO) AS VLD&#xA;FROM&#xA;&#x9;DBO.TB_HIERARQUIA_PARTICIPANTES&#xA;) A&#xA;WHERE&#xA;&#x9;VLD &gt; 1&#xA;)&#xA;&#xA;&#xA;&#x9;UPDATE A SET DATA_FIM = DATEADD(DAY,-1,B.DATA_INICIO)&#xA;FROM&#xA;&#x9;DBO.TB_HIERARQUIA_PARTICIPANTES A&#xA;&#x9;INNER JOIN NOVOS_REGISTROS&#x9;B&#xA;&#x9;&#x9;ON A.ID_PARTICIPANTE = B.ID_PARTICIPANTE&#xA;&#x9;&#x9;AND A.ID_PROGRAMA = B.ID_PROGRAMA&#xA;WHERE&#xA;&#x9;A.DATA_INICIO &lt; B.DATA_INICIO&#xA;&#x9;AND A.DATA_FIM IS NULL" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -3973,7 +3973,7 @@ AND PT.NOME NOT LIKE '%TESTE%'</property>
       DTS:refId="Package\UPDATE ID_VERSAO"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{ED6DF98F-00E7-4405-9012-C41F0B6E066F}"
+      DTS:DTSID="{96C83A70-85FF-4674-B2C0-06D2468419B3}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="UPDATE ID_VERSAO"
@@ -3982,7 +3982,7 @@ AND PT.NOME NOT LIKE '%TESTE%'</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{AB9690D2-407C-4CF7-A1F5-9D2443F0BF5A}"
+          SQLTask:Connection="{26B9D2AA-2025-4463-BC68-13D4D7B3D75A}"
           SQLTask:SqlStatementSource="-- INSERE UMA NOVA VERSÃO CASO TENHA UM NOVO CARGO&#xA;INSERT INTO DBO.TB_HIERARQUIA_PARTICIPANTES &#xA;    (ID_PARTICIPANTE, CPF, ID_HIERARQUIA, ID_PROGRAMA, DATA_INICIO, ID_VERSAO)&#xA;SELECT &#xA;    HPT.ID_PARTICIPANTE,&#xA;    HPT.CPF,&#xA;    HPT.ID_HIERARQUIA,&#xA;    HPT.ID_PROGRAMA,&#xA;    GETDATE() AS DATA_INICIO,&#xA;    ISNULL((&#xA;        SELECT MAX(HP2.ID_VERSAO)&#xA;        FROM DBO.TB_HIERARQUIA_PARTICIPANTES HP2&#xA;        WHERE HP2.ID_PARTICIPANTE = HPT.ID_PARTICIPANTE&#xA;    ), 0) + 1 AS ID_VERSAO&#xA;FROM &#xA;    DBO.TB_HIERARQUIA_PARTICIPANTES_TEMP AS HPT (NOLOCK)&#xA;WHERE &#xA;    NOT EXISTS (&#xA;        SELECT 1&#xA;        FROM DBO.TB_HIERARQUIA_PARTICIPANTES AS HP (NOLOCK)&#xA;        WHERE &#xA;            HP.ID_PARTICIPANTE = HPT.ID_PARTICIPANTE&#xA;            AND HP.ID_HIERARQUIA = HPT.ID_HIERARQUIA&#xA;            AND HP.ID_PROGRAMA = HPT.ID_PROGRAMA&#xA;    )&#xA;&#xA;--INSERE A VERSÃO 1 PARA OS NOVOS PARTICIPANTES&#xA;UPDATE HP&#xA;SET HP.ID_VERSAO = 1  &#xA;FROM DBO.TB_HIERARQUIA_PARTICIPANTES AS HP&#xA;INNER JOIN DBO.TB_HIERARQUIA_PARTICIPANTES_TEMP AS HPT (NOLOCK)&#xA;    ON HPT.id_participante = HP.ID_PARTICIPANTE&#xA;WHERE HP.ID_VERSAO IS NULL;&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -3990,7 +3990,7 @@ AND PT.NOME NOT LIKE '%TESTE%'</property>
       DTS:refId="Package\UPDATE TB_PARTICIPANTES"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{A964DD5E-0B49-45BB-BBE6-249D44C8C67D}"
+      DTS:DTSID="{6A434205-3C1B-4248-9D77-53D840EB8EE1}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="UPDATE TB_PARTICIPANTES"
@@ -3999,7 +3999,7 @@ AND PT.NOME NOT LIKE '%TESTE%'</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{AB9690D2-407C-4CF7-A1F5-9D2443F0BF5A}"
+          SQLTask:Connection="{26B9D2AA-2025-4463-BC68-13D4D7B3D75A}"
           SQLTask:SqlStatementSource="UPDATE A SET &#xA; NOME&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;= UPPER(B.NOME)&#xA; ,RG&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;= IIF(B.RG = 'null', NULL, B.RG)&#xA; ,CPF&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;= B.CPF&#xA; ,DATA_NASCIMENTO&#x9;&#x9;&#x9;&#x9;= B.DATA_NASCIMENTO&#xA; ,GENERO&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;= UPPER(B.GENERO)&#xA; ,ENROLL&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;= B.ENROLL&#xA; ,STATUS&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;= B.STATUS&#xA; ,EMAIL&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;= B.EMAIL&#xA; ,TEL_RESIDENCIAL&#x9;&#x9;&#x9;&#x9;= DB_TCLSEMP.[dbo].[FN_REMOVE_TEXTO](B.TEL_RESIDENCIAL)&#xA; ,TEL_CELULAR&#x9;&#x9;&#x9;&#x9;&#x9;= DB_TCLSEMP.[dbo].[FN_REMOVE_TEXTO](B.TEL_CELULAR)&#xA; ,CEP&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;= B.CEP&#xA; ,RUA&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;= B.RUA&#xA; ,NUMERO&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;= B.NUMERO&#xA; ,COMPLEMENTO&#x9;&#x9;&#x9;&#x9;&#x9;= B.COMPLEMENTO&#xA; ,BAIRRO&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;= B.BAIRRO&#xA; ,CIDADE&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;= B.CIDADE&#xA; ,ESTADO&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;= B.ESTADO&#xA; ,DATA_ACEITE_REGULAMENTO&#x9;&#x9;= B.DATA_ACEITE_REGULAMENTO&#xA; ,DATA_VERIFICACAO_EMAIL&#x9;&#x9;= B.DATA_VERIFICACAO_EMAIL&#xA; ,DATA_DELETE_USUARIO&#x9;&#x9;&#x9;= B.DATA_DELETE_USUARIO&#xA; ,DATA_CRIACAO_PARTICIPANTE&#x9;&#x9;= B.DATA_CRIACAO_PARTICIPANTE&#xA; ,DATA_ATUALIZACAO_PARTICIPANTE = B.DATA_ATUALIZACAO_PARTICIPANTE&#xA; ,DATA_INATIVACAO_PARTICIPANTE_API = B.DATA_INATIVACAO_PARTICIPANTE_API&#xA;FROM&#xA; DB_SAFRA.DBO.TB_PARTICIPANTES A&#xA; INNER JOIN DB_SAFRA.DBO.TB_PARTICIPANTES_TEMP B (NOLOCK)&#xA;  ON A.ID_PARTICIPANTE = B.ID_PARTICIPANTE" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -4008,7 +4008,7 @@ AND PT.NOME NOT LIKE '%TESTE%'</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{4B3E108E-CDEA-4F63-A782-CF1CEFC6B9D5}"
+      DTS:DTSID="{909CD1CC-3DF5-4617-8E74-43B15B743925}"
       DTS:From="Package\CARREGA TEMP"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -4016,7 +4016,7 @@ AND PT.NOME NOT LIKE '%TESTE%'</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{53849C41-139F-4A94-B8A0-307FE849F745}"
+      DTS:DTSID="{726F9675-C491-4E81-8CA3-B5A924868C42}"
       DTS:From="Package\TRUNCA TEMP"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -4024,7 +4024,7 @@ AND PT.NOME NOT LIKE '%TESTE%'</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1 1]"
       DTS:CreationName=""
-      DTS:DTSID="{A563DB18-A162-4253-B016-4F00F4784AFC}"
+      DTS:DTSID="{6A060BD1-CC0C-4514-8E9E-6B6ECD1A6681}"
       DTS:From="Package\Carrega TEMP"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1 1"
@@ -4032,7 +4032,7 @@ AND PT.NOME NOT LIKE '%TESTE%'</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{CD0A69CC-2A3F-4E0F-B921-C090F86059EF}"
+      DTS:DTSID="{3A7937EE-3099-451B-9045-A4011C5B64A7}"
       DTS:From="Package\Trunca TEMP"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
@@ -4040,7 +4040,7 @@ AND PT.NOME NOT LIKE '%TESTE%'</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
       DTS:CreationName=""
-      DTS:DTSID="{9A4B7749-E8D0-4696-B703-8A854C796A97}"
+      DTS:DTSID="{634044FD-0EEB-459D-BE18-C9BBFD5F20F8}"
       DTS:From="Package\Grava TB_PARTICIPANTES"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 5"
@@ -4048,7 +4048,7 @@ AND PT.NOME NOT LIKE '%TESTE%'</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
       DTS:CreationName=""
-      DTS:DTSID="{BB84C659-ACF0-497B-8525-29C3341E711F}"
+      DTS:DTSID="{2521D205-FA0C-42BD-A2E7-9933CA4FD665}"
       DTS:From="Package\UPDATE TB_PARTICIPANTES"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 6"
@@ -4056,7 +4056,7 @@ AND PT.NOME NOT LIKE '%TESTE%'</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
       DTS:CreationName=""
-      DTS:DTSID="{93F65A36-E6D6-4AA8-81EE-A91523847E91}"
+      DTS:DTSID="{C42F48D3-588E-4112-BEA2-0996D05F639C}"
       DTS:From="Package\TRUNCA TB_ACEITE_REGULAMENTO"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 7"
@@ -4064,7 +4064,7 @@ AND PT.NOME NOT LIKE '%TESTE%'</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
       DTS:CreationName=""
-      DTS:DTSID="{E7DE94B0-FE45-48A3-A0EF-D0FF89A8766C}"
+      DTS:DTSID="{1E01A8CA-049F-48B5-A722-737E2A7087B8}"
       DTS:From="Package\CARGA TB_ACEITE_REGULAMENTO"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 8"
@@ -4072,7 +4072,7 @@ AND PT.NOME NOT LIKE '%TESTE%'</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição]"
       DTS:CreationName=""
-      DTS:DTSID="{1CBEB4ED-4E4F-49DC-961D-AE4BC595BFC1}"
+      DTS:DTSID="{4927D4F9-D199-4C48-A121-482DF2708646}"
       DTS:From="Package\CARREGA TB_HIERARQUIA"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição"
@@ -4080,7 +4080,7 @@ AND PT.NOME NOT LIKE '%TESTE%'</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição 1]"
       DTS:CreationName=""
-      DTS:DTSID="{5AD0997E-A7CA-4DCA-ACB3-BD4AAB0275C8}"
+      DTS:DTSID="{99CDEE7E-5A3B-41D6-AED5-CDE428C8F720}"
       DTS:From="Package\UPDATE ID_VERSAO"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição 1"
@@ -4088,19 +4088,19 @@ AND PT.NOME NOT LIKE '%TESTE%'</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição 2]"
       DTS:CreationName=""
-      DTS:DTSID="{27EB23B6-0221-48AA-81CE-FE4A5A83B99B}"
+      DTS:DTSID="{CB584116-F9FC-46CE-995A-F9144635A0B5}"
       DTS:From="Package\UPDATE DATA_FIM"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição 2"
       DTS:To="Package\Trunca TEMP" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
-<!--If you manually edit this section and make a mistake, you can delete it. -->
-<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<!--Esta seção CDATA contém as informações de layout do pacote. A seção inclui informações como coordenadas (x,y), largura e altura.-->
+<!--Se você editar manualmente esta seção e cometer algum erro, poderá excluí-la. -->
+<!--O pacote ainda poderá ser carregado normalmente, mas as informações de layout anteriores serão perdidas e o designer reorganizará automaticamente os elementos na superfície de design.-->
 <Objects
   Version="8">
-  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <!--Cada nó abaixo conterá propriedades que não afetam o comportamento em tempo de execução.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>

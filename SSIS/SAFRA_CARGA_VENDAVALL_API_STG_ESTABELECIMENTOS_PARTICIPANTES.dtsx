@@ -1,49 +1,49 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="3/6/2024 3:27:45 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="MKPDCT-DBSTG01"
   DTS:CreatorName="MKPDCT-DBSTG01\dbm_dw"
-  DTS:DTSID="{7CBBF79D-F609-4FA3-832E-747B7EEA4F2D}"
+  DTS:DTSID="{0DF6E260-F7CE-4572-8573-95C38E55E6D1}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="SAFRA_CARGA_VENDAVALL_API_STG_ESTABELECIMENTOS_PARTICIPANTES"
   DTS:PackageType="5"
-  DTS:VersionBuild="219"
-  DTS:VersionGUID="{FCA43DA1-A9E2-4456-924C-10D15BE51CB6}">
+  DTS:VersionBuild="220"
+  DTS:VersionGUID="{ECEE70B3-80AE-4FAF-BD6F-C09474F23C6C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[10.10.20.103.DB_SAFRA.markup.dbranches]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{6BC00F25-318B-4567-ABCE-FEDDF7958900}"
+      DTS:DTSID="{66527764-3EA0-4A3F-831D-1DB0BFE16D2C}"
       DTS:ObjectName="10.10.20.103.DB_SAFRA.markup.dbranches">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=MKPDTC-DBSTG\STAGING;Initial Catalog=DB_SAFRA;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-SAFRA_CARGA_VENDAVALL_API_STG_ESTABELECIMENTOS_PARTICIPANTES-{6BC00F25-318B-4567-ABCE-FEDDF7958900}10.10.20.103.DB_SAFRA.;" />
+          DTS:ConnectionString="Data Source=MKPDTC-DBSTG\STAGING;Initial Catalog=DB_SAFRA;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-SAFRA_CARGA_VENDAVALL_API_STG_ESTABELECIMENTOS_PARTICIPANTES-{66527764-3EA0-4A3F-831D-1DB0BFE16D2C}10.10.20.103.DB_SAFRA.;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[10.10.20.103.markup.dbranches]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{8B84C7E2-7544-485A-A32F-E283DB83BE9C}"
+      DTS:DTSID="{52EFF5AF-3BDB-4BFE-B1CF-F0D9D2DA5613}"
       DTS:ObjectName="10.10.20.103.markup.dbranches">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=MKPDTC-DBSTG\STAGING;Initial Catalog=DB_SAFRA;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-SAFRA_CARGA_VENDAVALL_API_STG_ESTABELECIMENTOS_PARTICIPANTES-{8B84C7E2-7544-485A-A32F-E283DB83BE9C}10.10.20.103.markup.db;" />
+          DTS:ConnectionString="Data Source=MKPDTC-DBSTG\STAGING;Initial Catalog=DB_SAFRA;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-SAFRA_CARGA_VENDAVALL_API_STG_ESTABELECIMENTOS_PARTICIPANTES-{52EFF5AF-3BDB-4BFE-B1CF-F0D9D2DA5613}10.10.20.103.markup.db;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[vendavall40 - HLG]"
       DTS:CreationName="ADO.NET:System.Data.Odbc.OdbcConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
-      DTS:DTSID="{46E1F03E-981D-4A55-9B2A-AAC488232442}"
+      DTS:DTSID="{EEB12381-F316-4053-8ED4-949B87614E0A}"
       DTS:ObjectName="vendavall40 - HLG">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -53,7 +53,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[vendavall40 - HLG - API]"
       DTS:CreationName="ADO.NET:System.Data.Odbc.OdbcConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
-      DTS:DTSID="{96BDF742-68C3-49A6-BD77-7408D8B12AB7}"
+      DTS:DTSID="{6772FACE-4153-4F55-BA17-5EA1891B6645}"
       DTS:ObjectName="vendavall40 - HLG - API">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -64,7 +64,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{223AD63A-F198-4011-8507-2E6832D48C60}"
+      DTS:DTSID="{85E976D2-B15C-43EA-85EC-2CC772B85F3C}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="ESTABELECIMENTOS_PARTICIPANTES">
@@ -82,7 +82,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{10B769D1-47CA-404C-88F5-55C16CBA69DC}"
+      DTS:DTSID="{E46E021B-2ACA-400C-A3FD-830B81F309DD}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ID_CARGO">
@@ -92,7 +92,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{EA506E5F-1FA8-4E05-9B7E-50E1639BE223}"
+      DTS:DTSID="{AF93CB66-6259-4854-AF88-A1DADA4A5F04}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ID_ESTABELECIMENTO">
@@ -102,7 +102,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{5B0DC479-4D90-4AF5-B07B-2C5D88DCBC9C}"
+      DTS:DTSID="{B1782F60-9728-4D8C-AB1E-AEE412CB0D42}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ID_ESTABELECIMENTO_API">
@@ -112,7 +112,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{A010549C-DA2C-429A-8887-D1AE8132FF87}"
+      DTS:DTSID="{E3B8A789-C0E1-48B7-B6CF-6EDD4CA8E21B}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="ID_ITEM">
@@ -121,7 +121,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{33EB110A-E5C0-45E0-8415-6F52C9C4C50E}"
+      DTS:DTSID="{F3018FF9-EE95-4F03-A886-F7354FB8B32B}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ID_PARTICIPANTE">
@@ -131,7 +131,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{0CFD2CB7-4C3E-4BF3-9886-6B4E6DECEC90}"
+      DTS:DTSID="{D4923FAE-DB13-4EE8-940D-3CF83751DD21}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ID_PARTICIPANTE_API">
@@ -145,7 +145,7 @@
       DTS:refId="Package\Carrega TB_ESTABELECIMENTOS_PARTICIPANTES_API"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarefa Fluxo de Dados"
-      DTS:DTSID="{D7450E59-AB94-43D7-9CC3-C68AAA5B3320}"
+      DTS:DTSID="{A3C26508-F85A-421E-8A6E-C1A3EB6DFC29}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Carrega TB_ESTABELECIMENTOS_PARTICIPANTES_API"
@@ -685,7 +685,7 @@ where pe.status in ('Ativo', 'Inativar', 'Update')</property>
       DTS:refId="Package\Carrega TB_ESTABELECIMENTOS_PARTICIPANTES_STG"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarefa Fluxo de Dados"
-      DTS:DTSID="{8D51A8BE-EF1A-4B36-BD1B-E11D3C76F0AA}"
+      DTS:DTSID="{0F68F420-7513-4969-A9BE-8A9641C1DD16}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Carrega TB_ESTABELECIMENTOS_PARTICIPANTES_STG"
@@ -1149,7 +1149,7 @@ from safra_api_vendavall_20240805110525.establishment_participant</property>
       DTS:refId="Package\Carrega TB_ESTABELECIMENTOS_STG"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarefa Fluxo de Dados"
-      DTS:DTSID="{8E7B677B-2ACB-4A0B-9499-1A1B3A8F5EA7}"
+      DTS:DTSID="{92BE3549-3638-402C-856C-912D5BE330ED}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Carrega TB_ESTABELECIMENTOS_STG"
@@ -1567,7 +1567,7 @@ from safra_api_vendavall_20240805110525.establishment_participant</property>
       DTS:refId="Package\Carrega TB_PARTICIPANTES_STG"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarefa Fluxo de Dados"
-      DTS:DTSID="{F8488E16-07C9-428E-BB04-8CCC8573BE28}"
+      DTS:DTSID="{8BDB9C69-53D6-490C-9E4E-7D5BEDE3DC77}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Carrega TB_PARTICIPANTES_STG"
@@ -2223,13 +2223,13 @@ from safra_api_vendavall_20240805110525.establishment_participant</property>
       DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:Description="Contêiner do Loop Foreach"
       DTS:Disabled="True"
-      DTS:DTSID="{8B77A5F1-04DC-474E-812C-C482921C19A8}"
+      DTS:DTSID="{F61E0264-9BA0-4FD2-826F-920564F3E93B}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
       DTS:ObjectName="Contêiner do Loop Foreach 1 1">
       <DTS:ForEachEnumerator
         DTS:CreationName="Microsoft.ForEachADOEnumerator"
-        DTS:DTSID="{71F8C268-8499-4629-9C01-C4A8DF386F0D}"
+        DTS:DTSID="{847F95B0-6A8C-4DDD-A6B2-579636284B07}"
         DTS:ObjectName="{018D0820-A16A-4C3B-B205-8CB3154AE612}">
         <DTS:ObjectData>
           <FEEADO
@@ -2243,7 +2243,7 @@ from safra_api_vendavall_20240805110525.establishment_participant</property>
           DTS:refId="Package\Contêiner do Loop Foreach 1 1\Update API"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Tarefa Executar SQL"
-          DTS:DTSID="{A66754BD-DB64-4D30-9B84-4182AA8127E0}"
+          DTS:DTSID="{1F395C0B-2D2D-4259-9601-5B8C2A5F9A63}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Update API"
@@ -2252,7 +2252,7 @@ from safra_api_vendavall_20240805110525.establishment_participant</property>
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{96BDF742-68C3-49A6-BD77-7408D8B12AB7}"
+              SQLTask:Connection="{6772FACE-4153-4F55-BA17-5EA1891B6645}"
               SQLTask:BypassPrepare="False"
               SQLTask:SqlStatementSource="update public.participants_establishments&#xA;set status = 'error'&#xA;where establishment_id = ?&#xA;and participant_id = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
@@ -2274,14 +2274,14 @@ from safra_api_vendavall_20240805110525.establishment_participant</property>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{7720CD9C-31C0-4463-9D2F-DFF3B97EE0A0}"
-          DTS:ObjectName="{7720CD9C-31C0-4463-9D2F-DFF3B97EE0A0}"
+          DTS:DTSID="{38AB938C-A3D1-4A25-B946-29DD2F2EE365}"
+          DTS:ObjectName="{38AB938C-A3D1-4A25-B946-29DD2F2EE365}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::ID_ESTABELECIMENTO" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{A8248107-3417-460E-BB9A-EF882A5DF1C5}"
-          DTS:ObjectName="{A8248107-3417-460E-BB9A-EF882A5DF1C5}"
+          DTS:DTSID="{CBEF9386-950E-4B1C-ADE7-7441F966D385}"
+          DTS:ObjectName="{CBEF9386-950E-4B1C-ADE7-7441F966D385}"
           DTS:ValueIndex="1"
           DTS:VariableName="User::ID_PARTICIPANTE" />
       </DTS:ForEachVariableMappings>
@@ -2290,13 +2290,13 @@ from safra_api_vendavall_20240805110525.establishment_participant</property>
       DTS:refId="Package\Contêiner do Loop Foreach 1 1 1 1"
       DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:Description="Contêiner do Loop Foreach"
-      DTS:DTSID="{15143464-322D-4FFF-A833-DDF8D0613664}"
+      DTS:DTSID="{5CA7ACEB-9799-411D-BA0D-FC924312E83E}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
       DTS:ObjectName="Contêiner do Loop Foreach 1 1 1 1">
       <DTS:ForEachEnumerator
         DTS:CreationName="Microsoft.ForEachADOEnumerator"
-        DTS:DTSID="{1F030418-C7F1-4DA8-8DB0-EC00CFFF430F}"
+        DTS:DTSID="{118CF169-1C94-46A7-A3BD-413BFEED8917}"
         DTS:ObjectName="{018D0820-A16A-4C3B-B205-8CB3154AE612}">
         <DTS:ObjectData>
           <FEEADO
@@ -2310,7 +2310,7 @@ from safra_api_vendavall_20240805110525.establishment_participant</property>
           DTS:refId="Package\Contêiner do Loop Foreach 1 1 1 1\Update API"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Tarefa Executar SQL"
-          DTS:DTSID="{B947BF07-10F7-4F5D-B283-DBAB3A866450}"
+          DTS:DTSID="{8AFD20D8-E08E-41B0-9F96-79838BC3926B}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Update API"
@@ -2319,7 +2319,7 @@ from safra_api_vendavall_20240805110525.establishment_participant</property>
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{96BDF742-68C3-49A6-BD77-7408D8B12AB7}"
+              SQLTask:Connection="{6772FACE-4153-4F55-BA17-5EA1891B6645}"
               SQLTask:BypassPrepare="False"
               SQLTask:SqlStatementSource="update public.participants_establishments&#xA;set status = 'Sucesso'&#xA;where establishment_id = ?&#xA;and participant_id = ?&#xA;and status = 'Inativar'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
@@ -2341,7 +2341,7 @@ from safra_api_vendavall_20240805110525.establishment_participant</property>
           DTS:refId="Package\Contêiner do Loop Foreach 1 1 1 1\Update Inativar Vinculo Vendavall"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Tarefa Executar SQL"
-          DTS:DTSID="{4AF0444B-8CD0-4E68-B5AD-2F4CFF4E3CA4}"
+          DTS:DTSID="{931E29CB-E623-4B8A-8503-E74D116BC2DD}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Update Inativar Vinculo Vendavall"
@@ -2350,7 +2350,7 @@ from safra_api_vendavall_20240805110525.establishment_participant</property>
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{46E1F03E-981D-4A55-9B2A-AAC488232442}"
+              SQLTask:Connection="{EEB12381-F316-4053-8ED4-949B87614E0A}"
               SQLTask:BypassPrepare="False"
               SQLTask:SqlStatementSource="update safra_api_vendavall_20240805110525.establishment_participant&#xA;set status = false&#xA; ,updated_by = 'beb6b98c-f415-4bf7-9436-ad0cb2f451bf'&#xA; ,updated_at = now()&#xA; ,end_date = now()&#xA;--,company_position_id = ?&#xA;where establishment_id = ?&#xA;and participant_id = ?&#xA;and status = true" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
@@ -2373,7 +2373,7 @@ from safra_api_vendavall_20240805110525.establishment_participant</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Contêiner do Loop Foreach 1 1 1 1.PrecedenceConstraints[Restrição]"
           DTS:CreationName=""
-          DTS:DTSID="{0A858E2F-B6B0-4CAF-AE40-C528F6FBFA40}"
+          DTS:DTSID="{9946188A-9341-48EC-A097-293602BC3C25}"
           DTS:From="Package\Contêiner do Loop Foreach 1 1 1 1\Update Inativar Vinculo Vendavall"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Restrição"
@@ -2382,26 +2382,26 @@ from safra_api_vendavall_20240805110525.establishment_participant</property>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{F76996F8-14B8-460F-9020-B74392B35671}"
-          DTS:ObjectName="{F76996F8-14B8-460F-9020-B74392B35671}"
+          DTS:DTSID="{88A59730-CDAB-4FEA-9D7A-003192DEFFC3}"
+          DTS:ObjectName="{88A59730-CDAB-4FEA-9D7A-003192DEFFC3}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::ID_ESTABELECIMENTO" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{69806907-F45C-47A8-93E2-4E8FD160F7D6}"
-          DTS:ObjectName="{69806907-F45C-47A8-93E2-4E8FD160F7D6}"
+          DTS:DTSID="{C9A856FD-CD54-47A6-B6D4-78EF1620B612}"
+          DTS:ObjectName="{C9A856FD-CD54-47A6-B6D4-78EF1620B612}"
           DTS:ValueIndex="1"
           DTS:VariableName="User::ID_PARTICIPANTE" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{58DAA1A2-92D3-4933-AFB0-6F511654FAA8}"
-          DTS:ObjectName="{58DAA1A2-92D3-4933-AFB0-6F511654FAA8}"
+          DTS:DTSID="{054AF108-C63D-4C02-B741-41A7693DBC21}"
+          DTS:ObjectName="{054AF108-C63D-4C02-B741-41A7693DBC21}"
           DTS:ValueIndex="3"
           DTS:VariableName="User::ID_ESTABELECIMENTO_API" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{26806057-22DA-44C8-AADD-98E31D3A162B}"
-          DTS:ObjectName="{26806057-22DA-44C8-AADD-98E31D3A162B}"
+          DTS:DTSID="{E521DDD2-3552-4F22-9DB9-0EEE1F5DA80A}"
+          DTS:ObjectName="{E521DDD2-3552-4F22-9DB9-0EEE1F5DA80A}"
           DTS:ValueIndex="4"
           DTS:VariableName="User::ID_PARTICIPANTE_API" />
       </DTS:ForEachVariableMappings>
@@ -2410,13 +2410,13 @@ from safra_api_vendavall_20240805110525.establishment_participant</property>
       DTS:refId="Package\Contêiner do Loop Foreach 1 1 1 2 1"
       DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:Description="Contêiner do Loop Foreach"
-      DTS:DTSID="{C6DBECB0-F8D8-4453-8296-AFB48F10BC67}"
+      DTS:DTSID="{41CF90ED-26F2-4653-97FE-7FDFC001985F}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
       DTS:ObjectName="Contêiner do Loop Foreach 1 1 1 2 1">
       <DTS:ForEachEnumerator
         DTS:CreationName="Microsoft.ForEachADOEnumerator"
-        DTS:DTSID="{DD5E17BA-519E-4C1D-9499-57F42862B9B2}"
+        DTS:DTSID="{53F521BD-C7CC-410F-BA69-AE9BC7DB8EA4}"
         DTS:ObjectName="{018D0820-A16A-4C3B-B205-8CB3154AE612}">
         <DTS:ObjectData>
           <FEEADO
@@ -2430,7 +2430,7 @@ from safra_api_vendavall_20240805110525.establishment_participant</property>
           DTS:refId="Package\Contêiner do Loop Foreach 1 1 1 2 1\Update API"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Tarefa Executar SQL"
-          DTS:DTSID="{245ACE20-7C33-4640-B43A-4F62B44EF80B}"
+          DTS:DTSID="{0FD04FE0-4BBA-4946-A094-767D11FC18E4}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Update API"
@@ -2439,7 +2439,7 @@ from safra_api_vendavall_20240805110525.establishment_participant</property>
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{96BDF742-68C3-49A6-BD77-7408D8B12AB7}"
+              SQLTask:Connection="{6772FACE-4153-4F55-BA17-5EA1891B6645}"
               SQLTask:BypassPrepare="False"
               SQLTask:SqlStatementSource="update public.participants_establishments&#xA;set status = 'Sucesso'&#xA;where establishment_id = ?&#xA;and participant_id = ?&#xA;and status in ('Update', 'Ativo')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
@@ -2461,7 +2461,7 @@ from safra_api_vendavall_20240805110525.establishment_participant</property>
           DTS:refId="Package\Contêiner do Loop Foreach 1 1 1 2 1\Update Reativação Vendavall"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Tarefa Executar SQL"
-          DTS:DTSID="{CD37B972-85AE-405A-B04A-BEBD47C1960C}"
+          DTS:DTSID="{B1FD5B27-B31A-42DB-8C94-A876E2DB702C}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Update Reativação Vendavall"
@@ -2470,7 +2470,7 @@ from safra_api_vendavall_20240805110525.establishment_participant</property>
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{46E1F03E-981D-4A55-9B2A-AAC488232442}"
+              SQLTask:Connection="{EEB12381-F316-4053-8ED4-949B87614E0A}"
               SQLTask:BypassPrepare="False"
               SQLTask:SqlStatementSource="update safra_api_vendavall_20240805110525.establishment_participant&#xA;set status = true&#xA; ,updated_by = 'beb6b98c-f415-4bf7-9436-ad0cb2f451bf'&#xA; ,updated_at = now()&#xA; ,start_date = now()&#xA; ,end_date = null&#xA; --,company_position_id = ?&#xA;where establishment_id = ?&#xA;and participant_id = ?&#xA;and status = false" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ParameterBinding
@@ -2493,7 +2493,7 @@ from safra_api_vendavall_20240805110525.establishment_participant</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Contêiner do Loop Foreach 1 1 1 2 1.PrecedenceConstraints[Restrição]"
           DTS:CreationName=""
-          DTS:DTSID="{EEAA2253-2938-4684-8207-4B330A871D84}"
+          DTS:DTSID="{A3061564-808D-41D7-A755-318AB212C89A}"
           DTS:From="Package\Contêiner do Loop Foreach 1 1 1 2 1\Update Reativação Vendavall"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Restrição"
@@ -2502,26 +2502,26 @@ from safra_api_vendavall_20240805110525.establishment_participant</property>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{4AA2859E-D7CC-4F20-899C-4FA4901B4E97}"
-          DTS:ObjectName="{4AA2859E-D7CC-4F20-899C-4FA4901B4E97}"
+          DTS:DTSID="{CC4B98C5-D64F-43FB-A7DF-53750A8DCC91}"
+          DTS:ObjectName="{CC4B98C5-D64F-43FB-A7DF-53750A8DCC91}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::ID_ESTABELECIMENTO" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{8254EA0C-DE0E-4FA4-AEE3-F7CA482180EA}"
-          DTS:ObjectName="{8254EA0C-DE0E-4FA4-AEE3-F7CA482180EA}"
+          DTS:DTSID="{26333D5F-EE0D-4AD2-89B0-C0D4681AF34B}"
+          DTS:ObjectName="{26333D5F-EE0D-4AD2-89B0-C0D4681AF34B}"
           DTS:ValueIndex="1"
           DTS:VariableName="User::ID_PARTICIPANTE" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{0DAD54CC-BB80-42BB-8BC6-841546D15ECC}"
-          DTS:ObjectName="{0DAD54CC-BB80-42BB-8BC6-841546D15ECC}"
+          DTS:DTSID="{D1B91113-969D-4688-A4D4-7EF6D3B18F66}"
+          DTS:ObjectName="{D1B91113-969D-4688-A4D4-7EF6D3B18F66}"
           DTS:ValueIndex="3"
           DTS:VariableName="User::ID_ESTABELECIMENTO_API" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{3686F9E7-6B4B-4C1A-90F4-46CD81186D7F}"
-          DTS:ObjectName="{3686F9E7-6B4B-4C1A-90F4-46CD81186D7F}"
+          DTS:DTSID="{37BEF195-4B1A-4104-A3AE-6FCEA05E9E6B}"
+          DTS:ObjectName="{37BEF195-4B1A-4104-A3AE-6FCEA05E9E6B}"
           DTS:ValueIndex="4"
           DTS:VariableName="User::ID_PARTICIPANTE_API" />
       </DTS:ForEachVariableMappings>
@@ -2531,7 +2531,7 @@ from safra_api_vendavall_20240805110525.establishment_participant</property>
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarefa Executar SQL"
       DTS:Disabled="True"
-      DTS:DTSID="{8A0E6200-1CD8-4240-8B62-328B902D0759}"
+      DTS:DTSID="{611AA66C-E8D7-4541-9AB9-5FE1A069EECF}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Executar PROCEDURE"
@@ -2540,7 +2540,7 @@ from safra_api_vendavall_20240805110525.establishment_participant</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{96BDF742-68C3-49A6-BD77-7408D8B12AB7}"
+          SQLTask:Connection="{6772FACE-4153-4F55-BA17-5EA1891B6645}"
           SQLTask:SqlStatementSource="SELECT public.proc_alerta_cria_log_integracao_dim_participante();&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -2548,7 +2548,7 @@ from safra_api_vendavall_20240805110525.establishment_participant</property>
       DTS:refId="Package\Registra item"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{FFE72543-142F-4F3D-9025-952D6FA6A0E8}"
+      DTS:DTSID="{2A723086-4B41-4BC4-B189-7A15322C777B}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Registra item"
@@ -2557,7 +2557,7 @@ from safra_api_vendavall_20240805110525.establishment_participant</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{8B84C7E2-7544-485A-A32F-E283DB83BE9C}"
+          SQLTask:Connection="{52EFF5AF-3BDB-4BFE-B1CF-F0D9D2DA5613}"
           SQLTask:SqlStatementSource="EXEC DB_MARKUP. [MKP].[SP_REGISTRA_LOG_ITEM] ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
@@ -2572,7 +2572,7 @@ from safra_api_vendavall_20240805110525.establishment_participant</property>
       DTS:refId="Package\Trunca ESTABELECIMENTOS E PARTICIPANTES"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarefa Executar SQL"
-      DTS:DTSID="{17C0C0D6-1846-4FBD-87F9-4EB8087A16A4}"
+      DTS:DTSID="{FA3546B7-80F8-4A58-8002-91D0BBBE1263}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Trunca ESTABELECIMENTOS E PARTICIPANTES"
@@ -2581,7 +2581,7 @@ from safra_api_vendavall_20240805110525.establishment_participant</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{6BC00F25-318B-4567-ABCE-FEDDF7958900}"
+          SQLTask:Connection="{66527764-3EA0-4A3F-831D-1DB0BFE16D2C}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[TB_ESTABELECIMENTOS_STG]&#xA;TRUNCATE TABLE [dbo].[TB_PARTICIPANTES_STG]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -2589,7 +2589,7 @@ from safra_api_vendavall_20240805110525.establishment_participant</property>
       DTS:refId="Package\Trunca TB_ESTABELECIMENTOS_PARTICIPANTES_API E STG"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarefa Executar SQL"
-      DTS:DTSID="{F4D31C7C-1567-4590-A695-EBBF64F467A7}"
+      DTS:DTSID="{C53BF612-734A-490B-B2F9-3425C8B17D97}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Trunca TB_ESTABELECIMENTOS_PARTICIPANTES_API E STG"
@@ -2598,7 +2598,7 @@ from safra_api_vendavall_20240805110525.establishment_participant</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{6BC00F25-318B-4567-ABCE-FEDDF7958900}"
+          SQLTask:Connection="{66527764-3EA0-4A3F-831D-1DB0BFE16D2C}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[TB_ESTABELECIMENTOS_PARTICIPANTES_API]&#xA;TRUNCATE TABLE [dbo].[TB_ESTABELECIMENTOS_PARTICIPANTES_STG]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -2607,7 +2607,7 @@ from safra_api_vendavall_20240805110525.establishment_participant</property>
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarefa Fluxo de Dados"
       DTS:Disabled="True"
-      DTS:DTSID="{318686FC-EAF8-4879-9C61-304E564B7ADF}"
+      DTS:DTSID="{A60AE75C-1119-47A0-8204-68907E7A96AF}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Verifica Estabelecimentos_Participantes Existentes"
@@ -2799,7 +2799,7 @@ and PA.STATUS = 'Ativo'</property>
       DTS:refId="Package\Verifica Estabelecimentos_Participantes Inativar"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarefa Fluxo de Dados"
-      DTS:DTSID="{336439D0-FBD8-45FF-AECA-7C026A50BEAC}"
+      DTS:DTSID="{01D17056-4236-424F-B691-C4122E943A37}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Verifica Estabelecimentos_Participantes Inativar"
@@ -3077,7 +3077,7 @@ WHERE
       DTS:refId="Package\Verifica Estabelecimentos_Participantes Reativação"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarefa Fluxo de Dados"
-      DTS:DTSID="{94612C07-B54E-4CE9-B37E-C5AA6030A207}"
+      DTS:DTSID="{07DFD46C-DB17-4BB6-ADBA-E4BD5F98B7ED}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Verifica Estabelecimentos_Participantes Reativação"
@@ -3374,7 +3374,7 @@ WHERE
       DTS:refId="Package\Verifica novos Estabelecimentos_Participantes API"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarefa Fluxo de Dados"
-      DTS:DTSID="{EDDCE151-2BD2-40CB-B618-95642A5C9C9F}"
+      DTS:DTSID="{423D9473-464D-424B-8453-E97230410BF6}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Verifica novos Estabelecimentos_Participantes API"
@@ -3742,7 +3742,7 @@ and PA.STATUS = 'Ativo'</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{BA391D3D-59AE-460D-A2A7-AB3002143D6B}"
+      DTS:DTSID="{FF58E319-FF20-489A-8589-C2EAC3507256}"
       DTS:From="Package\Verifica novos Estabelecimentos_Participantes API"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -3750,7 +3750,7 @@ and PA.STATUS = 'Ativo'</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{31880338-822B-4382-9B79-92711758CAAB}"
+      DTS:DTSID="{26940806-1616-4FB1-9114-C91DAAD9DC59}"
       DTS:From="Package\Verifica Estabelecimentos_Participantes Inativar"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -3758,7 +3758,7 @@ and PA.STATUS = 'Ativo'</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{E6A93872-565E-4209-B45B-31C99F9932DE}"
+      DTS:DTSID="{3DA2262E-E793-4405-B0CE-9D666E4EFCAE}"
       DTS:From="Package\Contêiner do Loop Foreach 1 1 1 2 1"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
@@ -3766,7 +3766,7 @@ and PA.STATUS = 'Ativo'</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{45F2748A-81D8-48BF-B2F2-D09889D3243E}"
+      DTS:DTSID="{32BB7BC1-2177-4DE3-90E4-04F0679B74DE}"
       DTS:From="Package\Contêiner do Loop Foreach 1 1 1 1"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
@@ -3774,7 +3774,7 @@ and PA.STATUS = 'Ativo'</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{8B6BB82C-7BB0-4FC6-8782-0B4E72820A9F}"
+      DTS:DTSID="{954212D8-0AA1-43CC-92A0-EF03667F0236}"
       DTS:From="Package\Verifica Estabelecimentos_Participantes Reativação"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
@@ -3782,7 +3782,7 @@ and PA.STATUS = 'Ativo'</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição]"
       DTS:CreationName=""
-      DTS:DTSID="{8D8D1080-804C-4FD7-8F4B-33FFE94BA262}"
+      DTS:DTSID="{39D34E78-BEBA-4D98-BEAB-C4A90A578744}"
       DTS:From="Package\Carrega TB_PARTICIPANTES_STG"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição"
@@ -3790,7 +3790,7 @@ and PA.STATUS = 'Ativo'</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição 1]"
       DTS:CreationName=""
-      DTS:DTSID="{D9FAE8C5-7D33-42E0-93EC-2968698F4193}"
+      DTS:DTSID="{0C1E2D58-4E5B-4981-8FEC-FBB2FB5F4347}"
       DTS:From="Package\Carrega TB_ESTABELECIMENTOS_PARTICIPANTES_API"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição 1"
@@ -3798,7 +3798,7 @@ and PA.STATUS = 'Ativo'</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição 3]"
       DTS:CreationName=""
-      DTS:DTSID="{5C7900EF-02B4-4395-8224-66CA53EE9E20}"
+      DTS:DTSID="{220BBDAC-6680-4CB4-BCF4-61ACC90A505A}"
       DTS:From="Package\Carrega TB_ESTABELECIMENTOS_PARTICIPANTES_STG"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição 3"
@@ -3806,7 +3806,7 @@ and PA.STATUS = 'Ativo'</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição 4]"
       DTS:CreationName=""
-      DTS:DTSID="{182AE753-DD2D-4E61-9D9E-437444542AB1}"
+      DTS:DTSID="{736B23A8-EEAC-4421-8E73-F4FE54AA0004}"
       DTS:From="Package\Trunca TB_ESTABELECIMENTOS_PARTICIPANTES_API E STG"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição 4"
@@ -3814,7 +3814,7 @@ and PA.STATUS = 'Ativo'</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição 5]"
       DTS:CreationName=""
-      DTS:DTSID="{182315EA-B381-49ED-B9C9-2501BB8C7824}"
+      DTS:DTSID="{F7063A56-AE74-4CFB-9A45-6413FFE15E52}"
       DTS:From="Package\Carrega TB_ESTABELECIMENTOS_STG"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição 5"
@@ -3822,7 +3822,7 @@ and PA.STATUS = 'Ativo'</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição 6]"
       DTS:CreationName=""
-      DTS:DTSID="{F7253CDA-17CA-4BA1-B36A-59DF2FF38200}"
+      DTS:DTSID="{AAA75825-D51D-4C8E-A51C-C15617DC593C}"
       DTS:From="Package\Verifica Estabelecimentos_Participantes Existentes"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição 6"
@@ -3830,7 +3830,7 @@ and PA.STATUS = 'Ativo'</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição 7]"
       DTS:CreationName=""
-      DTS:DTSID="{7F592E4A-6F21-476B-A36D-3952D2E990D0}"
+      DTS:DTSID="{A3FC1A4F-43D5-41F5-BA22-747492DB6C39}"
       DTS:From="Package\Contêiner do Loop Foreach 1 1"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição 7"
@@ -3838,7 +3838,7 @@ and PA.STATUS = 'Ativo'</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição 8]"
       DTS:CreationName=""
-      DTS:DTSID="{E48EE471-F923-47A5-ABCF-10DA8B2B8198}"
+      DTS:DTSID="{987E94C9-F4DE-4975-A1B7-317F8C133E40}"
       DTS:From="Package\Trunca ESTABELECIMENTOS E PARTICIPANTES"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição 8"
@@ -3846,19 +3846,19 @@ and PA.STATUS = 'Ativo'</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição 9]"
       DTS:CreationName=""
-      DTS:DTSID="{48503EF9-FCA7-4605-A9FA-0505BC6A2891}"
+      DTS:DTSID="{3B958AC9-8FE8-446B-A847-1A3D6E2FC61B}"
       DTS:From="Package\Executar PROCEDURE"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição 9"
       DTS:To="Package\Trunca ESTABELECIMENTOS E PARTICIPANTES" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
-<!--If you manually edit this section and make a mistake, you can delete it. -->
-<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<!--Esta seção CDATA contém as informações de layout do pacote. A seção inclui informações como coordenadas (x,y), largura e altura.-->
+<!--Se você editar manualmente esta seção e cometer algum erro, poderá excluí-la. -->
+<!--O pacote ainda poderá ser carregado normalmente, mas as informações de layout anteriores serão perdidas e o designer reorganizará automaticamente os elementos na superfície de design.-->
 <Objects
   Version="8">
-  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <!--Cada nó abaixo conterá propriedades que não afetam o comportamento em tempo de execução.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
@@ -3892,6 +3892,80 @@ and PA.STATUS = 'Ativo'</property>
           Id="Package\Contêiner do Loop Foreach 1 1"
           TopLeft="713.272727272727,580.363636363637" />
         <NodeLayout
+          Size="139,42"
+          Id="Package\Contêiner do Loop Foreach 1 1 1 1\Update API"
+          TopLeft="105,91" />
+        <NodeLayout
+          Size="244,42"
+          Id="Package\Contêiner do Loop Foreach 1 1 1 1\Update Inativar Vinculo Vendavall"
+          TopLeft="53,26" />
+        <EdgeLayout
+          Id="Package\Contêiner do Loop Foreach 1 1 1 1.PrecedenceConstraints[Restrição]"
+          TopLeft="174.75,68">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,23"
+              Start="0,0"
+              End="0,15.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="350,188"
+          Size="350,231"
+          Id="Package\Contêiner do Loop Foreach 1 1 1 1"
+          TopLeft="213,718" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Contêiner do Loop Foreach 1 1 1 2 1\Update API"
+          TopLeft="107,104" />
+        <NodeLayout
+          Size="224,42"
+          Id="Package\Contêiner do Loop Foreach 1 1 1 2 1\Update Reativação Vendavall"
+          TopLeft="62,36" />
+        <EdgeLayout
+          Id="Package\Contêiner do Loop Foreach 1 1 1 2 1.PrecedenceConstraints[Restrição]"
+          TopLeft="175.25,78">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26"
+              Start="0,0"
+              End="0,18.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="342,200"
+          Size="342,243"
+          Id="Package\Contêiner do Loop Foreach 1 1 1 2 1"
+          TopLeft="436,1103" />
+        <NodeLayout
           Size="196,42"
           Id="Package\Executar PROCEDURE"
           TopLeft="275,9" />
@@ -3912,9 +3986,151 @@ and PA.STATUS = 'Ativo'</property>
           Id="Package\Verifica Estabelecimentos_Participantes Existentes"
           TopLeft="726,820" />
         <NodeLayout
+          Size="315,42"
+          Id="Package\Verifica Estabelecimentos_Participantes Inativar"
+          TopLeft="230,642" />
+        <NodeLayout
+          Size="333,42"
+          Id="Package\Verifica Estabelecimentos_Participantes Reativação"
+          TopLeft="214,1014" />
+        <NodeLayout
           Size="328,42"
           Id="Package\Verifica novos Estabelecimentos_Participantes API"
           TopLeft="217,552" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="384.25,594">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48"
+              Start="0,0"
+              End="0,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="387.75,684">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="662.666666666667,1103">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="227.833333333333,-241"
+              Start="0,0"
+              End="227.833333333333,-233.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-93.0733410942957" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-93.0733410942957"
+                    Point2="0,-97.0733410942957"
+                    Point3="4,-97.0733410942957" />
+                  <mssgle:LineSegment
+                    End="223.833333333333,-97.0733410942957" />
+                  <mssgle:CubicBezierSegment
+                    Point1="223.833333333333,-97.0733410942957"
+                    Point2="227.833333333333,-97.0733410942957"
+                    Point3="227.833333333333,-101.073341094296" />
+                  <mssgle:LineSegment
+                    End="227.833333333333,-233.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="384.25,949">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,65"
+              Start="0,0"
+              End="0,57.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="380.5,1056">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="170.833333333333,47"
+              Start="0,0"
+              End="170.833333333333,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.0686845168801" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.0686845168801"
+                    Point2="0,28.0686845168801"
+                    Point3="4,28.0686845168801" />
+                  <mssgle:LineSegment
+                    End="166.833333333333,28.0686845168801" />
+                  <mssgle:CubicBezierSegment
+                    Point1="166.833333333333,28.0686845168801"
+                    Point2="170.833333333333,28.0686845168801"
+                    Point3="170.833333333333,32.0686845168801" />
+                  <mssgle:LineSegment
+                    End="170.833333333333,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restrição]"
           TopLeft="381.5,259.727272727273">
@@ -4120,222 +4336,6 @@ and PA.STATUS = 'Ativo'</property>
           Size="160,40"
           Id="22eede81-936f-4567-8923-44170bf7a83b"
           TopLeft="533,15" />
-        <NodeLayout
-          Size="139,42"
-          Id="Package\Contêiner do Loop Foreach 1 1 1 1\Update API"
-          TopLeft="105,91" />
-        <NodeLayout
-          Size="244,42"
-          Id="Package\Contêiner do Loop Foreach 1 1 1 1\Update Inativar Vinculo Vendavall"
-          TopLeft="53,26" />
-        <EdgeLayout
-          Id="Package\Contêiner do Loop Foreach 1 1 1 1.PrecedenceConstraints[Restrição]"
-          TopLeft="174.75,68">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,23"
-              Start="0,0"
-              End="0,15.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="350,188"
-          Size="350,231"
-          Id="Package\Contêiner do Loop Foreach 1 1 1 1"
-          TopLeft="213,718" />
-        <NodeLayout
-          Size="315,42"
-          Id="Package\Verifica Estabelecimentos_Participantes Inativar"
-          TopLeft="230,642" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="384.25,594">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,48"
-              Start="0,0"
-              End="0,40.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,40.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="387.75,684">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,34"
-              Start="0,0"
-              End="0,26.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="333,42"
-          Id="Package\Verifica Estabelecimentos_Participantes Reativação"
-          TopLeft="214,1014" />
-        <NodeLayout
-          Size="139,42"
-          Id="Package\Contêiner do Loop Foreach 1 1 1 2 1\Update API"
-          TopLeft="107,104" />
-        <NodeLayout
-          Size="224,42"
-          Id="Package\Contêiner do Loop Foreach 1 1 1 2 1\Update Reativação Vendavall"
-          TopLeft="62,36" />
-        <EdgeLayout
-          Id="Package\Contêiner do Loop Foreach 1 1 1 2 1.PrecedenceConstraints[Restrição]"
-          TopLeft="175.25,78">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,26"
-              Start="0,0"
-              End="0,18.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="342,200"
-          Size="342,243"
-          Id="Package\Contêiner do Loop Foreach 1 1 1 2 1"
-          TopLeft="436,1103" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="384.25,949">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,65"
-              Start="0,0"
-              End="0,57.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,57.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="380.5,1056">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="170.833333333333,47"
-              Start="0,0"
-              End="170.833333333333,39.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.0686845168801" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.0686845168801"
-                    Point2="0,28.0686845168801"
-                    Point3="4,28.0686845168801" />
-                  <mssgle:LineSegment
-                    End="166.833333333333,28.0686845168801" />
-                  <mssgle:CubicBezierSegment
-                    Point1="166.833333333333,28.0686845168801"
-                    Point2="170.833333333333,28.0686845168801"
-                    Point3="170.833333333333,32.0686845168801" />
-                  <mssgle:LineSegment
-                    End="170.833333333333,39.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="662.666666666667,1103">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="227.833333333333,-241"
-              Start="0,0"
-              End="227.833333333333,-233.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-93.0733410942957" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-93.0733410942957"
-                    Point2="0,-97.0733410942957"
-                    Point3="4,-97.0733410942957" />
-                  <mssgle:LineSegment
-                    End="223.833333333333,-97.0733410942957" />
-                  <mssgle:CubicBezierSegment
-                    Point1="223.833333333333,-97.0733410942957"
-                    Point2="227.833333333333,-97.0733410942957"
-                    Point3="227.833333333333,-101.073341094296" />
-                  <mssgle:LineSegment
-                    End="227.833333333333,-233.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -4760,86 +4760,6 @@ and PA.STATUS = 'Ativo'</property>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Verifica novos Estabelecimentos_Participantes API">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="183,42"
-          Id="Package\Verifica novos Estabelecimentos_Participantes API\Destino do ADO NET"
-          TopLeft="247,219" />
-        <NodeLayout
-          Size="158,42"
-          Id="Package\Verifica novos Estabelecimentos_Participantes API\Origem OLE DB"
-          TopLeft="260,36" />
-        <NodeLayout
-          Size="161,42"
-          Id="Package\Verifica novos Estabelecimentos_Participantes API\Coluna Derivada"
-          TopLeft="259,124" />
-        <EdgeLayout
-          Id="Package\Verifica novos Estabelecimentos_Participantes API.Paths[Saída de Origem OLE DB]"
-          TopLeft="339.25,78">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,46"
-              Start="0,0"
-              End="0,38.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Verifica novos Estabelecimentos_Participantes API.Paths[Saída de Coluna Derivada]"
-          TopLeft="339,166">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,53"
-              Start="0,0"
-              End="0,45.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,45.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Verifica novos Estabelecimentos_Participantes API\Destino do ADO NET">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Verifica novos Estabelecimentos_Participantes API\Origem OLE DB">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
     design-time-name="Package\Verifica Estabelecimentos_Participantes Inativar">
     <LayoutInfo>
       <GraphLayout
@@ -4925,6 +4845,86 @@ and PA.STATUS = 'Ativo'</property>
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Verifica Estabelecimentos_Participantes Reativação\Origem OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Verifica novos Estabelecimentos_Participantes API">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Verifica novos Estabelecimentos_Participantes API\Destino do ADO NET"
+          TopLeft="247,219" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Verifica novos Estabelecimentos_Participantes API\Origem OLE DB"
+          TopLeft="260,36" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Verifica novos Estabelecimentos_Participantes API\Coluna Derivada"
+          TopLeft="259,124" />
+        <EdgeLayout
+          Id="Package\Verifica novos Estabelecimentos_Participantes API.Paths[Saída de Origem OLE DB]"
+          TopLeft="339.25,78">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46"
+              Start="0,0"
+              End="0,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Verifica novos Estabelecimentos_Participantes API.Paths[Saída de Coluna Derivada]"
+          TopLeft="339,166">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53"
+              Start="0,0"
+              End="0,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Verifica novos Estabelecimentos_Participantes API\Destino do ADO NET">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Verifica novos Estabelecimentos_Participantes API\Origem OLE DB">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

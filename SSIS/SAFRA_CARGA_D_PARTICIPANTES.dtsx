@@ -1,38 +1,38 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="5/24/2024 2:10:43 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="MKPDTC-DBSTG"
   DTS:CreatorName="MKPDTC\dbm_staging"
-  DTS:DTSID="{B93D3977-9F07-41B4-B73F-267359CB7DF7}"
+  DTS:DTSID="{9AF32FFE-10C1-4F98-85B2-9DF9E8257562}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="SAFRA_CARGA_D_PARTICIPANTES"
   DTS:PackageType="5"
-  DTS:VersionBuild="55"
-  DTS:VersionGUID="{288F04BB-B51D-40BE-ADDB-CF30F22CB158}">
+  DTS:VersionBuild="56"
+  DTS:VersionGUID="{9A25CB6A-BF9D-4825-8F7A-7BC16C22970A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[DB_SAFRA]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{0CD4C6B3-0338-4191-8BDB-28A96C9E270C}"
+      DTS:DTSID="{EBE5F742-6502-4521-B1C3-3F95E72EADEA}"
       DTS:ObjectName="DB_SAFRA">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=MKPDTC-DBSTG\STAGING;Initial Catalog=DB_SAFRA;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SAFRA_CARGA_D_PARTICIPANTES-{0CD4C6B3-0338-4191-8BDB-28A96C9E270C}10.10.20.103.DB_SAFRA;" />
+          DTS:ConnectionString="Data Source=MKPDTC-DBSTG\STAGING;Initial Catalog=DB_SAFRA;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SAFRA_CARGA_D_PARTICIPANTES-{EBE5F742-6502-4521-B1C3-3F95E72EADEA}10.10.20.103.DB_SAFRA;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{AD36DBDA-87B6-4591-A327-32182637A3D2}"
+      DTS:DTSID="{AD7E36E1-BB13-43E4-8CD7-61314036E3A0}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="ID_ITEM">
@@ -45,7 +45,7 @@
       DTS:refId="Package\Carga D_PARTICIPANTES"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{8CC0CB12-1789-4358-AAD8-2ED43FB96CBC}"
+      DTS:DTSID="{C89EA8C3-848F-440D-9261-77A13E2D0987}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Carga D_PARTICIPANTES"
@@ -560,7 +560,7 @@ WHERE
       DTS:refId="Package\Carrega TEMP"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{E3A7664D-22F3-487E-B318-3C466C1FB10E}"
+      DTS:DTSID="{9BB65EE7-81B2-4C99-9B79-D86117D0C899}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Carrega TEMP"
@@ -1057,7 +1057,7 @@ FROM
       DTS:refId="Package\Correção datas Pre cadastro"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{CD6756B8-F8BD-42D9-8A1D-17DE0E99FD7F}"
+      DTS:DTSID="{9104E1A8-0BF5-464D-9004-EF7FD17A61D7}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Correção datas Pre cadastro"
@@ -1066,7 +1066,7 @@ FROM
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{0CD4C6B3-0338-4191-8BDB-28A96C9E270C}"
+          SQLTask:Connection="{EBE5F742-6502-4521-B1C3-3F95E72EADEA}"
           SQLTask:SqlStatementSource="WITH TEMP AS (&#xA;SELECT&#xA;&#x9;*&#xA;FROM&#xA;&#x9;(&#xA;SELECT&#xA;&#x9;ID_PARTICIPANTE&#xA;&#x9;,ROW_NUMBER() OVER(PARTITION BY ID_PARTICIPANTE, ID_CARGO, DAT_INI_VIGENCIA, ID_PROGRAMA ORDER BY DATA_CRIACAO_PARTICIPANTE) AS VLD&#xA;FROM&#xA;&#x9;DB_TCLSEMP.DBO.D_PARTICIPANTES&#x9;(NOLOCK)&#xA;) A&#xA;WHERE&#xA;&#x9;VLD &gt; 1&#xA;)&#xA;&#xA;--SELECT *&#xA;&#x9;UPDATE A SET DAT_INI_VIGENCIA = NULL, DAT_FIM_VIGENCIA = NULL&#xA;FROM&#xA;&#x9;DB_TCLSEMP.DBO.D_PARTICIPANTES&#x9;A&#xA;&#x9;INNER JOIN TEMP B&#xA;&#x9;&#x9;ON A.ID_PARTICIPANTE = B.ID_PARTICIPANTE&#xA;WHERE&#xA;&#x9;status = 'Pre-cadastro'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -1074,7 +1074,7 @@ FROM
       DTS:refId="Package\Registra item"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{E688EFB4-985D-4409-8F52-3388699F49B8}"
+      DTS:DTSID="{CB9E164C-B8FB-4398-B729-13FD3D0030CB}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Registra item"
@@ -1083,7 +1083,7 @@ FROM
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{0CD4C6B3-0338-4191-8BDB-28A96C9E270C}"
+          SQLTask:Connection="{EBE5F742-6502-4521-B1C3-3F95E72EADEA}"
           SQLTask:SqlStatementSource="EXEC DB_MARKUP. [MKP].[SP_REGISTRA_LOG_ITEM] ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
@@ -1098,7 +1098,7 @@ FROM
       DTS:refId="Package\Trunca TEMP"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{8EFA205E-83A8-4A2D-98B2-FC046E9FA783}"
+      DTS:DTSID="{FFAD10FB-7578-4E65-B3D2-0FD15AFD14D4}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Trunca TEMP"
@@ -1107,7 +1107,7 @@ FROM
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{0CD4C6B3-0338-4191-8BDB-28A96C9E270C}"
+          SQLTask:Connection="{EBE5F742-6502-4521-B1C3-3F95E72EADEA}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE DBO.D_PARTICIPANTES_TEMP" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -1115,7 +1115,7 @@ FROM
       DTS:refId="Package\Update DAT_FIM Pre Cadastro"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{0E044159-1642-4AF3-9424-2A92B513B2A2}"
+      DTS:DTSID="{1E0849AC-334F-4463-8510-795B0C269ABC}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update DAT_FIM Pre Cadastro"
@@ -1124,7 +1124,7 @@ FROM
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{0CD4C6B3-0338-4191-8BDB-28A96C9E270C}"
+          SQLTask:Connection="{EBE5F742-6502-4521-B1C3-3F95E72EADEA}"
           SQLTask:SqlStatementSource="WITH DADOS_UPDATE AS(&#xA;SELECT&#xA;&#x9;PA.ID_PARTICIPANTE&#xA;&#x9;,MIN(DAT_INI_VIGENCIA)&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS DATA_FIM&#xA;FROM&#xA;&#x9;DBO.D_PARTICIPANTES&#x9;&#x9;&#x9;AS PA (NOLOCK)&#xA;WHERE&#xA;&#x9;STATUS = 'Ativo'&#xA;GROUP BY&#xA;&#x9;PA.ID_PARTICIPANTE&#xA;)&#xA;&#xA;&#xA;&#x9;UPDATE P SET DAT_FIM_VIGENCIA = DATEADD(DAY,-1,DATA_FIM)&#xA;FROM&#xA;&#x9;DBO.D_PARTICIPANTES&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;P&#xA;&#x9;INNER JOIN DADOS_UPDATE&#x9;&#x9;&#x9;&#x9;&#x9;DP&#xA;&#x9;&#x9;ON P.ID_PARTICIPANTE = DP.ID_PARTICIPANTE&#xA;WHERE&#xA;&#x9;P.DAT_FIM_VIGENCIA IS NULL&#xA;&#x9;AND STATUS = 'Pre-Cadastro'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -1132,7 +1132,7 @@ FROM
       DTS:refId="Package\Update DAT_FIM_VIGENCIA"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{3154EE4F-384B-4EE0-83C1-864F300E2270}"
+      DTS:DTSID="{DAEA4BF0-816E-4F6B-8216-BF7431EB4753}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update DAT_FIM_VIGENCIA"
@@ -1141,7 +1141,7 @@ FROM
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{0CD4C6B3-0338-4191-8BDB-28A96C9E270C}"
+          SQLTask:Connection="{EBE5F742-6502-4521-B1C3-3F95E72EADEA}"
           SQLTask:SqlStatementSource="WITH VLD_UNICO AS(&#xA;SELECT&#xA;&#x9;ID&#xA;&#x9;,ID_PARTICIPANTE&#xA;FROM&#xA;&#x9;(&#xA;SELECT&#xA;&#x9;A.*&#xA;&#x9;,ROW_NUMBER() OVER(PARTITION BY ID_PARTICIPANTE, ID_PROGRAMA ORDER BY ID DESC) AS VLD&#xA;FROM&#xA;&#x9;dbo.D_PARTICIPANTES A (NOLOCK)&#xA;WHERE&#xA;&#x9;DATA_ACEITE_REGULAMENTO IS NOT NULL&#xA;) B&#xA;WHERE&#xA;&#x9;DAT_FIM_VIGENCIA IS NULL&#xA;&#x9;AND VLD &gt; 1&#xA;),&#xA;&#xA;DADOS_UPDATE AS(&#xA;SELECT&#xA;&#x9;PA.ID_PARTICIPANTE&#xA;&#x9;,MIN(PA.ID)&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS ID&#xA;&#x9;,MAX(DAT_INI_VIGENCIA)&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS DATA_FIM&#xA;FROM&#xA;&#x9;DBO.D_PARTICIPANTES&#x9;&#x9;&#x9;AS PA (NOLOCK)&#xA;&#x9;INNER JOIN VLD_UNICO&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS VU &#xA;&#x9;&#x9;ON PA.ID_PARTICIPANTE = VU.ID_PARTICIPANTE&#xA;WHERE&#xA;&#x9;DAT_FIM_VIGENCIA IS NULL&#xA;GROUP BY&#xA;&#x9;PA.ID_PARTICIPANTE&#xA;)&#xA;&#xA;--SELECT *&#xA;&#x9;UPDATE P SET DAT_FIM_VIGENCIA = DATEADD(DAY,-1,DATA_FIM)&#xA;FROM&#xA;&#x9;DBO.D_PARTICIPANTES&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;P&#xA;&#x9;INNER JOIN DADOS_UPDATE&#x9;&#x9;&#x9;&#x9;&#x9;DP&#xA;&#x9;&#x9;ON P.ID = DP.ID&#xA;WHERE&#xA;&#x9;P.DAT_FIM_VIGENCIA IS NULL" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -1149,7 +1149,7 @@ FROM
       DTS:refId="Package\Update DAT_INI registro unico"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{6CF7ED7B-AE1B-4B86-B4FA-7F85FD3B5DE1}"
+      DTS:DTSID="{C11EAB20-E881-423A-A70E-02E6E5A5A28D}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update DAT_INI registro unico"
@@ -1158,7 +1158,7 @@ FROM
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{0CD4C6B3-0338-4191-8BDB-28A96C9E270C}"
+          SQLTask:Connection="{EBE5F742-6502-4521-B1C3-3F95E72EADEA}"
           SQLTask:SqlStatementSource="WITH VLD_UNICO AS(&#xA;SELECT&#xA;&#x9;*&#xA;FROM&#xA;&#x9;(&#xA;SELECT&#xA;&#x9;ID_PARTICIPANTE&#xA;&#x9;,ID_CARGO&#xA;&#x9;,DAT_INI_VIGENCIA&#xA;&#x9;,ROW_NUMBER() OVER(PARTITION BY ID_PARTICIPANTE, ID_PROGRAMA ORDER BY DATA_ATUALIZACAO_PARTICIPANTE) AS VLD&#xA;FROM&#xA;&#x9;DBO.D_PARTICIPANTES A (NOLOCK)&#xA;) A&#xA;WHERE&#xA;&#x9;VLD = 1&#xA;&#x9;AND DAT_INI_VIGENCIA IS NULL&#xA;)&#xA;&#xA;--SELECT *&#xA;&#x9;UPDATE A SET DAT_INI_VIGENCIA = IIF(STATUS = 'Pre-cadastro', DATEADD(DAY,1,EOMONTH(DATA_CRIACAO_PARTICIPANTE,-1)),DATEADD(DAY,1,EOMONTH(DATA_ACEITE_REGULAMENTO,-1)))&#xA;FROM&#xA;&#x9;DBO.D_PARTICIPANTES&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS A (NOLOCK)&#xA;&#x9;INNER JOIN VLD_UNICO&#x9;&#x9;&#x9;&#x9;&#x9;AS V&#xA;&#x9;&#x9;ON A.ID_PARTICIPANTE = V.ID_PARTICIPANTE&#xA;&#x9;&#x9;AND V.VLD = 1&#xA;WHERE&#xA;&#x9;A.DAT_INI_VIGENCIA IS NULL&#xA;&#x9;AND STATUS &lt;&gt; 'Inativo'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -1166,7 +1166,7 @@ FROM
       DTS:refId="Package\Update DAT_INI_VIGENCIA novo cargo"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{CC194684-5D86-42EA-9880-2C1B9EE18C3C}"
+      DTS:DTSID="{E9ADB6C1-B8F8-4EDB-8ECC-6003CF3A09BF}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update DAT_INI_VIGENCIA novo cargo"
@@ -1175,7 +1175,7 @@ FROM
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{0CD4C6B3-0338-4191-8BDB-28A96C9E270C}"
+          SQLTask:Connection="{EBE5F742-6502-4521-B1C3-3F95E72EADEA}"
           SQLTask:SqlStatementSource="&#xA;WITH VLD_UNICO AS(&#xA;SELECT&#xA;&#x9;ID_PARTICIPANTE&#xA;&#x9;,ROW_NUMBER() OVER(PARTITION BY ID_PARTICIPANTE, ID_PROGRAMA ORDER BY DATA_ATUALIZACAO_PARTICIPANTE) AS VLD&#xA;FROM&#xA;&#x9;dbo.D_PARTICIPANTES A (NOLOCK)&#xA;)&#xA;&#xA;--SELECT *&#xA;UPDATE A SET DAT_INI_VIGENCIA = DATEADD(DAY,1,EOMONTH(DATA_ATUALIZACAO_PARTICIPANTE,-1))&#xA;FROM&#xA;&#x9;DBO.D_PARTICIPANTES&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS A&#xA;&#x9;INNER JOIN VLD_UNICO&#x9;&#x9;&#x9;&#x9;&#x9;AS VU&#xA;&#x9;&#x9;ON A.ID_PARTICIPANTE = VU.ID_PARTICIPANTE&#xA;&#x9;&#x9;AND VU.VLD &gt; 1&#xA;WHERE&#xA;&#x9;A.DAT_INI_VIGENCIA IS NULL&#xA;&#x9;AND DATA_ACEITE_REGULAMENTO IS NOT NULL" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -1184,7 +1184,7 @@ FROM
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{17A2A817-22F1-410E-90D1-445CEA9E33C4}"
+      DTS:DTSID="{35C1E251-8F4B-4548-AB49-1C78695ACA82}"
       DTS:From="Package\Carga D_PARTICIPANTES"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -1192,7 +1192,7 @@ FROM
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{7F6A939F-2A68-40F6-A956-7440586485B5}"
+      DTS:DTSID="{B0B87338-BE76-4F89-BC2F-3A71076AA51C}"
       DTS:From="Package\Update DAT_INI registro unico"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -1200,7 +1200,7 @@ FROM
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{6EB93480-57D3-45B0-99EB-C5AE3CAFB406}"
+      DTS:DTSID="{C1680458-9A30-4BF3-95C3-63A44701E3FE}"
       DTS:From="Package\Update DAT_INI_VIGENCIA novo cargo"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
@@ -1208,7 +1208,7 @@ FROM
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{C393D698-CE6E-4BE2-A77A-663901A8E0A7}"
+      DTS:DTSID="{0A253FC2-4B8F-420B-B1E4-17F6E0E19087}"
       DTS:From="Package\Trunca TEMP"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
@@ -1216,7 +1216,7 @@ FROM
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{8444050D-F937-455E-94E5-865644313994}"
+      DTS:DTSID="{EC290B89-3EB7-45FB-98BA-5BBCDC086A7F}"
       DTS:From="Package\Carrega TEMP"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
@@ -1224,7 +1224,7 @@ FROM
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
       DTS:CreationName=""
-      DTS:DTSID="{C8E123F9-93A3-4FA3-84E6-01FF0C479CC3}"
+      DTS:DTSID="{2DB4A83F-C509-4EB9-8B1D-BF1CC719D1D2}"
       DTS:From="Package\Update DAT_FIM_VIGENCIA"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 5"
@@ -1232,7 +1232,7 @@ FROM
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
       DTS:CreationName=""
-      DTS:DTSID="{B40D6C46-7D19-4A4C-AAA0-1EC5847C18E3}"
+      DTS:DTSID="{0D0B206E-DAEE-4AEF-9522-EA3CB6345E3A}"
       DTS:From="Package\Update DAT_FIM Pre Cadastro"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 6"
@@ -1240,19 +1240,19 @@ FROM
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição]"
       DTS:CreationName=""
-      DTS:DTSID="{9F6076D5-4D27-494E-9100-853B5D277FAA}"
+      DTS:DTSID="{8C7D339B-5F51-4792-BA3F-4EDBE2D16B18}"
       DTS:From="Package\Correção datas Pre cadastro"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição"
       DTS:To="Package\Registra item" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
-<!--If you manually edit this section and make a mistake, you can delete it. -->
-<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<!--Esta seção CDATA contém as informações de layout do pacote. A seção inclui informações como coordenadas (x,y), largura e altura.-->
+<!--Se você editar manualmente esta seção e cometer algum erro, poderá excluí-la. -->
+<!--O pacote ainda poderá ser carregado normalmente, mas as informações de layout anteriores serão perdidas e o designer reorganizará automaticamente os elementos na superfície de design.-->
 <Objects
   Version="8">
-  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <!--Cada nó abaixo conterá propriedades que não afetam o comportamento em tempo de execução.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
