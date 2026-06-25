@@ -1,0 +1,1012 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/9/2024 4:31:34 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MKPDTC-DBSTG"
+  DTS:CreatorName="MKPDTC\dbm_staging"
+  DTS:DTSID="{ACA67E25-37D0-49B9-A4A4-AF5DC43B1C12}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SAFRA_CARGA_DETALHAMENTO_RESGATES"
+  DTS:PackageType="5"
+  DTS:VersionBuild="183"
+  DTS:VersionGUID="{EB930C61-F5D1-4EA0-8944-DC5DD8B3CF4C}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DB_SAFRA]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E4C0F486-085E-4B94-B8B5-E54B95B93ABF}"
+      DTS:ObjectName="DB_SAFRA">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=10.15.4.227;User ID=markup.dbranches;Initial Catalog=DB_SAFRA;Provider=SQLOLEDB.1;Auto Translate=False;Application Name=SSIS-SAFRA_CARGA_FATOS_DW-{E4C0F486-085E-4B94-B8B5-E54B95B93ABF}10.10.20.103.DB_SAFRA;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAMYZHfVQCnkCa/Xnwd7GF3QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAKwRh408yBFLAUz47Ncr9PI4R9QTMv54NMsPq5J69fgwAAAAAOgAAAAAIAACAAAAAFpPQeDq3yacevk3l8MdvWoaUloY5cl8x12KHp13FilyAAAADoO77VX6OX5OtEL7/hxttIKDpHl3hGsrBxQGnjoBXbhkAAAABSqNvBc48eqwwddME16xr4OzFmGE1JqJYPRPtaTar/wE5X4CfiaApacETXT3zZA/i5CYjNoe/RGUNG6HlYh6aa</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SAFRA_DW]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9DE93A45-C6CB-4B02-AE74-6CB6BA9E4DF8}"
+      DTS:ObjectName="SAFRA_DW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=10.15.4.77;User ID=bi_service;Initial Catalog=SAFRA_DW;Provider=SQLOLEDB.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-SAFRA_CARGA_FATOS_DW-{9DE93A45-C6CB-4B02-AE74-6CB6BA9E4DF8}10.10.10.103,1435.SAFRA_DW.dbm_staging;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[vendavall40 - HLG]"
+      DTS:CreationName="ADO.NET:System.Data.Odbc.OdbcConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{234D0026-576D-4BE4-B866-E4DADB5C0E96}"
+      DTS:ObjectName="vendavall40 - HLG">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Dsn=vendavall40 - HLG;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2044D53B-C9E9-4081-B2CD-9F1E5E55B937}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;'&quot; + (DT_WSTR, 20)(DT_DBDATE) DATEADD(&quot;day&quot;, -1, GETDATE()) + &quot;'&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DAT_FIM">
+      <DTS:VariableValue
+        DTS:DataType="8">'2026-06-24'</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{725B81EB-33C1-4C84-AAC7-E46D0D818FCD}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;'&quot; + (DT_WSTR, 20) (DT_DBDATE) DATEADD(&quot;day&quot;, @[User::RETROAGIR], (DT_DBDATE) REPLACE( @[User::DAT_FIM] , &quot;'&quot;, &quot;&quot;)) + &quot;'&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DAT_INI">
+      <DTS:VariableValue
+        DTS:DataType="8">'2023-09-28'</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{05E08627-A0A9-413A-8AA2-BA8511DFF2D9}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ID_CAMPANHA">
+      <DTS:VariableValue
+        DTS:DataType="3">375</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B88141DF-7D0E-422A-AF1B-7C77F27E24E3}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ID_ITEM">
+      <DTS:VariableValue
+        DTS:DataType="3">113</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B3094B71-A0F5-4564-851B-B553244D9200}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;DECLARE @DAT_INI VARCHAR(20)&#x9;&#x9;= &quot; + (DT_WSTR, 20) @[User::DAT_INI] +&#xA;&quot;DECLARE @DAT_FIM VARCHAR(20)&#x9;&#x9;= &quot; + (DT_WSTR, 20) @[User::DAT_FIM] + &quot;;&#xA;&#xA;SELECT&#xA;&#x9;PA.ID_PARTICIPANTE&#xA;&#x9;,CAST(CONCAT(HP.ID_VERSAO, '-',PA.ID_PARTICIPANTE) AS NTEXT)&#x9;&#x9;AS CHAVE_PARTICIPANTE&#xA;&#x9;,VISITED_PAGE&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS PAGINA&#xA;&#x9;,CASE &#xA;&#x9;&#x9;WHEN AV.BROWSER LIKE '%iPHONE%' OR AV.BROWSER LIKE '%Android%'&#xA;&#x9;&#x9;THEN 'MOBILE'&#xA;&#x9;&#x9;ELSE 'DESKTOP'&#xA;&#x9;END AS TIPO_ACESSO&#xA;&#x9;,CAST(DATE_TIME AS DATE)&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS DATA_ACESSO&#xA;    ,CONVERT(VARCHAR(8), DATE_TIME, 108)&#x9;&#x9;&#x9;&#x9;AS HORA_ACESSO&#xA;FROM&#xA;&#x9;[DB_VENDAVALL4].[dbo].[TB_ACESSOS_VENDAVALL]&#x9;&#x9;AS AV (NOLOCK)&#xA;&#x9;INNER JOIN [dbo].[TB_PARTICIPANTES]&#x9;AS TP (NOLOCK)&#xA;&#x9;&#x9;ON AV.USER_ID = TP.ID_USUARIO&#xA;&#x9;INNER JOIN dbo.D_PARTICIPANTES&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS PA (NOLOCK)&#xA;&#x9;&#x9;ON TP.ID = PA.ID_PARTICIPANTE&#xA;&#x9;INNER JOIN dbo.TB_HIERARQUIA_PARTICIPANTES&#x9;&#x9;&#x9;AS HP (NOLOCK)&#xA;&#x9;&#x9;ON TP.ID_PARTICIPANTE = HP.ID_PARTICIPANTE&#xA;&#x9;&#x9;AND CAST(AV.DATE_TIME AS DATE) BETWEEN DATA_INICIO AND ISNULL(DATA_FIM, CAST(GETDATE() AS DATE) )&#xA;WHERE&#xA;&#x9;AV.CLIENTE = 'SAFRA'&#xA;&#x9;AND PA.ID_CARGO &lt;&gt; 1 --Tira o cargo Trade&#xA;&#x9;AND CAST(DATE_TIME AS DATE) BETWEEN @DAT_INI AND @DAT_FIM&#xA;&#x9;&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="RESULT_SETS_ACESSOS">
+      <DTS:VariableValue
+        DTS:DataType="8">DECLARE @DAT_INI VARCHAR(20)		= '2023-09-28'DECLARE @DAT_FIM VARCHAR(20)		= '2026-06-24';
+
+SELECT
+	PA.ID_PARTICIPANTE
+	,CAST(CONCAT(HP.ID_VERSAO, '-',PA.ID_PARTICIPANTE) AS NTEXT)		AS CHAVE_PARTICIPANTE
+	,VISITED_PAGE										AS PAGINA
+	,CASE 
+		WHEN AV.BROWSER LIKE '%iPHONE%' OR AV.BROWSER LIKE '%Android%'
+		THEN 'MOBILE'
+		ELSE 'DESKTOP'
+	END AS TIPO_ACESSO
+	,CAST(DATE_TIME AS DATE)							AS DATA_ACESSO
+    ,CONVERT(VARCHAR(8), DATE_TIME, 108)				AS HORA_ACESSO
+FROM
+	[DB_VENDAVALL4].[dbo].[TB_ACESSOS_VENDAVALL]		AS AV (NOLOCK)
+	INNER JOIN [dbo].[TB_PARTICIPANTES]	AS TP (NOLOCK)
+		ON AV.USER_ID = TP.ID_USUARIO
+	INNER JOIN dbo.D_PARTICIPANTES						AS PA (NOLOCK)
+		ON TP.ID = PA.ID_PARTICIPANTE
+	INNER JOIN dbo.TB_HIERARQUIA_PARTICIPANTES			AS HP (NOLOCK)
+		ON TP.ID_PARTICIPANTE = HP.ID_PARTICIPANTE
+		AND CAST(AV.DATE_TIME AS DATE) BETWEEN DATA_INICIO AND ISNULL(DATA_FIM, CAST(GETDATE() AS DATE) )
+WHERE
+	AV.CLIENTE = 'SAFRA'
+	AND PA.ID_CARGO &lt;&gt; 1 --Tira o cargo Trade
+	AND CAST(DATE_TIME AS DATE) BETWEEN @DAT_INI AND @DAT_FIM
+	</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{34471F2D-BB53-4784-9866-A239BDE7D105}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;DECLARE @ID_CAMPANHA INT&#x9;= &quot; + (DT_WSTR, 12) @[User::ID_CAMPANHA] +&#xA;&quot;DECLARE @DAT_INI VARCHAR(20)&#x9;&#x9;= &quot; + (DT_WSTR, 20) @[User::DAT_INI] +&#xA;&quot;DECLARE @DAT_FIM VARCHAR(20)&#x9;&#x9;= (SELECT MAX(DATA_EXPIRACAO) FROM [DB_PREMIOIDEAL].[DBO].[TB_PONTOS] (NOLOCK)&#xA;WHERE ID_CAMPANHA = @ID_CAMPANHA);&#xA;&#xA;WITH CREDITOS AS(&#xA;SELECT&#xA;&#x9;CAST(PC.DATA_CREDITO AS DATE)&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS DATA&#xA;&#x9;,DP.ID&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS ID_PARTICIPANTE&#xA;&#x9;,CAST(CONCAT(HP.ID_VERSAO, '-',DP.ID) AS NVARCHAR(MAX))&#x9;&#x9;AS CHAVE_PARTICIPANTE&#xA;&#x9;,TIPO_CREDITO&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS CATEGORIA&#xA;&#x9;,SUM(PONTOS_CREDITADOS)&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS CREDITOS&#xA;&#x9;,SUM(REAIS_CREDITADOS)&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS CREDITOS_REAIS&#xA;&#x9;,SUM(SALDO_PONTOS)&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS SALDO&#xA;&#x9;,SUM(SALDO_REAIS)&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS SALDO_REAIS&#xA;FROM&#xA;&#x9;[DB_PREMIOIDEAL].[DBO].[TB_PONTOS]&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS PC (NOLOCK)&#xA;&#x9;LEFT JOIN [DB_PREMIOIDEAL].[DBO].[TB_PARTICIPANTES]&#x9;&#x9;&#x9;AS PA (NOLOCK)&#xA;&#x9;&#x9;ON PC.ID_PARTICIPANTE = PA.ID_PARTICIPANTE&#xA;&#x9;LEFT JOIN DB_SAFRA.DBO.TB_PARTICIPANTES&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS DP (NOLOCK)&#xA;&#x9;&#x9;ON PA.CPF = DP.CPF&#xA;&#x9;INNER JOIN DB_SAFRA.dbo.TB_HIERARQUIA_PARTICIPANTES&#x9;&#x9;&#x9;AS HP (NOLOCK)&#xA;&#x9;&#x9;ON DP.ID_PARTICIPANTE = HP.ID_PARTICIPANTE&#xA;&#x9;&#x9;AND CAST(PC.DATA_CREDITO AS DATE) BETWEEN DATA_INICIO &#xA;&#x9;&#x9;AND ISNULL(DATA_FIM, CAST(GETDATE() AS DATE))&#xA;WHERE&#xA;&#x9;PC.ID_CAMPANHA = @ID_CAMPANHA&#xA;&#x9;--AND CAST(PC.DATA_CREDITO AS DATE) BETWEEN @DAT_INI AND @DAT_FIM&#xA;GROUP BY&#xA;&#x9;CAST(PC.DATA_CREDITO AS DATE)&#xA;&#x9;,DP.ID&#x9;&#xA;&#x9;,TIPO_CREDITO&#xA;&#x9;,HP.ID_VERSAO&#xA;),&#xA;&#xA;&#xA;VENCIMENTOS AS(&#xA;SELECT&#xA;&#x9;CAST(PC.DATA_EXPIRACAO AS DATE)&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS DATA&#xA;&#x9;,DP.ID&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS ID_PARTICIPANTE&#xA;&#x9;,CAST(CONCAT(HP.ID_VERSAO, '-',DP.ID) AS NVARCHAR(MAX))&#x9;&#x9;AS CHAVE_PARTICIPANTE&#xA;&#x9;,TIPO_CREDITO&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS CATEGORIA&#xA;&#x9;,NULL&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS CREDITOS&#xA;&#x9;,NULL&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS CREDITOS_REAIS&#xA;&#x9;,SUM(SALDO_PONTOS)&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS VENCIMENTOS&#xA;&#x9;,SUM(SALDO_REAIS)&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS VENCIMENTOS_REAIS&#xA;FROM&#xA;&#x9;[DB_PREMIOIDEAL].[DBO].[TB_PONTOS]&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS PC (NOLOCK)&#xA;&#x9;LEFT JOIN [DB_PREMIOIDEAL].[DBO].[TB_PARTICIPANTES]&#x9;&#x9;&#x9;AS PA (NOLOCK)&#xA;&#x9;&#x9;ON PC.ID_PARTICIPANTE = PA.ID_PARTICIPANTE&#xA;&#x9;LEFT JOIN DB_SAFRA.DBO.TB_PARTICIPANTES&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS DP (NOLOCK)&#xA;&#x9;&#x9;ON PA.CPF = DP.CPF&#xA;&#x9;INNER JOIN DB_SAFRA.dbo.TB_HIERARQUIA_PARTICIPANTES&#x9;&#x9;&#x9;AS HP (NOLOCK)&#xA;&#x9;&#x9;ON DP.ID_PARTICIPANTE = HP.ID_PARTICIPANTE&#xA;&#x9;&#x9;AND CAST(PC.DATA_EXPIRACAO AS DATE) BETWEEN DATA_INICIO &#xA;&#x9;&#x9;AND ISNULL(DATA_FIM, @DAT_FIM)&#xA;WHERE&#xA;&#x9;PC.ID_CAMPANHA = @ID_CAMPANHA&#xA;&#x9;--AND CAST(PC.DATA_EXPIRACAO AS DATE) BETWEEN @DAT_INI AND @DAT_FIM&#xA;GROUP BY&#xA;&#x9;CAST(PC.DATA_EXPIRACAO AS DATE)&#xA;&#x9;,DP.ID&#x9;&#xA;&#x9;,TIPO_CREDITO&#xA;&#x9;,HP.ID_VERSAO&#xA;),&#xA;&#xA;PONTOS AS(&#xA;SELECT&#xA;&#x9;*&#xA;&#x9;,'CREDITOS'&#x9;AS TIPO&#xA;FROM&#xA;&#x9;CREDITOS&#xA;&#xA;UNION ALL&#xA;&#xA;SELECT&#xA;&#x9;*&#xA;&#x9;,'VENCIMENTOS'&#x9;AS TIPO&#xA;FROM&#xA;&#x9;VENCIMENTOS&#xA;)&#xA;&#xA;&#xA;SELECT&#xA;&#x9;DD.DAT_DIA&#xA;&#x9;,PT.ID_PARTICIPANTE&#xA;&#x9;,PT.CHAVE_PARTICIPANTE&#xA;&#x9;,CATEGORIA&#xA;&#x9;,SUM(IIF(PT.TIPO = 'CREDITOS', PT.CREDITOS, 0))&#x9;&#x9;&#x9;AS CREDITOS&#xA;&#x9;,SUM(IIF(PT.TIPO = 'CREDITOS', PT.CREDITOS_REAIS, 0))&#x9;AS CREDITOS_REAIS&#xA;&#x9;,SUM(IIF(PT.TIPO = 'CREDITOS', PT.SALDO, 0))&#x9;&#x9;&#x9;AS SALDO&#xA;&#x9;,SUM(IIF(PT.TIPO = 'CREDITOS', PT.SALDO_REAIS, 0))&#x9;&#x9;AS SALDO_REAIS&#xA;&#x9;,SUM(IIF(PT.TIPO = 'VENCIMENTOS', PT.SALDO, 0))&#x9;&#x9;&#x9;AS VENCIMENTOS&#xA;&#x9;,SUM(IIF(PT.TIPO = 'VENCIMENTOS', PT.SALDO_REAIS, 0))&#x9;AS VENCIMENTOS_REAIS&#xA;FROM&#xA;&#x9;DB_MARKUP.MKP.D_DATAS&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS DD (NOLOCK)&#xA;&#x9;INNER JOIN PONTOS&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS PT&#xA;&#x9;&#x9;ON PT.DATA = DD.DAT_DIA&#xA;GROUP BY&#xA;&#x9;DD.DAT_DIA&#xA;&#x9;,PT.ID_PARTICIPANTE&#xA;&#x9;,PT.CHAVE_PARTICIPANTE&#xA;&#x9;,CATEGORIA&#xA;ORDER BY&#xA;&#x9;1&#xA;&#x9;&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="RESULT_SETS_CREDITOS">
+      <DTS:VariableValue
+        DTS:DataType="8">DECLARE @ID_CAMPANHA INT	= 375DECLARE @DAT_INI VARCHAR(20)		= '2023-09-28'DECLARE @DAT_FIM VARCHAR(20)		= (SELECT MAX(DATA_EXPIRACAO) FROM [DB_PREMIOIDEAL].[DBO].[TB_PONTOS] (NOLOCK)
+WHERE ID_CAMPANHA = @ID_CAMPANHA);
+
+WITH CREDITOS AS(
+SELECT
+	CAST(PC.DATA_CREDITO AS DATE)								AS DATA
+	,DP.ID														AS ID_PARTICIPANTE
+	,CAST(CONCAT(HP.ID_VERSAO, '-',DP.ID) AS NVARCHAR(MAX))		AS CHAVE_PARTICIPANTE
+	,TIPO_CREDITO												AS CATEGORIA
+	,SUM(PONTOS_CREDITADOS)										AS CREDITOS
+	,SUM(REAIS_CREDITADOS)										AS CREDITOS_REAIS
+	,SUM(SALDO_PONTOS)											AS SALDO
+	,SUM(SALDO_REAIS)											AS SALDO_REAIS
+FROM
+	[DB_PREMIOIDEAL].[DBO].[TB_PONTOS]							AS PC (NOLOCK)
+	LEFT JOIN [DB_PREMIOIDEAL].[DBO].[TB_PARTICIPANTES]			AS PA (NOLOCK)
+		ON PC.ID_PARTICIPANTE = PA.ID_PARTICIPANTE
+	LEFT JOIN DB_SAFRA.DBO.TB_PARTICIPANTES						AS DP (NOLOCK)
+		ON PA.CPF = DP.CPF
+	INNER JOIN DB_SAFRA.dbo.TB_HIERARQUIA_PARTICIPANTES			AS HP (NOLOCK)
+		ON DP.ID_PARTICIPANTE = HP.ID_PARTICIPANTE
+		AND CAST(PC.DATA_CREDITO AS DATE) BETWEEN DATA_INICIO 
+		AND ISNULL(DATA_FIM, CAST(GETDATE() AS DATE))
+WHERE
+	PC.ID_CAMPANHA = @ID_CAMPANHA
+	--AND CAST(PC.DATA_CREDITO AS DATE) BETWEEN @DAT_INI AND @DAT_FIM
+GROUP BY
+	CAST(PC.DATA_CREDITO AS DATE)
+	,DP.ID	
+	,TIPO_CREDITO
+	,HP.ID_VERSAO
+),
+
+
+VENCIMENTOS AS(
+SELECT
+	CAST(PC.DATA_EXPIRACAO AS DATE)								AS DATA
+	,DP.ID														AS ID_PARTICIPANTE
+	,CAST(CONCAT(HP.ID_VERSAO, '-',DP.ID) AS NVARCHAR(MAX))		AS CHAVE_PARTICIPANTE
+	,TIPO_CREDITO												AS CATEGORIA
+	,NULL														AS CREDITOS
+	,NULL														AS CREDITOS_REAIS
+	,SUM(SALDO_PONTOS)											AS VENCIMENTOS
+	,SUM(SALDO_REAIS)											AS VENCIMENTOS_REAIS
+FROM
+	[DB_PREMIOIDEAL].[DBO].[TB_PONTOS]							AS PC (NOLOCK)
+	LEFT JOIN [DB_PREMIOIDEAL].[DBO].[TB_PARTICIPANTES]			AS PA (NOLOCK)
+		ON PC.ID_PARTICIPANTE = PA.ID_PARTICIPANTE
+	LEFT JOIN DB_SAFRA.DBO.TB_PARTICIPANTES						AS DP (NOLOCK)
+		ON PA.CPF = DP.CPF
+	INNER JOIN DB_SAFRA.dbo.TB_HIERARQUIA_PARTICIPANTES			AS HP (NOLOCK)
+		ON DP.ID_PARTICIPANTE = HP.ID_PARTICIPANTE
+		AND CAST(PC.DATA_EXPIRACAO AS DATE) BETWEEN DATA_INICIO 
+		AND ISNULL(DATA_FIM, @DAT_FIM)
+WHERE
+	PC.ID_CAMPANHA = @ID_CAMPANHA
+	--AND CAST(PC.DATA_EXPIRACAO AS DATE) BETWEEN @DAT_INI AND @DAT_FIM
+GROUP BY
+	CAST(PC.DATA_EXPIRACAO AS DATE)
+	,DP.ID	
+	,TIPO_CREDITO
+	,HP.ID_VERSAO
+),
+
+PONTOS AS(
+SELECT
+	*
+	,'CREDITOS'	AS TIPO
+FROM
+	CREDITOS
+
+UNION ALL
+
+SELECT
+	*
+	,'VENCIMENTOS'	AS TIPO
+FROM
+	VENCIMENTOS
+)
+
+
+SELECT
+	DD.DAT_DIA
+	,PT.ID_PARTICIPANTE
+	,PT.CHAVE_PARTICIPANTE
+	,CATEGORIA
+	,SUM(IIF(PT.TIPO = 'CREDITOS', PT.CREDITOS, 0))			AS CREDITOS
+	,SUM(IIF(PT.TIPO = 'CREDITOS', PT.CREDITOS_REAIS, 0))	AS CREDITOS_REAIS
+	,SUM(IIF(PT.TIPO = 'CREDITOS', PT.SALDO, 0))			AS SALDO
+	,SUM(IIF(PT.TIPO = 'CREDITOS', PT.SALDO_REAIS, 0))		AS SALDO_REAIS
+	,SUM(IIF(PT.TIPO = 'VENCIMENTOS', PT.SALDO, 0))			AS VENCIMENTOS
+	,SUM(IIF(PT.TIPO = 'VENCIMENTOS', PT.SALDO_REAIS, 0))	AS VENCIMENTOS_REAIS
+FROM
+	DB_MARKUP.MKP.D_DATAS									AS DD (NOLOCK)
+	INNER JOIN PONTOS										AS PT
+		ON PT.DATA = DD.DAT_DIA
+GROUP BY
+	DD.DAT_DIA
+	,PT.ID_PARTICIPANTE
+	,PT.CHAVE_PARTICIPANTE
+	,CATEGORIA
+ORDER BY
+	1
+	</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{143E9796-034F-4BA3-BC72-B4F1F7DC13E8}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;DECLARE @ID_CAMPANHA INT&#x9;= &quot; + (DT_WSTR, 12) @[User::ID_CAMPANHA] +&#xA;&quot;DECLARE @DAT_INI VARCHAR(20)&#x9;&#x9;= &quot; + (DT_WSTR, 20) @[User::DAT_INI] +&#xA;&quot;DECLARE @DAT_FIM VARCHAR(20)&#x9;&#x9;= &quot; + (DT_WSTR, 20) @[User::DAT_FIM] + &quot;;&#xA;&#xA;SELECT&#xA;&#x9;NEWID()&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS ID&#xA;&#x9;,CAST('f0c38a79-302d-4cca-b50b-87b16becb8b0' AS UNIQUEIDENTIFIER) AS ID_PARTICIPANTE&#xA;&#x9;,DEPARTAMENTO_PAI&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS TYPE&#xA;&#x9;,DATA_PEDIDO&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS RESCUED_AT&#xA;FROM&#xA;&#x9;[DB_PREMIOIDEAL].[DBO].[TB_RESGATES]&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS PC (NOLOCK)&#xA;&#x9;INNER JOIN [DB_PREMIOIDEAL].[DBO].[TB_PARTICIPANTES]&#x9;&#x9;AS PA (NOLOCK)&#xA;&#x9;&#x9;ON PA.ID_PARTICIPANTE = PC.ID_PARTICIPANTE&#xA;&#x9;INNER JOIN DB_SAFRA.DBO.TB_PARTICIPANTES&#x9;&#x9;&#x9;&#x9;&#x9;AS DP (NOLOCK)&#xA;&#x9;&#x9;ON PA.CPF = DP.CPF&#xA;&#x9;INNER JOIN DB_SAFRA.dbo.TB_HIERARQUIA_PARTICIPANTES&#x9;&#x9;&#x9;&#x9;&#x9;AS HP (NOLOCK)&#xA;&#x9;&#x9;ON DP.ID_PARTICIPANTE = HP.ID_PARTICIPANTE&#xA;&#x9;&#x9;AND CAST(PC.DATA_PEDIDO AS DATE) BETWEEN DATA_INICIO AND ISNULL(DATA_FIM, CAST(GETDATE() AS DATE) )&#xA;WHERE&#xA;&#x9;ID_CAMPANHA = @ID_CAMPANHA&#xA;&#x9;AND CAST(PC.DATA_PEDIDO AS DATE) BETWEEN @DAT_INI AND @DAT_FIM&#xA;&#x9;&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="RESULT_SETS_RESGATES">
+      <DTS:VariableValue
+        DTS:DataType="8">DECLARE @ID_CAMPANHA INT	= 375DECLARE @DAT_INI VARCHAR(20)		= '2023-09-28'DECLARE @DAT_FIM VARCHAR(20)		= '2026-06-24';
+
+SELECT
+	NEWID()									AS ID
+	,CAST('f0c38a79-302d-4cca-b50b-87b16becb8b0' AS UNIQUEIDENTIFIER) AS ID_PARTICIPANTE
+	,DEPARTAMENTO_PAI						AS TYPE
+	,DATA_PEDIDO							AS RESCUED_AT
+FROM
+	[DB_PREMIOIDEAL].[DBO].[TB_RESGATES]						AS PC (NOLOCK)
+	INNER JOIN [DB_PREMIOIDEAL].[DBO].[TB_PARTICIPANTES]		AS PA (NOLOCK)
+		ON PA.ID_PARTICIPANTE = PC.ID_PARTICIPANTE
+	INNER JOIN DB_SAFRA.DBO.TB_PARTICIPANTES					AS DP (NOLOCK)
+		ON PA.CPF = DP.CPF
+	INNER JOIN DB_SAFRA.dbo.TB_HIERARQUIA_PARTICIPANTES					AS HP (NOLOCK)
+		ON DP.ID_PARTICIPANTE = HP.ID_PARTICIPANTE
+		AND CAST(PC.DATA_PEDIDO AS DATE) BETWEEN DATA_INICIO AND ISNULL(DATA_FIM, CAST(GETDATE() AS DATE) )
+WHERE
+	ID_CAMPANHA = @ID_CAMPANHA
+	AND CAST(PC.DATA_PEDIDO AS DATE) BETWEEN @DAT_INI AND @DAT_FIM
+	</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A045F11D-A2BD-4D93-A720-E9F6C5C1EE6F}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;DECLARE @DAT_INI VARCHAR(20)&#x9;&#x9;= &quot; + (DT_WSTR, 20) @[User::DAT_INI] +&#xA;&#xA;&quot;DECLARE @DAT_FIM VARCHAR(20)&#x9;&#x9;= &quot; + (DT_WSTR, 20) @[User::DAT_FIM] + &quot;;&#xA;&#xA;SELECT DP.ID&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS ID_PARTICIPANTE&#xA;&#x9;  ,CAST(CONCAT(HP.ID_VERSAO, '-', DP.ID) AS NTEXT)&#x9;&#x9;&#x9;AS CHAVE_PARTICIPANTE&#xA;&#x9;  ,E.ID&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS ID_ESTABELECIMENTO&#xA;      ,DATA_VENDA&#xA;&#x9;  ,SUM(VALOR_TOTAL)&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS VALOR_TOTAL&#xA;&#x9;  ,SUM(VOP)&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS VOP             -- VALOR FINANCIADO&#xA;      ,SUM(QUANTIDADE)&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS CONTRATOS   -- VOLUME QUANTITATIVO DE CONTRATOS&#xA;&#x9;  ,SUM(CASE &#xA;&#x9;&#x9;WHEN VALOR_TOTAL = 7200 THEN QUANTIDADE &#xA;&#x9;&#x9;ELSE 0 &#xA;&#x9;&#x9;END)&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS CONTRATOS_SEGURADOS -- VOLUME QUANTITATIVO DE CONTRATOS COM SEGURO INCLUSO&#xA;  FROM dbo.TB_VENDAS AS V (NOLOCK)&#xA;&#x9;INNER JOIN DBO.TB_PARTICIPANTES&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS DP (NOLOCK)&#xA;&#x9;&#x9;ON V.CPF COLLATE SQL_LATIN1_GENERAL_CP1_CI_AS = DP.CPF&#xA;&#x9;LEFT JOIN dbo.TB_ESTABELECIMENTOS&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;AS E (NOLOCK)&#xA;&#x9;&#x9;ON E.CNPJ = V.CNPJ&#xA;&#x9;INNER JOIN dbo.TB_HIERARQUIA_PARTICIPANTES&#x9;&#x9;&#x9;&#x9;&#x9;AS HP (NOLOCK)&#xA;&#x9;&#x9;ON DP.ID_PARTICIPANTE = HP.ID_PARTICIPANTE&#xA;&#x9;&#x9;AND CAST(V.DATA_VENDA AS DATE) BETWEEN DATA_INICIO AND ISNULL(DATA_FIM, CAST(GETDATE() AS DATE) )&#xA;&#x9;WHERE CAST(DATA_VENDA AS NVARCHAR(10)) BETWEEN @DAT_INI AND @DAT_FIM&#xA; &#x9;GROUP BY  &#xA;&#x9;&#x9;DP.ID&#xA;&#x9;&#x9;,E.ID&#xA;&#x9;&#x9;,HP.ID_VERSAO&#xA;&#x9;&#x9;,DATA_VENDA&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="RESULT_SETS_VENDAS">
+      <DTS:VariableValue
+        DTS:DataType="8">DECLARE @DAT_INI VARCHAR(20)		= '2023-09-28'DECLARE @DAT_FIM VARCHAR(20)		= '2026-06-24';
+
+SELECT DP.ID													AS ID_PARTICIPANTE
+	  ,CAST(CONCAT(HP.ID_VERSAO, '-', DP.ID) AS NTEXT)			AS CHAVE_PARTICIPANTE
+	  ,E.ID														AS ID_ESTABELECIMENTO
+      ,DATA_VENDA
+	  ,SUM(VALOR_TOTAL)											AS VALOR_TOTAL
+	  ,SUM(VOP)													AS VOP             -- VALOR FINANCIADO
+      ,SUM(QUANTIDADE)											AS CONTRATOS   -- VOLUME QUANTITATIVO DE CONTRATOS
+	  ,SUM(CASE 
+		WHEN VALOR_TOTAL = 7200 THEN QUANTIDADE 
+		ELSE 0 
+		END)													AS CONTRATOS_SEGURADOS -- VOLUME QUANTITATIVO DE CONTRATOS COM SEGURO INCLUSO
+  FROM dbo.TB_VENDAS AS V (NOLOCK)
+	INNER JOIN DBO.TB_PARTICIPANTES										AS DP (NOLOCK)
+		ON V.CPF COLLATE SQL_LATIN1_GENERAL_CP1_CI_AS = DP.CPF
+	LEFT JOIN dbo.TB_ESTABELECIMENTOS							AS E (NOLOCK)
+		ON E.CNPJ = V.CNPJ
+	INNER JOIN dbo.TB_HIERARQUIA_PARTICIPANTES					AS HP (NOLOCK)
+		ON DP.ID_PARTICIPANTE = HP.ID_PARTICIPANTE
+		AND CAST(V.DATA_VENDA AS DATE) BETWEEN DATA_INICIO AND ISNULL(DATA_FIM, CAST(GETDATE() AS DATE) )
+	WHERE CAST(DATA_VENDA AS NVARCHAR(10)) BETWEEN @DAT_INI AND @DAT_FIM
+ 	GROUP BY  
+		DP.ID
+		,E.ID
+		,HP.ID_VERSAO
+		,DATA_VENDA</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D32057ED-EE1D-4F64-AD47-C5F3D54CEEB0}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RETROAGIR">
+      <DTS:VariableValue
+        DTS:DataType="3">-1000</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\CARGA RESGATES"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{CA793B73-9814-4F6C-AAF9-EBA543DDE0D0}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CARGA RESGATES"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\CARGA RESGATES\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\CARGA RESGATES\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\CARGA RESGATES\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\CARGA RESGATES\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CARGA RESGATES\Derived Column.Outputs[Derived Column Output].Columns[DATA_CARGA]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\CARGA RESGATES\Derived Column.Outputs[Derived Column Output].Columns[DATA_CARGA]"
+                      name="DATA_CARGA"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\CARGA RESGATES\Derived Column.Outputs[Derived Column Output].Columns[CREATED_BY]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computação"
+                      errorRowDisposition="FailComponent"
+                      length="36"
+                      lineageId="Package\CARGA RESGATES\Derived Column.Outputs[Derived Column Output].Columns[CREATED_BY]"
+                      name="CREATED_BY"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expressão de Coluna Derivada"
+                          name="Expression">"beb6b98c-f415-4bf7-9436-ad0cb2f451bf"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expressão Amigável de Coluna Derivada"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"beb6b98c-f415-4bf7-9436-ad0cb2f451bf"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\CARGA RESGATES\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\CARGA RESGATES\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CARGA RESGATES\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\CARGA RESGATES\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\CARGA RESGATES\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\CARGA RESGATES\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\CARGA RESGATES\Destino do ADO NET"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Carrega dados em um banco de dados em conformidade com ADO.NET que usa uma tabela ou exibição de banco de dados. Carregue dados em uma tabela nova ou existente. por exemplo, use um provedor ADO.NET para ODBC para carregar dados em um destino ODBC.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;2"
+              description="Carrega dados em um banco de dados em conformidade com ADO.NET que usa uma tabela ou exibição de banco de dados. Carregue dados em uma tabela nova ou existente. por exemplo, use um provedor ADO.NET para ODBC para carregar dados em um destino ODBC."
+              name="Destino do ADO NET"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="O nome da tabela de banco de dados de Destino."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"safra_api_vendavall_20240805110525"."rescues_details"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifique o número de linhas por lote. O padrão é 0, que usa o mesmo tamanho que o buffer interno SSIS. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="O número de segundos antes de o tempo limite de um comando ser alcançado. Um valor de 0 indica um tempo limite infinito. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica se a interface SqlBulkCopy deve ser usada para melhorar o desempenho de operações de inserção em massa. Somente determinados provedores oferecem suporte a essa interface."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\CARGA RESGATES\Destino do ADO NET.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[vendavall40 - HLG]"
+                  connectionManagerRefId="Package.ConnectionManagers[vendavall40 - HLG]"
+                  description="Gerenciador de conexões gerenciadas"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\CARGA RESGATES\Destino do ADO NET.Inputs[Entrada de Destino ADO NET]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de Destino ADO NET">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\CARGA RESGATES\Destino do ADO NET.Inputs[Entrada de Destino ADO NET].Columns[DATA_CARGA]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DATA_CARGA"
+                      externalMetadataColumnId="Package\CARGA RESGATES\Destino do ADO NET.Inputs[Entrada de Destino ADO NET].ExternalColumns[created_at]"
+                      lineageId="Package\CARGA RESGATES\Derived Column.Outputs[Derived Column Output].Columns[DATA_CARGA]" />
+                    <inputColumn
+                      refId="Package\CARGA RESGATES\Destino do ADO NET.Inputs[Entrada de Destino ADO NET].Columns[TYPE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="TYPE"
+                      externalMetadataColumnId="Package\CARGA RESGATES\Destino do ADO NET.Inputs[Entrada de Destino ADO NET].ExternalColumns[type]"
+                      lineageId="Package\CARGA RESGATES\Recupera valores.Outputs[OLE DB Source Output].Columns[TYPE]" />
+                    <inputColumn
+                      refId="Package\CARGA RESGATES\Destino do ADO NET.Inputs[Entrada de Destino ADO NET].Columns[RESCUED_AT]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="RESCUED_AT"
+                      externalMetadataColumnId="Package\CARGA RESGATES\Destino do ADO NET.Inputs[Entrada de Destino ADO NET].ExternalColumns[rescued_at]"
+                      lineageId="Package\CARGA RESGATES\Recupera valores.Outputs[OLE DB Source Output].Columns[RESCUED_AT]" />
+                    <inputColumn
+                      refId="Package\CARGA RESGATES\Destino do ADO NET.Inputs[Entrada de Destino ADO NET].Columns[CREATED_BY]"
+                      cachedDataType="wstr"
+                      cachedLength="36"
+                      cachedName="CREATED_BY"
+                      externalMetadataColumnId="Package\CARGA RESGATES\Destino do ADO NET.Inputs[Entrada de Destino ADO NET].ExternalColumns[created_by]"
+                      lineageId="Package\CARGA RESGATES\Derived Column.Outputs[Derived Column Output].Columns[CREATED_BY]" />
+                    <inputColumn
+                      refId="Package\CARGA RESGATES\Destino do ADO NET.Inputs[Entrada de Destino ADO NET].Columns[ID_PARTICIPANTE]"
+                      cachedDataType="guid"
+                      cachedName="ID_PARTICIPANTE"
+                      externalMetadataColumnId="Package\CARGA RESGATES\Destino do ADO NET.Inputs[Entrada de Destino ADO NET].ExternalColumns[participant_id]"
+                      lineageId="Package\CARGA RESGATES\Recupera valores.Outputs[OLE DB Source Output].Columns[ID_PARTICIPANTE]" />
+                    <inputColumn
+                      refId="Package\CARGA RESGATES\Destino do ADO NET.Inputs[Entrada de Destino ADO NET].Columns[ID]"
+                      cachedDataType="guid"
+                      cachedName="ID"
+                      externalMetadataColumnId="Package\CARGA RESGATES\Destino do ADO NET.Inputs[Entrada de Destino ADO NET].ExternalColumns[id]"
+                      lineageId="Package\CARGA RESGATES\Recupera valores.Outputs[OLE DB Source Output].Columns[ID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\CARGA RESGATES\Destino do ADO NET.Inputs[Entrada de Destino ADO NET].ExternalColumns[id]"
+                      dataType="guid"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA RESGATES\Destino do ADO NET.Inputs[Entrada de Destino ADO NET].ExternalColumns[participant_id]"
+                      dataType="guid"
+                      name="participant_id" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA RESGATES\Destino do ADO NET.Inputs[Entrada de Destino ADO NET].ExternalColumns[type]"
+                      dataType="wstr"
+                      length="255"
+                      name="type" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA RESGATES\Destino do ADO NET.Inputs[Entrada de Destino ADO NET].ExternalColumns[rescued_at]"
+                      dataType="dbTimeStamp"
+                      name="rescued_at" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA RESGATES\Destino do ADO NET.Inputs[Entrada de Destino ADO NET].ExternalColumns[created_by]"
+                      dataType="wstr"
+                      length="255"
+                      name="created_by" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA RESGATES\Destino do ADO NET.Inputs[Entrada de Destino ADO NET].ExternalColumns[updated_by]"
+                      dataType="wstr"
+                      length="255"
+                      name="updated_by" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA RESGATES\Destino do ADO NET.Inputs[Entrada de Destino ADO NET].ExternalColumns[created_at]"
+                      dataType="dbTimeStamp"
+                      name="created_at" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA RESGATES\Destino do ADO NET.Inputs[Entrada de Destino ADO NET].ExternalColumns[updated_at]"
+                      dataType="dbTimeStamp"
+                      name="updated_at" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\CARGA RESGATES\Destino do ADO NET.Outputs[Saída de Erro de Destino ADO NET]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Destino ADO NET"
+                  synchronousInputId="Package\CARGA RESGATES\Destino do ADO NET.Inputs[Entrada de Destino ADO NET]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CARGA RESGATES\Destino do ADO NET.Outputs[Saída de Erro de Destino ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\CARGA RESGATES\Destino do ADO NET.Outputs[Saída de Erro de Destino ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\CARGA RESGATES\Destino do ADO NET.Outputs[Saída de Erro de Destino ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\CARGA RESGATES\Destino do ADO NET.Outputs[Saída de Erro de Destino ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\CARGA RESGATES\Recupera valores"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Recupera valores"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable">User::RESULT_SETS_RESGATES</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\CARGA RESGATES\Recupera valores.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DB_SAFRA]"
+                  connectionManagerRefId="Package.ConnectionManagers[DB_SAFRA]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\CARGA RESGATES\Recupera valores.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CARGA RESGATES\Recupera valores.Outputs[OLE DB Source Output].Columns[ID_PARTICIPANTE]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGA RESGATES\Recupera valores.Outputs[OLE DB Source Output].ExternalColumns[ID_PARTICIPANTE]"
+                      lineageId="Package\CARGA RESGATES\Recupera valores.Outputs[OLE DB Source Output].Columns[ID_PARTICIPANTE]"
+                      name="ID_PARTICIPANTE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CARGA RESGATES\Recupera valores.Outputs[OLE DB Source Output].Columns[ID]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGA RESGATES\Recupera valores.Outputs[OLE DB Source Output].ExternalColumns[ID]"
+                      lineageId="Package\CARGA RESGATES\Recupera valores.Outputs[OLE DB Source Output].Columns[ID]"
+                      name="ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CARGA RESGATES\Recupera valores.Outputs[OLE DB Source Output].Columns[TYPE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGA RESGATES\Recupera valores.Outputs[OLE DB Source Output].ExternalColumns[TYPE]"
+                      length="500"
+                      lineageId="Package\CARGA RESGATES\Recupera valores.Outputs[OLE DB Source Output].Columns[TYPE]"
+                      name="TYPE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\CARGA RESGATES\Recupera valores.Outputs[OLE DB Source Output].Columns[RESCUED_AT]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\CARGA RESGATES\Recupera valores.Outputs[OLE DB Source Output].ExternalColumns[RESCUED_AT]"
+                      lineageId="Package\CARGA RESGATES\Recupera valores.Outputs[OLE DB Source Output].Columns[RESCUED_AT]"
+                      name="RESCUED_AT"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\CARGA RESGATES\Recupera valores.Outputs[OLE DB Source Output].ExternalColumns[ID_PARTICIPANTE]"
+                      dataType="guid"
+                      name="ID_PARTICIPANTE" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA RESGATES\Recupera valores.Outputs[OLE DB Source Output].ExternalColumns[ID]"
+                      dataType="guid"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA RESGATES\Recupera valores.Outputs[OLE DB Source Output].ExternalColumns[TYPE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="TYPE" />
+                    <externalMetadataColumn
+                      refId="Package\CARGA RESGATES\Recupera valores.Outputs[OLE DB Source Output].ExternalColumns[RESCUED_AT]"
+                      dataType="dbTimeStamp"
+                      name="RESCUED_AT" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\CARGA RESGATES\Recupera valores.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\CARGA RESGATES\Recupera valores.Outputs[OLE DB Source Error Output].Columns[ID]"
+                      dataType="guid"
+                      lineageId="Package\CARGA RESGATES\Recupera valores.Outputs[OLE DB Source Error Output].Columns[ID]"
+                      name="ID" />
+                    <outputColumn
+                      refId="Package\CARGA RESGATES\Recupera valores.Outputs[OLE DB Source Error Output].Columns[ID_PARTICIPANTE]"
+                      dataType="guid"
+                      lineageId="Package\CARGA RESGATES\Recupera valores.Outputs[OLE DB Source Error Output].Columns[ID_PARTICIPANTE]"
+                      name="ID_PARTICIPANTE" />
+                    <outputColumn
+                      refId="Package\CARGA RESGATES\Recupera valores.Outputs[OLE DB Source Error Output].Columns[TYPE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\CARGA RESGATES\Recupera valores.Outputs[OLE DB Source Error Output].Columns[TYPE]"
+                      name="TYPE" />
+                    <outputColumn
+                      refId="Package\CARGA RESGATES\Recupera valores.Outputs[OLE DB Source Error Output].Columns[RESCUED_AT]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\CARGA RESGATES\Recupera valores.Outputs[OLE DB Source Error Output].Columns[RESCUED_AT]"
+                      name="RESCUED_AT" />
+                    <outputColumn
+                      refId="Package\CARGA RESGATES\Recupera valores.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\CARGA RESGATES\Recupera valores.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\CARGA RESGATES\Recupera valores.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\CARGA RESGATES\Recupera valores.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\CARGA RESGATES.Paths[Derived Column Output]"
+              endId="Package\CARGA RESGATES\Destino do ADO NET.Inputs[Entrada de Destino ADO NET]"
+              name="Derived Column Output"
+              startId="Package\CARGA RESGATES\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\CARGA RESGATES.Paths[OLE DB Source Output]"
+              endId="Package\CARGA RESGATES\Derived Column.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\CARGA RESGATES\Recupera valores.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Deleta período Resgates"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{FAF91F6F-F7DC-48D5-9713-BF2EC3794EA0}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Deleta período Resgates"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{9DE93A45-C6CB-4B02-AE74-6CB6BA9E4DF8}"
+          SQLTask:SqlStatementSource="DELETE&#xA;FROM&#xA;&#x9;DBO.FT_PONTOS_RESGATADOS&#xA;WHERE&#xA;&#x9;CAST(DATA AS NVARCHAR(10)) BETWEEN ? AND ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::DAT_INI"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::DAT_FIM"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Registra Log"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarefa Executar SQL"
+      DTS:DTSID="{8CC4CC24-2798-4527-99B4-C1BCEE9EE7B8}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Registra Log"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E4C0F486-085E-4B94-B8B5-E54B95B93ABF}"
+          SQLTask:SqlStatementSource="EXEC DB_MARKUP.[MKP].[SP_REGISTRA_LOG_ITEM] ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::ID_ITEM"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{95D4F13D-2407-4ED9-A664-D30B0132A852}"
+      DTS:From="Package\Deleta período Resgates"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\CARGA RESGATES" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição]"
+      DTS:CreationName=""
+      DTS:DTSID="{AFF42EBD-E33D-4808-9828-3DADB5DA1E8D}"
+      DTS:From="Package\CARGA RESGATES"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição"
+      DTS:To="Package\Registra Log" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta seção CDATA contém as informações de layout do pacote. A seção inclui informações como coordenadas (x,y), largura e altura.-->
+<!--Se você editar manualmente esta seção e cometer algum erro, poderá excluí-la. -->
+<!--O pacote ainda poderá ser carregado normalmente, mas as informações de layout anteriores serão perdidas e o designer reorganizará automaticamente os elementos na superfície de design.-->
+<Objects
+  Version="8">
+  <!--Cada nó abaixo conterá propriedades que não afetam o comportamento em tempo de execução.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="181,42"
+          Id="Package\CARGA RESGATES"
+          TopLeft="142,301" />
+        <NodeLayout
+          Size="200,42"
+          Id="Package\Deleta período Resgates"
+          TopLeft="129,214" />
+        <NodeLayout
+          Size="141,42"
+          Id="Package\Registra Log"
+          TopLeft="159,393" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="230.75,256">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição]"
+          TopLeft="231,343">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50"
+              Start="0,0"
+              End="0,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\CARGA RESGATES">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="158,42"
+          Id="Package\CARGA RESGATES\Derived Column"
+          TopLeft="66,141" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\CARGA RESGATES\Recupera valores"
+          TopLeft="62,60" />
+        <EdgeLayout
+          Id="Package\CARGA RESGATES.Paths[OLE DB Source Output]"
+          TopLeft="144.75,102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39"
+              Start="0,0"
+              End="0,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="183,42"
+          Id="Package\CARGA RESGATES\Destino do ADO NET"
+          TopLeft="63,303" />
+        <EdgeLayout
+          Id="Package\CARGA RESGATES.Paths[Derived Column Output]"
+          TopLeft="145,183">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9.5,120"
+              Start="0,0"
+              End="9.5,112.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,56" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,56"
+                    Point2="0,60"
+                    Point3="4,60" />
+                  <mssgle:LineSegment
+                    End="5.5,60" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5.5,60"
+                    Point2="9.5,60"
+                    Point3="9.5,64" />
+                  <mssgle:LineSegment
+                    End="9.5,112.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARGA RESGATES\Recupera valores">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\CARGA RESGATES\Destino do ADO NET">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

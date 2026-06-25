@@ -1,0 +1,1769 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/6/2024 3:27:45 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MKPDCT-DBSTG01"
+  DTS:CreatorName="MKPDCT-DBSTG01\dbm_dw"
+  DTS:DTSID="{F5CD6C18-4C2B-413B-82FD-813A2D477454}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SAFRA_REPLICA_API_LOGS"
+  DTS:PackageType="5"
+  DTS:VersionBuild="399"
+  DTS:VersionGUID="{A4B8D872-DEC9-4256-BF20-0B9DA7B5DC34}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DB_SAFRA_API]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{DD787376-5736-458D-AD5F-5AC804C65CDC}"
+      DTS:ObjectName="DB_SAFRA_API">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=MKPDTC-DBSTG\STAGING;Initial Catalog=DB_SAFRA_API;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SAFRA_CARGA_VENDAVALL_API_STG_PONTOS_PRD-{DD787376-5736-458D-AD5F-5AC804C65CDC}10.10.20.103.DB_SAFRA_API.markup.dbranches;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[vendavall40 - PROD]"
+      DTS:CreationName="ADO.NET:System.Data.Odbc.OdbcConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{69B92BE4-657C-4AC0-B084-236D4A8854BB}"
+      DTS:ObjectName="vendavall40 - PROD">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Dsn=vendavall40 - PROD;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[vendavall40 - PROD - API]"
+      DTS:CreationName="ADO.NET:System.Data.Odbc.OdbcConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{F243318D-5ACE-4DCF-A270-627977F3E358}"
+      DTS:ObjectName="vendavall40 - PROD - API">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Dsn=vendavall40 - PROD - API;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{28E3098F-88C0-4752-B85A-8126F7F48C5A}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;'&quot; + (DT_WSTR, 20)(DT_DBDATE) GETDATE() + &quot;'&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DAT_FIM">
+      <DTS:VariableValue
+        DTS:DataType="8">'2026-06-25'</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{87DC0659-401C-4E39-98AA-1FA657F1D7BA}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;'&quot; + (DT_WSTR, 20)(DT_DBDATE) DATEADD(&quot;day&quot;, -10, GETDATE()) + &quot;'&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DAT_INI">
+      <DTS:VariableValue
+        DTS:DataType="8">'2026-06-15'</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{03197EAD-D5D8-4E54-9E85-776EC28F1CA8}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ID_ITEM">
+      <DTS:VariableValue
+        DTS:DataType="3">123</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Carrega TB_JOB_LOGS_REP"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarefa Fluxo de Dados"
+      DTS:DTSID="{58ABE085-64E1-4CFF-B419-1363DABAE82E}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carrega TB_JOB_LOGS_REP"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Carrega TB_JOB_LOGS_REP\Conversão de Dados"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Conversão de Dados;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;0"
+              description="Conversão de Dados"
+              name="Conversão de Dados"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Carrega TB_JOB_LOGS_REP\Conversão de Dados.Inputs[Entrada de Conversão de Dados]"
+                  name="Entrada de Conversão de Dados">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Conversão de Dados.Inputs[Entrada de Conversão de Dados].Columns[job_name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="job_name"
+                      lineageId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[job_name]" />
+                    <inputColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Conversão de Dados.Inputs[Entrada de Conversão de Dados].Columns[status]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="status"
+                      lineageId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[status]" />
+                    <inputColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Conversão de Dados.Inputs[Entrada de Conversão de Dados].Columns[job_id]"
+                      cachedDataType="nText"
+                      cachedName="job_id"
+                      lineageId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[job_id]" />
+                    <inputColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Conversão de Dados.Inputs[Entrada de Conversão de Dados].Columns[transaction_id]"
+                      cachedDataType="nText"
+                      cachedName="transaction_id"
+                      lineageId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[transaction_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carrega TB_JOB_LOGS_REP\Conversão de Dados.Outputs[Saída de Conversão de Dados]"
+                  exclusionGroup="1"
+                  name="Saída de Conversão de Dados"
+                  synchronousInputId="Package\Carrega TB_JOB_LOGS_REP\Conversão de Dados.Inputs[Entrada de Conversão de Dados]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Copy of job_name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Carrega TB_JOB_LOGS_REP\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Copy of job_name]"
+                      name="Copy of job_name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica a coluna de entrada usada como a origem dois dados para a conversão."
+                          name="SourceInputColumnLineageID">#{Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[job_name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Copy of status]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Carrega TB_JOB_LOGS_REP\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Copy of status]"
+                      name="Copy of status"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica a coluna de entrada usada como a origem dois dados para a conversão."
+                          name="SourceInputColumnLineageID">#{Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[status]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Copy of job_id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      length="100"
+                      lineageId="Package\Carrega TB_JOB_LOGS_REP\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Copy of job_id]"
+                      name="Copy of job_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica a coluna de entrada usada como a origem dois dados para a conversão."
+                          name="SourceInputColumnLineageID">#{Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[job_id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Copy of transaction_id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      length="100"
+                      lineageId="Package\Carrega TB_JOB_LOGS_REP\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Copy of transaction_id]"
+                      name="Copy of transaction_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica a coluna de entrada usada como a origem dois dados para a conversão."
+                          name="SourceInputColumnLineageID">#{Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[transaction_id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Carrega TB_JOB_LOGS_REP\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Conversão de Dados"
+                  synchronousInputId="Package\Carrega TB_JOB_LOGS_REP\Conversão de Dados.Inputs[Entrada de Conversão de Dados]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carrega TB_JOB_LOGS_REP\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carrega TB_JOB_LOGS_REP\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carrega TB_JOB_LOGS_REP\Destino OLE DB"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino OLE DB"
+              name="Destino OLE DB"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[dbo].[TB_JOB_LOGS_REP]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS,ROWS_PER_BATCH = 10000</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carrega TB_JOB_LOGS_REP\Destino OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DB_SAFRA_API]"
+                  connectionManagerRefId="Package.ConnectionManagers[DB_SAFRA_API]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Carrega TB_JOB_LOGS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB]"
+                  errorOrTruncationOperation="Inserir"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de Destino OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[success_count]"
+                      cachedDataType="i4"
+                      cachedName="success_count"
+                      externalMetadataColumnId="Package\Carrega TB_JOB_LOGS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[QUANTIDADE_SUCESSOS]"
+                      lineageId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[success_count]" />
+                    <inputColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[error_count]"
+                      cachedDataType="i4"
+                      cachedName="error_count"
+                      externalMetadataColumnId="Package\Carrega TB_JOB_LOGS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[QUANTIDADE_ERROS]"
+                      lineageId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[error_count]" />
+                    <inputColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[executed_at]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="executed_at"
+                      externalMetadataColumnId="Package\Carrega TB_JOB_LOGS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[DATA_EXECUCAO]"
+                      lineageId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[executed_at]" />
+                    <inputColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[created_at]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="created_at"
+                      externalMetadataColumnId="Package\Carrega TB_JOB_LOGS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[DATA_CRIACAO]"
+                      lineageId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[created_at]" />
+                    <inputColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[updated_at]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="updated_at"
+                      externalMetadataColumnId="Package\Carrega TB_JOB_LOGS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[DATA_ATUALIZACAO]"
+                      lineageId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[updated_at]" />
+                    <inputColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[Copy of job_name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of job_name"
+                      externalMetadataColumnId="Package\Carrega TB_JOB_LOGS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[NOME_JOB]"
+                      lineageId="Package\Carrega TB_JOB_LOGS_REP\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Copy of job_name]" />
+                    <inputColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[Copy of status]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of status"
+                      externalMetadataColumnId="Package\Carrega TB_JOB_LOGS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[STATUS]"
+                      lineageId="Package\Carrega TB_JOB_LOGS_REP\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Copy of status]" />
+                    <inputColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[Copy of job_id]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Copy of job_id"
+                      externalMetadataColumnId="Package\Carrega TB_JOB_LOGS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_JOB]"
+                      lineageId="Package\Carrega TB_JOB_LOGS_REP\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Copy of job_id]" />
+                    <inputColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[Copy of transaction_id]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Copy of transaction_id"
+                      externalMetadataColumnId="Package\Carrega TB_JOB_LOGS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_TRANSACAO]"
+                      lineageId="Package\Carrega TB_JOB_LOGS_REP\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Copy of transaction_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID]"
+                      dataType="i4"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_JOB]"
+                      dataType="nText"
+                      name="ID_JOB" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[NOME_JOB]"
+                      dataType="wstr"
+                      length="255"
+                      name="NOME_JOB" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_TRANSACAO]"
+                      dataType="nText"
+                      name="ID_TRANSACAO" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[QUANTIDADE_SUCESSOS]"
+                      dataType="i4"
+                      name="QUANTIDADE_SUCESSOS" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[QUANTIDADE_ERROS]"
+                      dataType="i4"
+                      name="QUANTIDADE_ERROS" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[STATUS]"
+                      dataType="wstr"
+                      length="255"
+                      name="STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[DATA_EXECUCAO]"
+                      dataType="dbTimeStamp"
+                      name="DATA_EXECUCAO" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[DATA_CRIACAO]"
+                      dataType="dbTimeStamp"
+                      name="DATA_CRIACAO" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[DATA_ATUALIZACAO]"
+                      dataType="dbTimeStamp"
+                      name="DATA_ATUALIZACAO" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carrega TB_JOB_LOGS_REP\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Destino OLE DB"
+                  synchronousInputId="Package\Carrega TB_JOB_LOGS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carrega TB_JOB_LOGS_REP\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carrega TB_JOB_LOGS_REP\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consome dados do SQL Server, OLE DB, ODBC ou Oracle usando o provedor de dados .NET Framework correspondente. Use uma instrução Transact-SQL para definir o conjunto de resultados. Por exemplo, extraia dados do SQL Server com o provedor de dados .NET Framework para SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+              description="Consome dados do SQL Server, OLE DB, ODBC ou Oracle usando o provedor de dados .NET Framework correspondente. Use uma instrução Transact-SQL para definir o conjunto de resultados. Por exemplo, extraia dados do SQL Server com o provedor de dados .NET Framework para SQL Server."
+              name="Origem do ADO NET"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica a instrução SQL usada pelo componente para extrair os dados."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT id::text as job_id
+, job_name
+, transaction_id::text
+, success_count
+, error_count
+, status
+, executed_at
+, created_at
+, updated_at
+FROM public.job_logs
+WHERE 
+    updated_at::date BETWEEN (now() - INTERVAL '10 day')::date AND now()::date
+    OR created_at::date BETWEEN (now() - INTERVAL '10 day')::date AND now()::date</property>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica a permissão para que as colunas externas que não são de cadeias de caracteres sejam convertidas implicitamente em cadeias de caracteres nas colunas de saída."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="O nome da tabela de banco de dados de Origem."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"public"."participants"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifique o modo para recuperar informações da coluna externa"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[vendavall40 - PROD - API]"
+                  connectionManagerRefId="Package.ConnectionManagers[vendavall40 - PROD - API]"
+                  description="Gerenciador de conexões gerenciadas"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET]"
+                  name="Saída do de Origem do ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[job_id]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[job_id]"
+                      lineageId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[job_id]"
+                      name="job_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[job_name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[job_name]"
+                      length="255"
+                      lineageId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[job_name]"
+                      name="job_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[transaction_id]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[transaction_id]"
+                      lineageId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[transaction_id]"
+                      name="transaction_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[success_count]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[success_count]"
+                      lineageId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[success_count]"
+                      name="success_count"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[error_count]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[error_count]"
+                      lineageId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[error_count]"
+                      name="error_count"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[status]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[status]"
+                      length="255"
+                      lineageId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[status]"
+                      name="status"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[executed_at]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[executed_at]"
+                      lineageId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[executed_at]"
+                      name="executed_at"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[created_at]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[created_at]"
+                      lineageId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[created_at]"
+                      name="created_at"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[updated_at]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[updated_at]"
+                      lineageId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[updated_at]"
+                      name="updated_at"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[job_id]"
+                      dataType="nText"
+                      name="job_id" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[job_name]"
+                      dataType="wstr"
+                      length="255"
+                      name="job_name" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[transaction_id]"
+                      dataType="nText"
+                      name="transaction_id" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[success_count]"
+                      dataType="i4"
+                      name="success_count" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[error_count]"
+                      dataType="i4"
+                      name="error_count" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[status]"
+                      dataType="wstr"
+                      length="255"
+                      name="status" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[executed_at]"
+                      dataType="dbTimeStamp"
+                      name="executed_at" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[created_at]"
+                      dataType="dbTimeStamp"
+                      name="created_at" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[updated_at]"
+                      dataType="dbTimeStamp"
+                      name="updated_at" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET]"
+                  isErrorOut="true"
+                  name="Saída de Erro de Origem do ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[job_id]"
+                      dataType="nText"
+                      lineageId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[job_id]"
+                      name="job_id" />
+                    <outputColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[job_name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[job_name]"
+                      name="job_name" />
+                    <outputColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[transaction_id]"
+                      dataType="nText"
+                      lineageId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[transaction_id]"
+                      name="transaction_id" />
+                    <outputColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[success_count]"
+                      dataType="i4"
+                      lineageId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[success_count]"
+                      name="success_count" />
+                    <outputColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[error_count]"
+                      dataType="i4"
+                      lineageId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[error_count]"
+                      name="error_count" />
+                    <outputColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[status]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[status]"
+                      name="status" />
+                    <outputColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[executed_at]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[executed_at]"
+                      name="executed_at" />
+                    <outputColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[created_at]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[created_at]"
+                      name="created_at" />
+                    <outputColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[updated_at]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[updated_at]"
+                      name="updated_at" />
+                    <outputColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Carrega TB_JOB_LOGS_REP.Paths[Saída de Conversão de Dados]"
+              endId="Package\Carrega TB_JOB_LOGS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB]"
+              name="Saída de Conversão de Dados"
+              startId="Package\Carrega TB_JOB_LOGS_REP\Conversão de Dados.Outputs[Saída de Conversão de Dados]" />
+            <path
+              refId="Package\Carrega TB_JOB_LOGS_REP.Paths[Saída do de Origem do ADO NET]"
+              endId="Package\Carrega TB_JOB_LOGS_REP\Conversão de Dados.Inputs[Entrada de Conversão de Dados]"
+              name="Saída do de Origem do ADO NET"
+              startId="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Carrega TB_RETORNO_PONTOS_REP"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarefa Fluxo de Dados"
+      DTS:DTSID="{AC560BC6-7B16-4858-87C6-1F55CA2EABDA}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carrega TB_RETORNO_PONTOS_REP"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Carrega TB_RETORNO_PONTOS_REP\Conversão de Dados"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Conversão de Dados;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;0"
+              description="Conversão de Dados"
+              name="Conversão de Dados"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Carrega TB_RETORNO_PONTOS_REP\Conversão de Dados.Inputs[Entrada de Conversão de Dados]"
+                  name="Entrada de Conversão de Dados">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Conversão de Dados.Inputs[Entrada de Conversão de Dados].Columns[points]"
+                      cachedDataType="i4"
+                      cachedName="points"
+                      lineageId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[points]" />
+                    <inputColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Conversão de Dados.Inputs[Entrada de Conversão de Dados].Columns[contract_number]"
+                      cachedDataType="nText"
+                      cachedName="contract_number"
+                      lineageId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[contract_number]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carrega TB_RETORNO_PONTOS_REP\Conversão de Dados.Outputs[Saída de Conversão de Dados]"
+                  exclusionGroup="1"
+                  name="Saída de Conversão de Dados"
+                  synchronousInputId="Package\Carrega TB_RETORNO_PONTOS_REP\Conversão de Dados.Inputs[Entrada de Conversão de Dados]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Copy of points]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Carrega TB_RETORNO_PONTOS_REP\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Copy of points]"
+                      name="Copy of points"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica a coluna de entrada usada como a origem dois dados para a conversão."
+                          name="SourceInputColumnLineageID">#{Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[points]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Copy of contract_number]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      length="150"
+                      lineageId="Package\Carrega TB_RETORNO_PONTOS_REP\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Copy of contract_number]"
+                      name="Copy of contract_number"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica a coluna de entrada usada como a origem dois dados para a conversão."
+                          name="SourceInputColumnLineageID">#{Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[contract_number]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Carrega TB_RETORNO_PONTOS_REP\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Conversão de Dados"
+                  synchronousInputId="Package\Carrega TB_RETORNO_PONTOS_REP\Conversão de Dados.Inputs[Entrada de Conversão de Dados]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carrega TB_RETORNO_PONTOS_REP\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carrega TB_RETORNO_PONTOS_REP\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carrega TB_RETORNO_PONTOS_REP\Destino OLE DB"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino OLE DB"
+              name="Destino OLE DB"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[dbo].[TB_RETORNO_PONTOS_REP]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS,ROWS_PER_BATCH = 10000</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carrega TB_RETORNO_PONTOS_REP\Destino OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DB_SAFRA_API]"
+                  connectionManagerRefId="Package.ConnectionManagers[DB_SAFRA_API]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Carrega TB_RETORNO_PONTOS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB]"
+                  errorOrTruncationOperation="Inserir"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de Destino OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[status]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="status"
+                      externalMetadataColumnId="Package\Carrega TB_RETORNO_PONTOS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[STATUS]"
+                      lineageId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[status]" />
+                    <inputColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[error]"
+                      cachedDataType="nText"
+                      cachedName="error"
+                      externalMetadataColumnId="Package\Carrega TB_RETORNO_PONTOS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[ERROR]"
+                      lineageId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[error]" />
+                    <inputColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[participant_cpf]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="participant_cpf"
+                      externalMetadataColumnId="Package\Carrega TB_RETORNO_PONTOS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[CPF]"
+                      lineageId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[participant_cpf]" />
+                    <inputColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[type]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="type"
+                      externalMetadataColumnId="Package\Carrega TB_RETORNO_PONTOS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[TIPO]"
+                      lineageId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[type]" />
+                    <inputColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[Copy of points]"
+                      cachedDataType="r8"
+                      cachedName="Copy of points"
+                      externalMetadataColumnId="Package\Carrega TB_RETORNO_PONTOS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[PONTOS]"
+                      lineageId="Package\Carrega TB_RETORNO_PONTOS_REP\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Copy of points]" />
+                    <inputColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[Copy of contract_number]"
+                      cachedDataType="wstr"
+                      cachedLength="150"
+                      cachedName="Copy of contract_number"
+                      externalMetadataColumnId="Package\Carrega TB_RETORNO_PONTOS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[NUMERO_NOTA]"
+                      lineageId="Package\Carrega TB_RETORNO_PONTOS_REP\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Copy of contract_number]" />
+                    <inputColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[vop]"
+                      cachedDataType="r8"
+                      cachedName="vop"
+                      externalMetadataColumnId="Package\Carrega TB_RETORNO_PONTOS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[VOP]"
+                      lineageId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[vop]" />
+                    <inputColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[created_at]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="created_at"
+                      externalMetadataColumnId="Package\Carrega TB_RETORNO_PONTOS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[DATA_CRIACAO]"
+                      lineageId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[created_at]" />
+                    <inputColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[updated_at]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="updated_at"
+                      externalMetadataColumnId="Package\Carrega TB_RETORNO_PONTOS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[DATA_ATUALIZACAO]"
+                      lineageId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[updated_at]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID]"
+                      dataType="i4"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[CPF]"
+                      dataType="wstr"
+                      length="255"
+                      name="CPF" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[VOP]"
+                      dataType="r8"
+                      name="VOP" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[PONTOS]"
+                      dataType="r8"
+                      name="PONTOS" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[STATUS]"
+                      dataType="wstr"
+                      length="255"
+                      name="STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[TIPO]"
+                      dataType="wstr"
+                      length="255"
+                      name="TIPO" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[NUMERO_NOTA]"
+                      dataType="nText"
+                      name="NUMERO_NOTA" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[ERROR]"
+                      dataType="nText"
+                      name="ERROR" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[DATA_CRIACAO]"
+                      dataType="dbTimeStamp"
+                      name="DATA_CRIACAO" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[DATA_ATUALIZACAO]"
+                      dataType="dbTimeStamp"
+                      name="DATA_ATUALIZACAO" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carrega TB_RETORNO_PONTOS_REP\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Destino OLE DB"
+                  synchronousInputId="Package\Carrega TB_RETORNO_PONTOS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carrega TB_RETORNO_PONTOS_REP\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carrega TB_RETORNO_PONTOS_REP\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consome dados do SQL Server, OLE DB, ODBC ou Oracle usando o provedor de dados .NET Framework correspondente. Use uma instrução Transact-SQL para definir o conjunto de resultados. Por exemplo, extraia dados do SQL Server com o provedor de dados .NET Framework para SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+              description="Consome dados do SQL Server, OLE DB, ODBC ou Oracle usando o provedor de dados .NET Framework correspondente. Use uma instrução Transact-SQL para definir o conjunto de resultados. Por exemplo, extraia dados do SQL Server com o provedor de dados .NET Framework para SQL Server."
+              name="Origem do ADO NET"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica a instrução SQL usada pelo componente para extrair os dados."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select
+	NULLIF(po.additional_info::JSONB -&gt;&gt; 'vop', 'N/A')::float vop
+, po.participant_cpf 
+, po.points
+, po.status
+, po.type
+,po.additional_info::JSONB -&gt;&gt; 'numero_contrato' AS contract_number
+, dp.error
+, po.created_at
+, po.updated_at
+from public.points po
+	left join dlq_points dp on po.id=dp.id_t_points
+--WHERE 
+    --po.updated_at::date BETWEEN (now() - INTERVAL '1 day')::date AND now()::date
+    --OR po.created_at::date BETWEEN (now() - INTERVAL '1 day')::date AND now()::date
+order by po.status, po.created_at  desc</property>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica a permissão para que as colunas externas que não são de cadeias de caracteres sejam convertidas implicitamente em cadeias de caracteres nas colunas de saída."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="O nome da tabela de banco de dados de Origem."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"public"."participants"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifique o modo para recuperar informações da coluna externa"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[vendavall40 - PROD - API]"
+                  connectionManagerRefId="Package.ConnectionManagers[vendavall40 - PROD - API]"
+                  description="Gerenciador de conexões gerenciadas"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET]"
+                  name="Saída do de Origem do ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[vop]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[vop]"
+                      lineageId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[vop]"
+                      name="vop"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[participant_cpf]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[participant_cpf]"
+                      length="255"
+                      lineageId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[participant_cpf]"
+                      name="participant_cpf"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[points]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[points]"
+                      lineageId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[points]"
+                      name="points"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[status]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[status]"
+                      length="255"
+                      lineageId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[status]"
+                      name="status"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[type]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[type]"
+                      length="255"
+                      lineageId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[type]"
+                      name="type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[contract_number]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[contract_number]"
+                      lineageId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[contract_number]"
+                      name="contract_number"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[error]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[error]"
+                      lineageId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[error]"
+                      name="error"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[created_at]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[created_at]"
+                      lineageId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[created_at]"
+                      name="created_at"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[updated_at]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[updated_at]"
+                      lineageId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[updated_at]"
+                      name="updated_at"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[vop]"
+                      dataType="r8"
+                      name="vop" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[participant_cpf]"
+                      dataType="wstr"
+                      length="255"
+                      name="participant_cpf" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[points]"
+                      dataType="i4"
+                      name="points" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[status]"
+                      dataType="wstr"
+                      length="255"
+                      name="status" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[type]"
+                      dataType="wstr"
+                      length="255"
+                      name="type" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[contract_number]"
+                      dataType="nText"
+                      name="contract_number" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[error]"
+                      dataType="nText"
+                      name="error" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[created_at]"
+                      dataType="dbTimeStamp"
+                      name="created_at" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[updated_at]"
+                      dataType="dbTimeStamp"
+                      name="updated_at" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET]"
+                  isErrorOut="true"
+                  name="Saída de Erro de Origem do ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[vop]"
+                      dataType="r8"
+                      lineageId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[vop]"
+                      name="vop" />
+                    <outputColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[participant_cpf]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[participant_cpf]"
+                      name="participant_cpf" />
+                    <outputColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[points]"
+                      dataType="i4"
+                      lineageId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[points]"
+                      name="points" />
+                    <outputColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[status]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[status]"
+                      name="status" />
+                    <outputColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[type]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[type]"
+                      name="type" />
+                    <outputColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[contract_number]"
+                      dataType="nText"
+                      lineageId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[contract_number]"
+                      name="contract_number" />
+                    <outputColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[error]"
+                      dataType="nText"
+                      lineageId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[error]"
+                      name="error" />
+                    <outputColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[created_at]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[created_at]"
+                      name="created_at" />
+                    <outputColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[updated_at]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[updated_at]"
+                      name="updated_at" />
+                    <outputColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Carrega TB_RETORNO_PONTOS_REP.Paths[Saída de Conversão de Dados]"
+              endId="Package\Carrega TB_RETORNO_PONTOS_REP\Destino OLE DB.Inputs[Entrada de Destino OLE DB]"
+              name="Saída de Conversão de Dados"
+              startId="Package\Carrega TB_RETORNO_PONTOS_REP\Conversão de Dados.Outputs[Saída de Conversão de Dados]" />
+            <path
+              refId="Package\Carrega TB_RETORNO_PONTOS_REP.Paths[Saída do de Origem do ADO NET]"
+              endId="Package\Carrega TB_RETORNO_PONTOS_REP\Conversão de Dados.Inputs[Entrada de Conversão de Dados]"
+              name="Saída do de Origem do ADO NET"
+              startId="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Deleta Periodo 1"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarefa Executar SQL"
+      DTS:DTSID="{33498044-548B-4894-A097-9B43DB83793C}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Deleta Periodo 1"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{DD787376-5736-458D-AD5F-5AC804C65CDC}"
+          SQLTask:SqlStatementSource="DELETE&#xA;  FROM [DB_SAFRA_API].[dbo].[TB_JOB_LOGS_REP]&#xA;&#x9;WHERE CAST(DATA_CRIACAO AS NVARCHAR(10)) BETWEEN ? AND ?&#xA;&#x9;OR CAST(DATA_ATUALIZACAO AS NVARCHAR(10)) BETWEEN ? AND ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::DAT_INI"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::DAT_FIM"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::DAT_INI"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="User::DAT_FIM"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Registra item"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{AE6192F5-EDBE-40F3-B819-4F316D958DA7}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Registra item"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{DD787376-5736-458D-AD5F-5AC804C65CDC}"
+          SQLTask:SqlStatementSource="EXEC DB_MARKUP.[MKP].[SP_REGISTRA_LOG_ITEM] ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::ID_ITEM"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Trunca"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarefa Executar SQL"
+      DTS:DTSID="{A918D3B0-CBCF-46D5-874E-F20F16886857}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Trunca"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{DD787376-5736-458D-AD5F-5AC804C65CDC}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[TB_RETORNO_PONTOS_REP]&#xA;&#x9;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::DAT_INI"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::DAT_FIM"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::DAT_INI"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="3"
+            SQLTask:DtsVariableName="User::DAT_FIM"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição]"
+      DTS:CreationName=""
+      DTS:DTSID="{6797E9E8-4D4C-428E-B0CF-5F048825009F}"
+      DTS:From="Package\Carrega TB_RETORNO_PONTOS_REP"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição"
+      DTS:To="Package\Deleta Periodo 1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{764BFCA3-DC9E-4DB2-9495-927623C49CDC}"
+      DTS:From="Package\Deleta Periodo 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição 1"
+      DTS:To="Package\Carrega TB_JOB_LOGS_REP" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{06B0DACB-CF1B-4B1D-8F65-6BB3918DCF3B}"
+      DTS:From="Package\Trunca"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição 2"
+      DTS:To="Package\Carrega TB_RETORNO_PONTOS_REP" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{D9A72744-83BC-4C85-8F2D-5CA6C0A1513D}"
+      DTS:From="Package\Carrega TB_JOB_LOGS_REP"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição 3"
+      DTS:To="Package\Registra item" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="229,42"
+          Id="Package\Carrega TB_JOB_LOGS_REP"
+          TopLeft="147,323" />
+        <NodeLayout
+          Size="278,42"
+          Id="Package\Carrega TB_RETORNO_PONTOS_REP"
+          TopLeft="125,159.272727272727" />
+        <NodeLayout
+          Size="174,42"
+          Id="Package\Deleta Periodo 1"
+          TopLeft="173,243.272727272727" />
+        <NodeLayout
+          Size="144,42"
+          Id="Package\Registra item"
+          TopLeft="194,406" />
+        <NodeLayout
+          Size="113,42"
+          Id="Package\Trunca"
+          TopLeft="207,81" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição]"
+          TopLeft="262,201.272727272727">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição 1]"
+          TopLeft="260.75,285.272727272727">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.727272727273"
+              Start="0,0"
+              End="0,30.227272727273">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.227272727273" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição 2]"
+          TopLeft="263.75,123">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.272727272727"
+              Start="0,0"
+              End="0,28.772727272727">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.772727272727" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição 3]"
+          TopLeft="263.75,365">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41"
+              Start="0,0"
+              End="0,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Carrega TB_JOB_LOGS_REP">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET"
+          TopLeft="153,47" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Carrega TB_JOB_LOGS_REP\Destino OLE DB"
+          TopLeft="161,198" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Carrega TB_JOB_LOGS_REP\Conversão de Dados"
+          TopLeft="149,120" />
+        <EdgeLayout
+          Id="Package\Carrega TB_JOB_LOGS_REP.Paths[Saída do de Origem do ADO NET]"
+          TopLeft="242,89">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31"
+              Start="0,0"
+              End="0,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carrega TB_JOB_LOGS_REP.Paths[Saída de Conversão de Dados]"
+          TopLeft="240.25,162">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carrega TB_JOB_LOGS_REP\Origem do ADO NET">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carrega TB_JOB_LOGS_REP\Destino OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Carrega TB_RETORNO_PONTOS_REP">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET"
+          TopLeft="153,47" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Carrega TB_RETORNO_PONTOS_REP\Destino OLE DB"
+          TopLeft="167,239" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Carrega TB_RETORNO_PONTOS_REP\Conversão de Dados"
+          TopLeft="152,145" />
+        <EdgeLayout
+          Id="Package\Carrega TB_RETORNO_PONTOS_REP.Paths[Saída do de Origem do ADO NET]"
+          TopLeft="243.5,89">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56"
+              Start="0,0"
+              End="0,48.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carrega TB_RETORNO_PONTOS_REP.Paths[Saída de Conversão de Dados]"
+          TopLeft="244.75,187">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52"
+              Start="0,0"
+              End="0,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carrega TB_RETORNO_PONTOS_REP\Origem do ADO NET">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carrega TB_RETORNO_PONTOS_REP\Destino OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
