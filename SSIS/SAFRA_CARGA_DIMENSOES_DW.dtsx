@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="SAFRA_CARGA_DIMENSOES_DW"
   DTS:PackageType="5"
-  DTS:VersionBuild="167"
-  DTS:VersionGUID="{0EEC34C2-578F-443A-93D2-F77956D49905}">
+  DTS:VersionBuild="168"
+  DTS:VersionGUID="{1925E1FC-0DE4-49BE-B576-144A4DCE58D1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -37,7 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=10.15.4.77;User ID=bi_service;Initial Catalog=SAFRA_DW;Provider=SQLOLEDB.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-SAFRA_CARGA_DIMENSOES_DW-{DBF57BC0-50BA-43EA-A56D-25AA14FE3AB8}10.10.10.103,1435.SAFRA_DW.dbm_staging;" />
+          DTS:ConnectionString="Data Source=10.15.4.77;Initial Catalog=SAFRA_DW;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SAFRA_CARGA_DIMENSOES_DW-{DBF57BC0-50BA-43EA-A56D-25AA14FE3AB8}10.10.10.103,1435.SAFRA_DW.dbm_staging;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>

@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="8/9/2024 4:31:34 PM"
@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="SAFRA_CARGA_FATOS_DW"
   DTS:PackageType="5"
-  DTS:VersionBuild="168"
-  DTS:VersionGUID="{4BA2A2ED-4AD1-4C81-A37C-01D82153BE2B}">
+  DTS:VersionBuild="169"
+  DTS:VersionGUID="{DB244937-ABB3-4849-918A-585882608908}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -37,7 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=10.15.4.77;User ID=bi_service;Initial Catalog=SAFRA_DW;Provider=SQLOLEDB.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-SAFRA_CARGA_FATOS_DW-{6776C04B-199D-441A-8F7D-5166A5B77FF6}10.10.10.103,1435.SAFRA_DW.dbm_staging;" />
+          DTS:ConnectionString="Data Source=10.15.4.77;Initial Catalog=SAFRA_DW;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SAFRA_CARGA_FATOS_DW-{6776C04B-199D-441A-8F7D-5166A5B77FF6}10.10.10.103,1435.SAFRA_DW.dbm_staging;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -51,7 +51,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="DAT_FIM">
       <DTS:VariableValue
-        DTS:DataType="8">'2026-06-23'</DTS:VariableValue>
+        DTS:DataType="8">'2026-06-25'</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -62,7 +62,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="DAT_INI">
       <DTS:VariableValue
-        DTS:DataType="8">'2026-04-24'</DTS:VariableValue>
+        DTS:DataType="8">'2026-04-26'</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -91,7 +91,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RESULT_SETS_ACESSOS">
       <DTS:VariableValue
-        DTS:DataType="8">DECLARE @DAT_INI VARCHAR(20)		= '2026-04-24'DECLARE @DAT_FIM VARCHAR(20)		= '2026-06-23';
+        DTS:DataType="8">DECLARE @DAT_INI VARCHAR(20)		= '2026-04-26'DECLARE @DAT_FIM VARCHAR(20)		= '2026-06-25';
 
 SELECT
 	PA.ID_PARTICIPANTE
@@ -128,7 +128,7 @@ WHERE
       DTS:Namespace="User"
       DTS:ObjectName="RESULT_SETS_CREDITOS">
       <DTS:VariableValue
-        DTS:DataType="8">DECLARE @ID_CAMPANHA INT	= 375DECLARE @DAT_INI VARCHAR(20)		= '2026-04-24'DECLARE @DAT_FIM VARCHAR(20)		= (SELECT MAX(DATA_EXPIRACAO) FROM [DB_PREMIOIDEAL].[DBO].[TB_PONTOS] (NOLOCK)
+        DTS:DataType="8">DECLARE @ID_CAMPANHA INT	= 375DECLARE @DAT_INI VARCHAR(20)		= '2026-04-26'DECLARE @DAT_FIM VARCHAR(20)		= (SELECT MAX(DATA_EXPIRACAO) FROM [DB_PREMIOIDEAL].[DBO].[TB_PONTOS] (NOLOCK)
 WHERE ID_CAMPANHA = @ID_CAMPANHA);
 
 WITH CREDITOS AS(
@@ -242,7 +242,7 @@ ORDER BY
       DTS:Namespace="User"
       DTS:ObjectName="RESULT_SETS_RESGATES">
       <DTS:VariableValue
-        DTS:DataType="8">DECLARE @ID_CAMPANHA INT	= 375DECLARE @DAT_INI VARCHAR(20)		= '2026-04-24'DECLARE @DAT_FIM VARCHAR(20)		= '2026-06-23';
+        DTS:DataType="8">DECLARE @ID_CAMPANHA INT	= 375DECLARE @DAT_INI VARCHAR(20)		= '2026-04-26'DECLARE @DAT_FIM VARCHAR(20)		= '2026-06-25';
 
 SELECT
 	CAST(PC.DATA_RESGATE AS DATE)			AS DATA
@@ -285,7 +285,7 @@ GROUP BY
       DTS:Namespace="User"
       DTS:ObjectName="RESULT_SETS_VENDAS">
       <DTS:VariableValue
-        DTS:DataType="8">DECLARE @DAT_INI VARCHAR(20)		= '2026-04-24'DECLARE @DAT_FIM VARCHAR(20)		= '2026-06-23';
+        DTS:DataType="8">DECLARE @DAT_INI VARCHAR(20)		= '2026-04-26'DECLARE @DAT_FIM VARCHAR(20)		= '2026-06-25';
 
 SELECT DP.ID													AS ID_PARTICIPANTE
 	  ,CAST(CONCAT(HP.ID_VERSAO, '-', DP.ID) AS NTEXT)			AS CHAVE_PARTICIPANTE
@@ -2976,12 +2976,12 @@ WHERE
       DTS:To="Package\Registra Log" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
-<!--If you manually edit this section and make a mistake, you can delete it. -->
-<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<!--Esta seção CDATA contém as informações de layout do pacote. A seção inclui informações como coordenadas (x,y), largura e altura.-->
+<!--Se você editar manualmente esta seção e cometer algum erro, poderá excluí-la. -->
+<!--O pacote ainda poderá ser carregado normalmente, mas as informações de layout anteriores serão perdidas e o designer reorganizará automaticamente os elementos na superfície de design.-->
 <Objects
   Version="8">
-  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <!--Cada nó abaixo conterá propriedades que não afetam o comportamento em tempo de execução.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>

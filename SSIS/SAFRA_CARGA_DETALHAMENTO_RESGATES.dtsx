@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="SAFRA_CARGA_DETALHAMENTO_RESGATES"
   DTS:PackageType="5"
-  DTS:VersionBuild="183"
-  DTS:VersionGUID="{EB930C61-F5D1-4EA0-8944-DC5DD8B3CF4C}">
+  DTS:VersionBuild="194"
+  DTS:VersionGUID="{B7FAE6AE-C717-4C5D-A653-AA5D24BFC82E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,7 +29,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAMYZHfVQCnkCa/Xnwd7GF3QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAKwRh408yBFLAUz47Ncr9PI4R9QTMv54NMsPq5J69fgwAAAAAOgAAAAAIAACAAAAAFpPQeDq3yacevk3l8MdvWoaUloY5cl8x12KHp13FilyAAAADoO77VX6OX5OtEL7/hxttIKDpHl3hGsrBxQGnjoBXbhkAAAABSqNvBc48eqwwddME16xr4OzFmGE1JqJYPRPtaTar/wE5X4CfiaApacETXT3zZA/i5CYjNoe/RGUNG6HlYh6aa</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAMYZHfVQCnkCa/Xnwd7GF3QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAb62VfD5YRvb7dU7HxFD0QUtKP9pBrFwKnue7vtFyNJAAAAAAOgAAAAAIAACAAAABW0sU7C3EDgvm5Tr66amPRD9eBXXfNafLu0tmxeEyi0iAAAABrSXP/U4oRsYoFWhLgkxGK4kWuxRuM7icZittODlRNVkAAAAC4Y6rONUpBmKsy6eP5FJnKEygPZZez86pL59PexfbN8jxSpuh5jB0AzW3P0NuWVWGSzUg2rWJPHg1KsMXmc0PV</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -785,19 +785,19 @@ SELECT DP.ID													AS ID_PARTICIPANTE
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{9DE93A45-C6CB-4B02-AE74-6CB6BA9E4DF8}"
-          SQLTask:SqlStatementSource="DELETE&#xA;FROM&#xA;&#x9;DBO.FT_PONTOS_RESGATADOS&#xA;WHERE&#xA;&#x9;CAST(DATA AS NVARCHAR(10)) BETWEEN ? AND ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          SQLTask:Connection="{234D0026-576D-4BE4-B866-E4DADB5C0E96}"
+          SQLTask:SqlStatementSource="DELETE&#xA;FROM safra_api_vendavall_20240805110525.rescues_details&#xA;WHERE rescued_at::date BETWEEN ? AND ?;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
-            SQLTask:ParameterName="0"
+            SQLTask:ParameterName="@DAT_INI"
             SQLTask:DtsVariableName="User::DAT_INI"
             SQLTask:ParameterDirection="Input"
-            SQLTask:DataType="129"
+            SQLTask:DataType="16"
             SQLTask:ParameterSize="-1" />
           <SQLTask:ParameterBinding
-            SQLTask:ParameterName="1"
+            SQLTask:ParameterName="@DAT_FIM"
             SQLTask:DtsVariableName="User::DAT_FIM"
             SQLTask:ParameterDirection="Input"
-            SQLTask:DataType="129"
+            SQLTask:DataType="16"
             SQLTask:ParameterSize="-1" />
         </SQLTask:SqlTaskData>
       </DTS:ObjectData>
@@ -806,6 +806,7 @@ SELECT DP.ID													AS ID_PARTICIPANTE
       DTS:refId="Package\Registra Log"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarefa Executar SQL"
+      DTS:Disabled="True"
       DTS:DTSID="{8CC4CC24-2798-4527-99B4-C1BCEE9EE7B8}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -860,18 +861,18 @@ SELECT DP.ID													AS ID_PARTICIPANTE
         <NodeLayout
           Size="181,42"
           Id="Package\CARGA RESGATES"
-          TopLeft="142,301" />
+          TopLeft="136,154" />
         <NodeLayout
           Size="200,42"
           Id="Package\Deleta período Resgates"
-          TopLeft="129,214" />
+          TopLeft="123,67" />
         <NodeLayout
           Size="141,42"
           Id="Package\Registra Log"
-          TopLeft="159,393" />
+          TopLeft="153,246" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="230.75,256">
+          TopLeft="224.75,109">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -893,7 +894,7 @@ SELECT DP.ID													AS ID_PARTICIPANTE
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restrição]"
-          TopLeft="231,343">
+          TopLeft="225,196">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -922,13 +923,17 @@ SELECT DP.ID													AS ID_PARTICIPANTE
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="165,42"
+          Id="Package\CARGA RESGATES\Recupera valores"
+          TopLeft="62,60" />
+        <NodeLayout
           Size="158,42"
           Id="Package\CARGA RESGATES\Derived Column"
           TopLeft="66,141" />
         <NodeLayout
-          Size="165,42"
-          Id="Package\CARGA RESGATES\Recupera valores"
-          TopLeft="62,60" />
+          Size="183,42"
+          Id="Package\CARGA RESGATES\Destino do ADO NET"
+          TopLeft="63,303" />
         <EdgeLayout
           Id="Package\CARGA RESGATES.Paths[OLE DB Source Output]"
           TopLeft="144.75,102">
@@ -951,10 +956,6 @@ SELECT DP.ID													AS ID_PARTICIPANTE
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="183,42"
-          Id="Package\CARGA RESGATES\Destino do ADO NET"
-          TopLeft="63,303" />
         <EdgeLayout
           Id="Package\CARGA RESGATES.Paths[Derived Column Output]"
           TopLeft="145,183">
