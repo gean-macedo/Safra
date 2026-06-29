@@ -1,0 +1,1581 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/6/2024 3:27:45 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MKPDCT-DBSTG01"
+  DTS:CreatorName="MKPDCT-DBSTG01\dbm_dw"
+  DTS:DTSID="{D6268E10-6A08-4043-B9A9-6D68C89ECDAA}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SAFRA_CARGA_CADASTRO_API"
+  DTS:PackageType="5"
+  DTS:VersionBuild="722"
+  DTS:VersionGUID="{91F9ACBA-BED0-409B-BEB1-5F17172DED93}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DB_SAFRA]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F074EF5B-596F-439F-B68F-A9F41F22666C}"
+      DTS:ObjectName="DB_SAFRA">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=10.15.4.227;User ID=markup.dbranches;Initial Catalog=DB_SAFRA;Provider=SQLOLEDB.1;Auto Translate=False;Application Name=SSIS-SAFRA_CARGA_VENDAVALL_API_STG_PARTICIPANTES_E_ESTABELECIMENTOS_PRD-{F074EF5B-596F-439F-B68F-A9F41F22666C}10.10.20.103.DB_;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFZtphO24FkmnryGLnozZEQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADLCic15MZ3f+oLqvwQllvexOElpf7kEk0G0wRWKJQ6HwAAAAAOgAAAAAIAACAAAAAMF8tZVXhEO6PPulA0b1uCc1mo8fr28bWMqmVIxqyljiAAAADc1jfACq7b1+hyj8wjaTgJyNZCoW7L1C3xzdDWzm+KE0AAAAANyTO+zDiQ6RMVz+V1cEC6ua3D3pK1a2zTQ6mtAWk5bbo51FQv54WYmO823kfNi6uF20iCFmrComOn3JUNaf1x</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[vendavall40 - PROD]"
+      DTS:CreationName="ADO.NET:System.Data.Odbc.OdbcConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{E08498F1-25C9-4940-8ED9-E709DAC021FD}"
+      DTS:ObjectName="vendavall40 - PROD">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Dsn=vendavall40 - PROD;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[vendavall40 - PROD - API]"
+      DTS:CreationName="ADO.NET:System.Data.Odbc.OdbcConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{A2FCA52B-7398-4BC2-910E-B16ABAAF5CD9}"
+      DTS:ObjectName="vendavall40 - PROD - API">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Dsn=vendavall40 - PROD - API;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E88BC032-626D-4AEA-8571-3B389C0365A1}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ADD_INFO">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8588E6EE-4729-4AEE-87CF-7A8F1B4C3211}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="CARGO">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F652AE86-A2C0-49FF-8817-CEB43769DD87}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="CNPJ">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9BEEEE44-20A2-400B-8366-A02D4B612B1E}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="COD_STATUS">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C1BCFA9E-5719-477F-A7FE-39B450DE8101}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="CPF">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{471FB1CC-C953-4183-B2EC-93CCD08D1EA9}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DT_ANIVERSARIO">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BB4B497C-E2D3-4A4A-A6BF-78C4A2E44671}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="EMAIL">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{18BB0A64-243B-48A0-852F-154FB578E369}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ENROLL">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{04153DCC-1A3D-4883-96E4-62EF676A4DD9}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ESTABELECIMENTOS">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{192EA7C3-325A-4585-AFB3-AC8673B08AB2}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="GENERO">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A3FA89B7-80FF-4671-8280-7BE7DDCCA51B}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="HAVE_POINTS">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6FF0136B-83DA-4799-AC1F-0D3960BCDC2D}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ID_ESTABELECIMENTO">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{AFB7C14A-03D5-4AC3-A302-EDB1A87BDD8E}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ID_ITEM">
+      <DTS:VariableValue
+        DTS:DataType="3">149</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7F4A136D-DC28-458F-A68E-9A1DCFBD151D}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ID_PARTICIPANTE">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{52AD11A5-6E33-4E00-B815-C9E83BAC5195}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="NOME">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{01F45B6A-EA3C-4D47-870D-AD19233B0572}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="NOME_ESTABELECIMENTO">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6F8DEE4C-9409-48E1-AB46-0873F67D4ADC}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="PARTICIPANTES">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{FF2EB903-C029-4E8E-BF9E-FEAE3CF5FF9B}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="RESALE_CODE">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{82E953EA-DF23-4F13-BBEB-CB476AB19F80}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="STATUS">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0F4DF371-3F90-4FC3-9EF2-BF679C3B366C}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="STATUS_ESTABELECIMENTO">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{43A5569C-7B7D-4F31-AD0E-F9A3C96D25E3}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TELEFONE">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarefa Fluxo de Dados"
+      DTS:DTSID="{af1e2fb8-5b9e-4a83-95c8-ceff4dd3e07d}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carrega TB_PARTICIPANTES_CADASTRO_API"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Destino OLE DB"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino OLE DB"
+              name="Destino OLE DB"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[dbo].[TB_PARTICIPANTES_CADASTRO_API]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS,ROWS_PER_BATCH = 10000</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Destino OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DB_SAFRA]"
+                  connectionManagerRefId="Package.ConnectionManagers[DB_SAFRA]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Destino OLE DB.Inputs[Entrada de Destino OLE DB]"
+                  errorOrTruncationOperation="Inserir"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de Destino OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[PARTICIPANT_CODE]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PARTICIPANT_CODE"
+                      externalMetadataColumnId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[PARTICIPANT_CODE]"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[PARTICIPANT_CODE]" />
+                    <inputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[SUPERIOR_PARTICIPANT_CODE]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="SUPERIOR_PARTICIPANT_CODE"
+                      externalMetadataColumnId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[SUPERIOR_PARTICIPANT_CODE]"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[SUPERIOR_PARTICIPANT_CODE]" />
+                    <inputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[CADASTRADO_VENDAVALL]"
+                      cachedDataType="i4"
+                      cachedName="CADASTRADO_VENDAVALL"
+                      externalMetadataColumnId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[CADASTRADO_VENDAVALL]"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[CADASTRADO_VENDAVALL]" />
+                    <inputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[ID_PARTICIPANTE]"
+                      cachedDataType="i4"
+                      cachedName="ID_PARTICIPANTE"
+                      externalMetadataColumnId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_PARTICIPANTE]"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[ID_PARTICIPANTE]" />
+                    <inputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[ID_SUPERIOR_PARTICIPANTE]"
+                      cachedDataType="i4"
+                      cachedName="ID_SUPERIOR_PARTICIPANTE"
+                      externalMetadataColumnId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_SUPERIOR_PARTICIPANTE]"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[ID_SUPERIOR_PARTICIPANTE]" />
+                    <inputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[ID_CARGO]"
+                      cachedDataType="i4"
+                      cachedName="ID_CARGO"
+                      externalMetadataColumnId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_CARGO]"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[ID_CARGO]" />
+                    <inputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[DATA_CRIACAO]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DATA_CRIACAO"
+                      externalMetadataColumnId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[DATA_CRIACAO]"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[DATA_CRIACAO]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[PARTICIPANT_CODE]"
+                      dataType="wstr"
+                      length="20"
+                      name="PARTICIPANT_CODE" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[SUPERIOR_PARTICIPANT_CODE]"
+                      dataType="wstr"
+                      length="20"
+                      name="SUPERIOR_PARTICIPANT_CODE" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[CADASTRADO_VENDAVALL]"
+                      dataType="i4"
+                      name="CADASTRADO_VENDAVALL" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[DATA_CRIACAO]"
+                      dataType="dbTimeStamp"
+                      name="DATA_CRIACAO" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID]"
+                      dataType="i4"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_PARTICIPANTE]"
+                      dataType="i4"
+                      name="ID_PARTICIPANTE" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_SUPERIOR_PARTICIPANTE]"
+                      dataType="i4"
+                      name="ID_SUPERIOR_PARTICIPANTE" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[ID_CARGO]"
+                      dataType="i4"
+                      name="ID_CARGO" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Destino OLE DB"
+                  synchronousInputId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Destino OLE DB.Inputs[Entrada de Destino OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origem OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;7"
+              description="Origem OLE DB"
+              name="Origem OLE DB"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">WITH CTE_TEMP_BASE AS (
+    -- 1. Isolamos a temporária e criamos um "ranking" por CPF ordenado pela data mais recente
+    SELECT 
+        CPF,
+        SUPERIOR_CPF,
+        ROLE,
+        PARTICIPANT_CODE,
+        SUPERIOR_PARTICIPANT_CODE,
+        CADASTRADO_VENDAVALL,
+        DATA_CRIACAO,
+        ROW_NUMBER() OVER(PARTITION BY CPF ORDER BY DATA_CRIACAO DESC) AS RN
+    FROM [DB_SAFRA].[dbo].[TB_PARTICIPANTES_CADASTRO_API_TEMP] (NOLOCK)
+),
+CTE_TEMP_UNICA AS (
+    -- 2. Filtramos apenas o registro mais recente (RN = 1) de cada CPF, eliminando duplicatas
+    SELECT 
+        CPF,
+        SUPERIOR_CPF,
+        ROLE,
+        PARTICIPANT_CODE,
+        SUPERIOR_PARTICIPANT_CODE,
+        CADASTRADO_VENDAVALL,
+        DATA_CRIACAO
+    FROM CTE_TEMP_BASE
+    WHERE RN = 1
+),
+CTE_PARTICIPANTES AS (
+    -- 3. Trazemos apenas ID e CPF
+    SELECT 
+        ID, 
+        CPF
+    FROM TB_PARTICIPANTES (NOLOCK)
+),
+CTE_HIERARQUIA AS (
+    -- 4. Isolamos a tabela de cargos
+    SELECT 
+        ID, 
+        NOME
+    FROM TB_PROGRAMA_HIERARQUIA (NOLOCK)
+),
+CTE_JA_CADASTRADOS AS (
+    -- 5. Isolamos a lista de IDs que já constam na API
+    SELECT 
+        ID_PARTICIPANTE
+    FROM [DB_SAFRA].[dbo].[TB_PARTICIPANTES_CADASTRO_API] (NOLOCK)
+)
+
+-- Consulta Final
+SELECT 
+    PA.ID     AS ID_PARTICIPANTE,
+    SUP.ID    AS ID_SUPERIOR_PARTICIPANTE,
+    PH.ID     AS ID_CARGO,
+    T.PARTICIPANT_CODE,
+    T.SUPERIOR_PARTICIPANT_CODE,
+    T.CADASTRADO_VENDAVALL,
+    T.DATA_CRIACAO
+FROM CTE_TEMP_UNICA AS T
+-- INNER JOIN garante que não virão IDs nulos. Se não tiver na TB_PARTICIPANTES, é descartado.
+INNER JOIN CTE_PARTICIPANTES AS PA 
+    ON T.CPF = PA.CPF
+LEFT JOIN CTE_PARTICIPANTES AS SUP 
+    ON T.SUPERIOR_CPF = SUP.CPF
+LEFT JOIN CTE_HIERARQUIA AS PH 
+    ON T.ROLE = PH.NOME 
+WHERE NOT EXISTS (
+    SELECT 1 
+    FROM CTE_JA_CADASTRADOS AS B
+    WHERE PA.ID = B.ID_PARTICIPANTE
+);</property>
+                <property
+                  dataType="System.String"
+                  description="A variável que contém o comando SQL a ser executado."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Os mapeamentos entre os parâmetros no comando SQL e as variáveis."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DB_SAFRA]"
+                  connectionManagerRefId="Package.ConnectionManagers[DB_SAFRA]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Origem OLE DB]"
+                  name="Saída de Origem OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[ID_PARTICIPANTE]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[ID_PARTICIPANTE]"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[ID_PARTICIPANTE]"
+                      name="ID_PARTICIPANTE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[ID_SUPERIOR_PARTICIPANTE]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[ID_SUPERIOR_PARTICIPANTE]"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[ID_SUPERIOR_PARTICIPANTE]"
+                      name="ID_SUPERIOR_PARTICIPANTE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[ID_CARGO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[ID_CARGO]"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[ID_CARGO]"
+                      name="ID_CARGO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[PARTICIPANT_CODE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[PARTICIPANT_CODE]"
+                      length="255"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[PARTICIPANT_CODE]"
+                      name="PARTICIPANT_CODE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[SUPERIOR_PARTICIPANT_CODE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[SUPERIOR_PARTICIPANT_CODE]"
+                      length="255"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[SUPERIOR_PARTICIPANT_CODE]"
+                      name="SUPERIOR_PARTICIPANT_CODE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[CADASTRADO_VENDAVALL]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[CADASTRADO_VENDAVALL]"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[CADASTRADO_VENDAVALL]"
+                      name="CADASTRADO_VENDAVALL"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[DATA_CRIACAO]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[DATA_CRIACAO]"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Origem OLE DB].Columns[DATA_CRIACAO]"
+                      name="DATA_CRIACAO"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[ID_PARTICIPANTE]"
+                      dataType="i4"
+                      name="ID_PARTICIPANTE" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[ID_SUPERIOR_PARTICIPANTE]"
+                      dataType="i4"
+                      name="ID_SUPERIOR_PARTICIPANTE" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[ID_CARGO]"
+                      dataType="i4"
+                      name="ID_CARGO" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[PARTICIPANT_CODE]"
+                      dataType="wstr"
+                      length="255"
+                      name="PARTICIPANT_CODE" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[SUPERIOR_PARTICIPANT_CODE]"
+                      dataType="wstr"
+                      length="255"
+                      name="SUPERIOR_PARTICIPANT_CODE" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[CADASTRADO_VENDAVALL]"
+                      dataType="i4"
+                      name="CADASTRADO_VENDAVALL" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Origem OLE DB].ExternalColumns[DATA_CRIACAO]"
+                      dataType="dbTimeStamp"
+                      name="DATA_CRIACAO" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB]"
+                  isErrorOut="true"
+                  name="Saída de Erro de Origem OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[ID_PARTICIPANTE]"
+                      dataType="i4"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[ID_PARTICIPANTE]"
+                      name="ID_PARTICIPANTE" />
+                    <outputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[ID_SUPERIOR_PARTICIPANTE]"
+                      dataType="i4"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[ID_SUPERIOR_PARTICIPANTE]"
+                      name="ID_SUPERIOR_PARTICIPANTE" />
+                    <outputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[ID_CARGO]"
+                      dataType="i4"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[ID_CARGO]"
+                      name="ID_CARGO" />
+                    <outputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[PARTICIPANT_CODE]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[PARTICIPANT_CODE]"
+                      name="PARTICIPANT_CODE" />
+                    <outputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[SUPERIOR_PARTICIPANT_CODE]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[SUPERIOR_PARTICIPANT_CODE]"
+                      name="SUPERIOR_PARTICIPANT_CODE" />
+                    <outputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[CADASTRADO_VENDAVALL]"
+                      dataType="i4"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[CADASTRADO_VENDAVALL]"
+                      name="CADASTRADO_VENDAVALL" />
+                    <outputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[DATA_CRIACAO]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[DATA_CRIACAO]"
+                      name="DATA_CRIACAO" />
+                    <outputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API.Paths[Saída de Origem OLE DB]"
+              endId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Destino OLE DB.Inputs[Entrada de Destino OLE DB]"
+              name="Saída de Origem OLE DB"
+              startId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB.Outputs[Saída de Origem OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarefa Fluxo de Dados"
+      DTS:DTSID="{2712E991-1311-4120-A6A0-A68A05D0CEA1}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Conversão de Dados"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Conversão de Dados;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;0"
+              description="Conversão de Dados"
+              name="Conversão de Dados"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Conversão de Dados.Inputs[Entrada de Conversão de Dados]"
+                  name="Entrada de Conversão de Dados">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Conversão de Dados.Outputs[Saída de Conversão de Dados]"
+                  exclusionGroup="1"
+                  name="Saída de Conversão de Dados"
+                  synchronousInputId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Conversão de Dados.Inputs[Entrada de Conversão de Dados]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Conversão de Dados"
+                  synchronousInputId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Conversão de Dados.Inputs[Entrada de Conversão de Dados]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Destino OLE DB"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino OLE DB"
+              name="Destino OLE DB"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[dbo].[TB_PARTICIPANTES_CADASTRO_API_TEMP]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS,ROWS_PER_BATCH = 10000</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Destino OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DB_SAFRA]"
+                  connectionManagerRefId="Package.ConnectionManagers[DB_SAFRA]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Destino OLE DB.Inputs[Entrada de Destino OLE DB]"
+                  errorOrTruncationOperation="Inserir"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de Destino OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[participant_code]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="participant_code"
+                      externalMetadataColumnId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[PARTICIPANT_CODE]"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[participant_code]" />
+                    <inputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[superior_participant_code]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="superior_participant_code"
+                      externalMetadataColumnId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[SUPERIOR_PARTICIPANT_CODE]"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[superior_participant_code]" />
+                    <inputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[cpf]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="cpf"
+                      externalMetadataColumnId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[CPF]"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[cpf]" />
+                    <inputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[superior_cpf]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="superior_cpf"
+                      externalMetadataColumnId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[SUPERIOR_CPF]"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[superior_cpf]" />
+                    <inputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[cadastrado_vendavall]"
+                      cachedDataType="i4"
+                      cachedName="cadastrado_vendavall"
+                      externalMetadataColumnId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[CADASTRADO_VENDAVALL]"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[cadastrado_vendavall]" />
+                    <inputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[role]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="role"
+                      externalMetadataColumnId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[ROLE]"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[role]" />
+                    <inputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].Columns[created_at]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="created_at"
+                      externalMetadataColumnId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[DATA_CRIACAO]"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[created_at]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[PARTICIPANT_CODE]"
+                      dataType="wstr"
+                      length="255"
+                      name="PARTICIPANT_CODE" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[SUPERIOR_PARTICIPANT_CODE]"
+                      dataType="wstr"
+                      length="255"
+                      name="SUPERIOR_PARTICIPANT_CODE" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[CPF]"
+                      dataType="wstr"
+                      length="255"
+                      name="CPF" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[SUPERIOR_CPF]"
+                      dataType="wstr"
+                      length="255"
+                      name="SUPERIOR_CPF" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[CADASTRADO_VENDAVALL]"
+                      dataType="i4"
+                      name="CADASTRADO_VENDAVALL" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[ROLE]"
+                      dataType="wstr"
+                      length="255"
+                      name="ROLE" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Destino OLE DB.Inputs[Entrada de Destino OLE DB].ExternalColumns[DATA_CRIACAO]"
+                      dataType="dbTimeStamp"
+                      name="DATA_CRIACAO" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Destino OLE DB"
+                  synchronousInputId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Destino OLE DB.Inputs[Entrada de Destino OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Destino OLE DB.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consome dados do SQL Server, OLE DB, ODBC ou Oracle usando o provedor de dados .NET Framework correspondente. Use uma instrução Transact-SQL para definir o conjunto de resultados. Por exemplo, extraia dados do SQL Server com o provedor de dados .NET Framework para SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+              description="Consome dados do SQL Server, OLE DB, ODBC ou Oracle usando o provedor de dados .NET Framework correspondente. Use uma instrução Transact-SQL para definir o conjunto de resultados. Por exemplo, extraia dados do SQL Server com o provedor de dados .NET Framework para SQL Server."
+              name="Origem do ADO NET"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica a instrução SQL usada pelo componente para extrair os dados."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+	p.participant_code, 
+	p2.participant_code as superior_participant_code,
+	p.cpf, 
+	p2.cpf as superior_cpf,
+	case when p.status in ('Sucesso Cadastro', 'Sucesso Update')
+		then 1
+		else 0 
+	end 								as cadastrado_vendavall,
+	p.role, 
+	p.created_at
+FROM public.participants p
+left join public.participant_hierarchy ph
+	on p.id = ph.participant_id 
+left join public.participants p2
+	on ph.superior_participant_id = p2.id
+where 1=1</property>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica a permissão para que as colunas externas que não são de cadeias de caracteres sejam convertidas implicitamente em cadeias de caracteres nas colunas de saída."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="O nome da tabela de banco de dados de Origem."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"public"."participants"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifique o modo para recuperar informações da coluna externa"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[vendavall40 - PROD - API]"
+                  connectionManagerRefId="Package.ConnectionManagers[vendavall40 - PROD - API]"
+                  description="Gerenciador de conexões gerenciadas"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET]"
+                  name="Saída do de Origem do ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[participant_code]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[participant_code]"
+                      length="255"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[participant_code]"
+                      name="participant_code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[superior_participant_code]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[superior_participant_code]"
+                      length="255"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[superior_participant_code]"
+                      name="superior_participant_code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[cpf]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[cpf]"
+                      length="255"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[cpf]"
+                      name="cpf"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[superior_cpf]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[superior_cpf]"
+                      length="255"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[superior_cpf]"
+                      name="superior_cpf"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[cadastrado_vendavall]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[cadastrado_vendavall]"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[cadastrado_vendavall]"
+                      name="cadastrado_vendavall"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[role]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[role]"
+                      length="255"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[role]"
+                      name="role"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[created_at]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[created_at]"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].Columns[created_at]"
+                      name="created_at"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[participant_code]"
+                      dataType="wstr"
+                      length="255"
+                      name="participant_code" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[superior_participant_code]"
+                      dataType="wstr"
+                      length="255"
+                      name="superior_participant_code" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[cpf]"
+                      dataType="wstr"
+                      length="255"
+                      name="cpf" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[superior_cpf]"
+                      dataType="wstr"
+                      length="255"
+                      name="superior_cpf" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[cadastrado_vendavall]"
+                      dataType="i4"
+                      name="cadastrado_vendavall" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[role]"
+                      dataType="wstr"
+                      length="255"
+                      name="role" />
+                    <externalMetadataColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET].ExternalColumns[created_at]"
+                      dataType="dbTimeStamp"
+                      name="created_at" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET]"
+                  isErrorOut="true"
+                  name="Saída de Erro de Origem do ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[participant_code]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[participant_code]"
+                      name="participant_code" />
+                    <outputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[superior_participant_code]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[superior_participant_code]"
+                      name="superior_participant_code" />
+                    <outputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[cpf]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[cpf]"
+                      name="cpf" />
+                    <outputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[superior_cpf]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[superior_cpf]"
+                      name="superior_cpf" />
+                    <outputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[cadastrado_vendavall]"
+                      dataType="i4"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[cadastrado_vendavall]"
+                      name="cadastrado_vendavall" />
+                    <outputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[role]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[role]"
+                      name="role" />
+                    <outputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[created_at]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[created_at]"
+                      name="created_at" />
+                    <outputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída de Erro de Origem do ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP.Paths[Saída de Conversão de Dados]"
+              endId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Destino OLE DB.Inputs[Entrada de Destino OLE DB]"
+              name="Saída de Conversão de Dados"
+              startId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Conversão de Dados.Outputs[Saída de Conversão de Dados]" />
+            <path
+              refId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP.Paths[Saída do de Origem do ADO NET]"
+              endId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Conversão de Dados.Inputs[Entrada de Conversão de Dados]"
+              name="Saída do de Origem do ADO NET"
+              startId="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET.Outputs[Saída do de Origem do ADO NET]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Registra item"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{bc6d2113-ea0f-4b47-92d8-bda3f8040ae1}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Registra item"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F074EF5B-596F-439F-B68F-A9F41F22666C}"
+          SQLTask:SqlStatementSource="EXEC DB_MARKUP.[MKP].[SP_REGISTRA_LOG_ITEM] ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::ID_ITEM"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Trunca Temp"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarefa Executar SQL"
+      DTS:DTSID="{0DFCBCD6-2893-4F2B-8381-E0D6D0E89CDF}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Trunca Temp"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F074EF5B-596F-439F-B68F-A9F41F22666C}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE TB_PARTICIPANTES_CADASTRO_API_TEMP" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição]"
+      DTS:CreationName=""
+      DTS:DTSID="{08584959-985D-40F6-98F4-10A9B83E941F}"
+      DTS:From="Package\Trunca Temp"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição"
+      DTS:To="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{675AD273-83C2-465D-84F9-261288FAF6F4}"
+      DTS:From="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição 1"
+      DTS:To="Package\Carrega TB_PARTICIPANTES_CADASTRO_API" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{A385A7A6-F3B4-41FE-A389-91E80C6D4D76}"
+      DTS:From="Package\Carrega TB_PARTICIPANTES_CADASTRO_API"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição 2"
+      DTS:To="Package\Registra item" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta seção CDATA contém as informações de layout do pacote. A seção inclui informações como coordenadas (x,y), largura e altura.-->
+<!--Se você editar manualmente esta seção e cometer algum erro, poderá excluí-la. -->
+<!--O pacote ainda poderá ser carregado normalmente, mas as informações de layout anteriores serão perdidas e o designer reorganizará automaticamente os elementos na superfície de design.-->
+<Objects
+  Version="8">
+  <!--Cada nó abaixo conterá propriedades que não afetam o comportamento em tempo de execução.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="357,42"
+          Id="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP"
+          TopLeft="53.25,117.93939393939" />
+        <NodeLayout
+          Size="320,42"
+          Id="Package\Carrega TB_PARTICIPANTES_CADASTRO_API"
+          TopLeft="69,218" />
+        <NodeLayout
+          Size="144,42"
+          Id="Package\Trunca Temp"
+          TopLeft="163.333333333334,22.55555555556" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição]"
+          TopLeft="233.541666666667,64.55555555556">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53.38383838383"
+              Start="0,0"
+              End="0,45.88383838383">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.88383838383" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição 1]"
+          TopLeft="230.375,159.93939393939">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58.06060606061"
+              Start="0,0"
+              End="0,50.56060606061">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.56060606061" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="144,42"
+          Id="Package\Registra item"
+          TopLeft="160,320" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição 2]"
+          TopLeft="230.5,260">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET"
+          TopLeft="161,44" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Conversão de Dados"
+          TopLeft="164,146" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Destino OLE DB"
+          TopLeft="175,261" />
+        <EdgeLayout
+          Id="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP.Paths[Saída do de Origem do ADO NET]"
+          TopLeft="253.5,86">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP.Paths[Saída de Conversão de Dados]"
+          TopLeft="254.75,188">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,73"
+              Start="0,0"
+              End="0,65.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,65.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Origem do ADO NET">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carrega TB_PARTICIPANTES_CADASTRO_API_TEMP\Destino OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Carrega TB_PARTICIPANTES_CADASTRO_API">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB"
+          TopLeft="175,139" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Destino OLE DB"
+          TopLeft="175,261" />
+        <EdgeLayout
+          Id="Package\Carrega TB_PARTICIPANTES_CADASTRO_API.Paths[Saída de Origem OLE DB]"
+          TopLeft="254.25,181">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,80"
+              Start="0,0"
+              End="0,72.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,72.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Destino OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carrega TB_PARTICIPANTES_CADASTRO_API\Origem OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
