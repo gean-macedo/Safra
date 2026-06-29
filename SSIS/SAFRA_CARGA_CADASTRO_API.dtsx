@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="SAFRA_CARGA_CADASTRO_API"
   DTS:PackageType="5"
-  DTS:VersionBuild="722"
-  DTS:VersionGUID="{91F9ACBA-BED0-409B-BEB1-5F17172DED93}">
+  DTS:VersionBuild="723"
+  DTS:VersionGUID="{8B6C7E6A-98E9-4889-B760-2ED86F28C784}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,12 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=10.15.4.227;User ID=markup.dbranches;Initial Catalog=DB_SAFRA;Provider=SQLOLEDB.1;Auto Translate=False;Application Name=SSIS-SAFRA_CARGA_VENDAVALL_API_STG_PARTICIPANTES_E_ESTABELECIMENTOS_PRD-{F074EF5B-596F-439F-B68F-A9F41F22666C}10.10.20.103.DB_;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFZtphO24FkmnryGLnozZEQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADLCic15MZ3f+oLqvwQllvexOElpf7kEk0G0wRWKJQ6HwAAAAAOgAAAAAIAACAAAAAMF8tZVXhEO6PPulA0b1uCc1mo8fr28bWMqmVIxqyljiAAAADc1jfACq7b1+hyj8wjaTgJyNZCoW7L1C3xzdDWzm+KE0AAAAANyTO+zDiQ6RMVz+V1cEC6ua3D3pK1a2zTQ6mtAWk5bbo51FQv54WYmO823kfNi6uF20iCFmrComOn3JUNaf1x</DTS:Password>
-        </DTS:ConnectionManager>
+          DTS:ConnectionString="Data Source=10.15.4.227;Initial Catalog=DB_SAFRA;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SAFRA_CARGA_VENDAVALL_API_STG_PARTICIPANTES_E_ESTABELECIMENTOS_PRD-{F074EF5B-596F-439F-B68F-A9F41F22666C}10.10.20.103.DB_;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
